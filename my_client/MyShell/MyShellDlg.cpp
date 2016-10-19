@@ -1546,6 +1546,7 @@ void CMyShellDlg::OnLButtonDown(UINT nFlags, CPoint point)
                     return ;
                 }
             }
+
             if ( g_objHero.GetCommandType() == _COMMAND_WALK)
             {
                 CMyPos posTarget = {nPosX, nPosY};
@@ -1553,7 +1554,8 @@ void CMyShellDlg::OnLButtonDown(UINT nFlags, CPoint point)
             }
             else
             {
-                g_objHero.Walk(nPosX, nPosY);
+				g_objHero.Run(nPosX,nPosY);
+               // g_objHero.Walk(nPosX, nPosY);
             }
             CMyShellDlg::SetMouseMove(nPosX, nPosY);
             if (m_DlgTask.m_bShow)
@@ -1561,7 +1563,10 @@ void CMyShellDlg::OnLButtonDown(UINT nFlags, CPoint point)
                 m_DlgTask.EnableWindow(false);
             }
             //			m_DlgMain.CloseNpcDlg();
-            m_bLbuttonDown = true ;
+			
+			m_bLbuttonDown = true ;
+			
+            
         }
     }
     CDialog::OnLButtonDown(nFlags, point);
@@ -7093,41 +7098,44 @@ void CMyShellDlg::OnRButtonDown(UINT nFlags, CPoint point)
     {
         m_bRbuttonHold = false ;
     }
-    if ( m_bRbuttonDown == false)
-    {
-        m_bRbuttonDown = true;
-    }
-    if (m_bRbuttonDown)
-    {
-        if (g_objHero.IsMagicAttackBusy())
-        {
-            return;
-        }
-        int nPosX, nPosY;
-        g_objGameMap.Mouse2Cell(point.x, point.y, nPosX, nPosY);
-        if (g_objHero.GetCommandType() == _COMMAND_RUN)
-        {
-            CMyPos posTarget = {nPosX, nPosY};
-            g_objHero.AddStep(posTarget);
-        }
-        else
-        {
-            g_objHero.Run(nPosX, nPosY);
-        }
-        CMyShellDlg::SetMouseMove(nPosX, nPosY);
-        if (m_DlgTask.m_bShow)
-        {
-            m_DlgTask.EnableWindow(false);
-        }
-        //		m_DlgMain.CloseNpcDlg();
-    }
-    /*
-    	if (!bOperation && g_objHero.IsMiner())
-    	{
-    		g_objHero.Mine();
-    		return;
-    	}
-    */
+	if (g_objHero.IsMagicAttackBusy())
+	{
+		return;
+	}
+	const int RIGHT_MAGIC = 7;//F8
+	gpDlgShell->AttackMagic(RIGHT_MAGIC, false);
+	//屏蔽 右键现在用来释放技能 F8
+	/* if ( m_bRbuttonDown == false)
+	{
+	m_bRbuttonDown = true;
+	}
+	if (m_bRbuttonDown)
+	{
+	if (g_objHero.IsMagicAttackBusy())
+	{
+	return;
+	}
+	const int RIGHT_MAGIC = 7;
+	gpDlgShell->AttackMagic(RIGHT_MAGIC, false);
+	int nPosX, nPosY;
+	g_objGameMap.Mouse2Cell(point.x, point.y, nPosX, nPosY);
+	if (g_objHero.GetCommandType() == _COMMAND_RUN)
+	{
+	CMyPos posTarget = {nPosX, nPosY};
+	g_objHero.AddStep(posTarget);
+	}
+	else
+	{
+	g_objHero.Run(nPosX, nPosY);
+	}
+	CMyShellDlg::SetMouseMove(nPosX, nPosY);
+	if (m_DlgTask.m_bShow)
+	{
+	m_DlgTask.EnableWindow(false);
+	}
+
+	}*/
+ 
     CDialog::OnRButtonDown(nFlags, point);
 }
 
@@ -7307,10 +7315,11 @@ void CMyShellDlg::ProcessMouseHold()
         MouseSet(MousePnt.x, MousePnt.y, 1);
         g_objGameMap.Mouse2Cell(MousePnt.x, MousePnt.y, nPosX, nPosY);
         BOOL bRun = true;
-        if (!m_bRbuttonDown )
-        {
-            bRun = false;
-        }
+		//左键用来操作角色移动- 2016.10.19
+		/*       if (!m_bRbuttonDown )
+		{
+		bRun = false;
+		}*/
         if (g_objHero.TestStatus(USERSTATUS_GHOST))
         {
             bRun = false;
@@ -8082,7 +8091,7 @@ void CMyShellDlg::OnRButtonDblClk(UINT nFlags, CPoint point)
             }
         }
     }
-    m_bRbuttonDown = true;
+   // m_bRbuttonDown = true;
     CDialog::OnRButtonDblClk(nFlags, point);
 }
 
