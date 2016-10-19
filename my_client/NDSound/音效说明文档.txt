@@ -1,0 +1,102 @@
+底层音效说明
+DLL          NDSOUND.DLL
+LIB          NDSOUND.LIB
+
+支持 
+真3D音效 ( 支持.sgt .wav .min 格式音档) 
+/2D仿3D音效 ( 支持 .wav 格式音档) 
+/2维音效 ( 支持 .wav 格式音档) 
+/音乐 ( 支持.mp3 .wav .min .rmi 格式音档) 
+
+
+///////////////////////////////////////////////////////////////////////////////////
+初始化
+  DXSoundinit(HWND hWnd);
+////////////////////////////////////////////////////////////////////////////////////////////
+播放2维音效
+
+CSound * const __stdcall DXPlaySound(char * szFileName,int nWorldX=0,int nWorldY=0,int nRange=0,int nLoop=0,int nVolume = 100);
+
+返回音效对象句柄
+
+
+szFileName  文件名
+nWorldX     音效的世界坐标X
+nWorldY     音效的世界坐标Y
+nRange      音效的有效范围 像素单位
+nLoop       播放次数
+nVolume     音效本身音量0--100//音效实际播放音量为nVolume /100 * 游戏总体音量
+
+非基于地图的音效只要传入文件名
+
+设置音效自身音量
+DLLAPI  void	__stdcall DXSetVolume(char * szFileName,int nVolume,int nWorldX=0,int nWorldY=0)
+
+szFileName  文件名
+nVolume     音量百分比(0-100)
+nWorldX     音效的世界坐标X
+nWorldY     音效的世界坐标Y
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+播放3维音效  
+DLLAPI C3DSound * __stdcall DXPlay3DSound(char * szFileName,int nWorldX=0,int nWorldY=0,int nWorldZ=0,int nRange=100,int nLoop=0);
+返回音效对象句柄
+szFileName  文件名
+nWorldX     音效的世界坐标X
+nWorldY     音效的世界坐标Y
+nWorldZ     音效的世界坐标Z
+nRange      音效的有效范围  
+nLoop       播放次数
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+播放音乐 
+DLLAPI CMedia *__stdcall DXPlayMedia(HWND hwnd ,char * szFileName,int nLoop=0);
+返回音效对象句柄
+hwnd           程序主窗口句柄
+szFileName     文件名
+nLoop          播放次数 
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+音效PROCESS
+DLLAPI void		__stdcall DXProcessSound(int nWorldX,int nWorldY);
+
+
+nWorldX         主角的世界坐标X
+nWorldY         主角的世界坐标Y
+ 
+
+///////////////////////////////////////////////////////////////////////////////////////
+关闭音效
+
+DLLAPI	BOOL	__stdcall DXCloseSound(char * szFileName,int nX,int nY);
+
+/////////////////////////////////////////////////////////////////////////
+关闭音乐
+DLLAPI	BOOL	__stdcall DXCloseMedia(char *szFileName);
+//////////////////////////////////////////////////////////////////////////////
+设置音乐音量   0 ----100
+DLLAPI	void	__stdcall DXSetMusicVolume(int nVolume);
+
+/////////////////////////////////////////////////////////////////////////////////
+设置音效音量  0 --------100
+
+DLLAPI	void	__stdcall DXSetSoundVolume(int nVolume);
+
+////////////////////////////////////////////////////////////////////////////////
+得到当前的音乐音量   0---100
+DLLAPI	int		__stdcall DXGetMusicVolume();
+///////////////////////////////////////////////////////////////////////////////
+得到当前的音效音量   0------100
+
+DLLAPI	int		__stdcall DXGetSoundVolume();
+
+////////////////////////////////////////////
+
+释放所有音乐音效..习构NDSOUND对象
+DLLAPI	void		__stdcall DXDestroy();	
+
+ 
