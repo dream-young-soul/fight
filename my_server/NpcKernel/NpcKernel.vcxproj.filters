@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{dbca8673-97cf-4d6f-99d4-74a4c4e7b914}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{6856d365-fbe8-4f64-9860-50e4e19c1c70}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="NetWork">
+      <UniqueIdentifier>{46f82115-6bfa-4d3d-95ea-69419aac0b6b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Agent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AgentData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Body.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DynaNpcGen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameBlock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemPack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MapManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\MsgItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\MsgItemInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\MsgMagicEffect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\MsgSyndicate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\MsgTeam.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\MsgTeamMember.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\MsgUserInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Npc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcWorld.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RoleFight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RoleMove.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sense.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SynManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Team.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\MsgAction.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\MsgAiNpcInfo.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\MsgInteract.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\MsgLogin.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\MsgNpc.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\MsgPlayer.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\MsgTalk.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\MsgUserAttrib.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\MsgWalk.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\MsgWalkEx.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork\NetMsg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Agent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AgentData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Body.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="chn_rc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaNpcGen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="eng_rc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameBlock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="I_Role.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemPack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MapManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\MsgItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\MsgItemInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\MsgMagicEffect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\MsgSyndicate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\MsgTeam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\MsgTeamMember.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\MsgUserInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Npc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcWorld.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RoleFight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RoleMove.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sense.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SynManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="T_SingleMap2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Team.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\MsgAction.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\MsgAiNpcInfo.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\MsgInteract.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\MsgLogin.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\MsgNpc.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\MsgPlayer.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\MsgTalk.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\MsgUserAttrib.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\MsgWalk.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\MsgWalkEx.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\NetMsg.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\AllMsg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="I_MapData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="I_Shell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWork\NetworkDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

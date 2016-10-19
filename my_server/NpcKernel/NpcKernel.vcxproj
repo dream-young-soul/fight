@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <ProjectGuid>{5A2BD408-4F9C-3681-CF63-D821D70CEBB0}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)_bin</OutDir>
+    <IntDir>$(SolutionDir)_tmp\$(ProjectName)</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>.;NetWork;..\common;..\MyDBMT;..\AiModule;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_DDNPC_;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>.;NetWork;..\..\common;..\..\GameBaseCode;..\..\AiModule;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_DDNPC_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\NpcKernel.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\NpcKernel.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\NpcKernel.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="AgentData.cpp" />
+    <ClCompile Include="Body.cpp" />
+    <ClCompile Include="DynaNpcGen.cpp" />
+    <ClCompile Include="GameBlock.cpp" />
+    <ClCompile Include="GameMap.cpp" />
+    <ClCompile Include="GameObj.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemPack.cpp" />
+    <ClCompile Include="ItemType.cpp" />
+    <ClCompile Include="MapManager.cpp" />
+    <ClCompile Include="NetWork\MsgItem.cpp" />
+    <ClCompile Include="NetWork\MsgItemInfo.cpp" />
+    <ClCompile Include="NetWork\MsgMagicEffect.cpp" />
+    <ClCompile Include="NetWork\MsgSyndicate.cpp" />
+    <ClCompile Include="NetWork\MsgTeam.cpp" />
+    <ClCompile Include="NetWork\MsgTeamMember.cpp" />
+    <ClCompile Include="NetWork\MsgUserInfo.cpp" />
+    <ClCompile Include="Npc.cpp" />
+    <ClCompile Include="NpcGenerator.cpp" />
+    <ClCompile Include="NpcManager.cpp" />
+    <ClCompile Include="NpcType.cpp" />
+    <ClCompile Include="NpcWorld.cpp" />
+    <ClCompile Include="RoleFight.cpp" />
+    <ClCompile Include="RoleMove.cpp" />
+    <ClCompile Include="Sense.cpp" />
+    <ClCompile Include="SynManager.cpp" />
+    <ClCompile Include="Team.cpp" />
+    <ClCompile Include="User.cpp" />
+    <ClCompile Include="UserManager.cpp" />
+    <ClCompile Include="NetWork\MsgAction.cpp" />
+    <ClCompile Include="NetWork\MsgAiNpcInfo.cpp" />
+    <ClCompile Include="NetWork\MsgInteract.cpp" />
+    <ClCompile Include="NetWork\MsgLogin.cpp" />
+    <ClCompile Include="NetWork\MsgNpc.cpp" />
+    <ClCompile Include="NetWork\MsgPlayer.cpp" />
+    <ClCompile Include="NetWork\MsgTalk.cpp" />
+    <ClCompile Include="NetWork\MsgUserAttrib.cpp" />
+    <ClCompile Include="NetWork\MsgWalk.cpp" />
+    <ClCompile Include="NetWork\MsgWalkEx.cpp" />
+    <ClCompile Include="NetWork\NetMsg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Agent.h" />
+    <ClInclude Include="AgentData.h" />
+    <ClInclude Include="Body.h" />
+    <ClInclude Include="chn_rc.h" />
+    <ClInclude Include="DynaNpcGen.h" />
+    <ClInclude Include="eng_rc.h" />
+    <ClInclude Include="GameBlock.h" />
+    <ClInclude Include="GameMap.h" />
+    <ClInclude Include="GameObj.h" />
+    <ClInclude Include="I_Role.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemPack.h" />
+    <ClInclude Include="ItemType.h" />
+    <ClInclude Include="MapManager.h" />
+    <ClInclude Include="NetWork\MsgItem.h" />
+    <ClInclude Include="NetWork\MsgItemInfo.h" />
+    <ClInclude Include="NetWork\MsgMagicEffect.h" />
+    <ClInclude Include="NetWork\MsgSyndicate.h" />
+    <ClInclude Include="NetWork\MsgTeam.h" />
+    <ClInclude Include="NetWork\MsgTeamMember.h" />
+    <ClInclude Include="NetWork\MsgUserInfo.h" />
+    <ClInclude Include="Npc.h" />
+    <ClInclude Include="NpcGenerator.h" />
+    <ClInclude Include="NpcManager.h" />
+    <ClInclude Include="NpcType.h" />
+    <ClInclude Include="NpcWorld.h" />
+    <ClInclude Include="RoleFight.h" />
+    <ClInclude Include="RoleMove.h" />
+    <ClInclude Include="Sense.h" />
+    <ClInclude Include="SynManager.h" />
+    <ClInclude Include="T_SingleMap2.h" />
+    <ClInclude Include="Team.h" />
+    <ClInclude Include="User.h" />
+    <ClInclude Include="UserManager.h" />
+    <ClInclude Include="NetWork\MsgAction.h" />
+    <ClInclude Include="NetWork\MsgAiNpcInfo.h" />
+    <ClInclude Include="NetWork\MsgInteract.h" />
+    <ClInclude Include="NetWork\MsgLogin.h" />
+    <ClInclude Include="NetWork\MsgNpc.h" />
+    <ClInclude Include="NetWork\MsgPlayer.h" />
+    <ClInclude Include="NetWork\MsgTalk.h" />
+    <ClInclude Include="NetWork\MsgUserAttrib.h" />
+    <ClInclude Include="NetWork\MsgWalk.h" />
+    <ClInclude Include="NetWork\MsgWalkEx.h" />
+    <ClInclude Include="NetWork\NetMsg.h" />
+    <ClInclude Include="NetWork\AllMsg.h" />
+    <ClInclude Include="define.h" />
+    <ClInclude Include="I_MapData.h" />
+    <ClInclude Include="I_Shell.h" />
+    <ClInclude Include="NetWork\NetworkDef.h" />
+    <ClInclude Include="protocol.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
