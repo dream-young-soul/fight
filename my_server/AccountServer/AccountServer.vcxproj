@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug NewDatabase|Win32">
+      <Configuration>Debug NewDatabase</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <Keyword>MFCProj</Keyword>
+    <ProjectName>MyAccSvr</ProjectName>
+    <ProjectGuid>{CD54B808-C945-793C-1324-A123811F3D0C}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug NewDatabase|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug NewDatabase|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug NewDatabase|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)_bin</OutDir>
+    <IntDir>$(SolutionDir)_tmp\$(ProjectName)</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>.\GameBaseCode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\AccountServer.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Release\AccountServer.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\AccountServer.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\Release\AccountServer.exe</OutputFile>
+      <AdditionalDependencies>ws2_32.lib;Winmm.lib;libmysql.lib;.\GameBaseCode\GameBaseCode.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug NewDatabase|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>..\MyDB;../../Library/mysql/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\AccountServer___Win32_Debug_NewDatabase\AccountServer.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\AccountServer___Win32_Debug_NewDatabase\AccountServer.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>ws2_32.lib;Winmm.lib;libmysql.lib;MyDB.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\_bin;..\..\3rd\mysql\lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AccountServer.cpp" />
+    <ClCompile Include="AccountServerDlg.cpp" />
+    <ClCompile Include="Global.cpp" />
+    <ClCompile Include="IniFile.cpp" />
+    <ClCompile Include="ListenSocket.cpp" />
+    <ClCompile Include="logfile.cpp" />
+    <ClCompile Include="LoginThread.cpp" />
+    <ClCompile Include="MsgAccount91U.cpp" />
+    <ClCompile Include="MsgBarAccount.cpp" />
+    <ClCompile Include="MsgConnect91U.cpp" />
+    <ClCompile Include="MsgFee.cpp" />
+    <ClCompile Include="MsgQueryFee.cpp" />
+    <ClCompile Include="MyHeap.cpp" />
+    <ClCompile Include="OnlineTable.cpp" />
+    <ClCompile Include="PointThread.cpp" />
+    <ClCompile Include="RC5_321216.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="ThreadBase.cpp" />
+    <ClCompile Include="typedef.cpp" />
+    <ClCompile Include="Account.cpp" />
+    <ClCompile Include="MsgAccount.cpp" />
+    <ClCompile Include="MsgConnect.cpp" />
+    <ClCompile Include="MsgLogin.cpp" />
+    <ClCompile Include="NetMsg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="AccountServer.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AccountServer.h" />
+    <ClInclude Include="AccountServerDlg.h" />
+    <ClInclude Include="AllHeads.h" />
+    <ClInclude Include="EncryptClient.h" />
+    <ClInclude Include="EncryptServer.h" />
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="IniFile.h" />
+    <ClInclude Include="ListenSocket.h" />
+    <ClInclude Include="logfile.h" />
+    <ClInclude Include="LoginThread.h" />
+    <ClInclude Include="MsgAccount91U.h" />
+    <ClInclude Include="MsgBarAccount.h" />
+    <ClInclude Include="MsgConnect91U.h" />
+    <ClInclude Include="MsgFee.h" />
+    <ClInclude Include="MsgQueryFee.h" />
+    <ClInclude Include="MyHeap.h" />
+    <ClInclude Include="OnlineTable.h" />
+    <ClInclude Include="PointThread.h" />
+    <ClInclude Include="RC5_321216.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ServerSocket.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="T_Index.h" />
+    <ClInclude Include="ThreadBase.h" />
+    <ClInclude Include="Account.h" />
+    <ClInclude Include="Define.h" />
+    <ClInclude Include="MsgAccount.h" />
+    <ClInclude Include="MsgConnect.h" />
+    <ClInclude Include="MsgLogin.h" />
+    <ClInclude Include="NetMsg.h" />
+    <ClInclude Include="typedef.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\AccountServer.ico" />
+    <CustomBuild Include="res\AccountServer.rc2">
+      <FileType>RC</FileType>
+    </CustomBuild>
+    <CustomBuild Include="account.sql">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="版本更新日志.txt" />
+    <CustomBuild Include="当前工作.txt" />
+    <CustomBuild Include="设计任务.txt" />
+    <CustomBuild Include="设计日志.txt" />
+    <CustomBuild Include="设计说明.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

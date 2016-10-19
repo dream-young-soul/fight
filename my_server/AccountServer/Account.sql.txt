@@ -1,0 +1,102 @@
+#帐号信息表
+CREATE TABLE account (
+	id int(4) unsigned zerofill NOT NULL  auto_increment, 
+	name char(32) binary NOT NULL  , 
+	sex int(4) unsigned zerofill NOT NULL  , 
+	age int(4) unsigned zerofill NOT NULL  , 
+	phone char(16) binary NOT NULL  , 
+	email char(128) binary NOT NULL  , 
+	address char(128) binary NOT NULL  , 
+	idnumber char(32) binary NOT NULL  , 
+	password char(16) binary NOT NULL   ,
+	PRIMARY KEY (id),
+	KEY ix_name (name)	
+);
+
+CREATE TABLE del_user (
+	name varchar(15) binary NOT NULL  , 
+	mate varchar(15) binary NOT NULL  , 
+	lookface int(4) unsigned NOT NULL  , 
+	hair smallint(2) unsigned NOT NULL  , 
+	money int(4) unsigned NOT NULL  , 
+	money_saved int(4) unsigned NOT NULL  , 
+	task_data int(4) unsigned NOT NULL  , 
+	level tinyint(1) unsigned NOT NULL  , 
+	exp int(4) NOT NULL  , 
+	force smallint(2) unsigned NOT NULL  , 
+	physique smallint(2) unsigned NOT NULL  , 
+	Speed smallint(2) unsigned NOT NULL  , 
+	health smallint(2) unsigned NOT NULL  , 
+	soul smallint(2) unsigned NOT NULL  , 
+	additional_point smallint(2) unsigned NOT NULL  , 
+	auto_allot tinyint(1) unsigned NOT NULL  , 
+	life smallint(2) unsigned NOT NULL  , 
+	mana smallint(2) unsigned NOT NULL  , 
+	profession tinyint(2) unsigned NOT NULL  , 
+	deed int(4) NOT NULL  , 
+	pk smallint(2) NOT NULL  , 
+	nobility tinyint(1) unsigned NOT NULL  , 
+	medal varchar(64) binary NOT NULL  , 
+	medal_select tinyint(4) unsigned NOT NULL  , 
+	metempsychosis tinyint(1) unsigned NOT NULL  , 
+	syndicate_id int(4) unsigned NOT NULL  , 
+	recordmap_id int(4) unsigned NOT NULL  , 
+	recordx smallint(2) unsigned NOT NULL  , 
+	recordy smallint(2) unsigned NOT NULL  , 
+	account_id int(4) unsigned NOT NULL  , 
+	id int(4) unsigned NOT NULL  auto_increment, 
+	last_login int(8) unsigned NOT NULL  , 
+	task_mask int(4) unsigned NOT NULL  , 
+	time_of_life int(4) unsigned NOT NULL  , 
+	virtue int(4) unsigned NOT NULL  , 
+	home_id int(4) unsigned NOT NULL  , 
+	title varchar(64) binary NOT NULL  , 
+	title_select tinyint(4) unsigned NOT NULL  , 
+	lock_key int(4) unsigned NOT NULL   ,
+	PRIMARY KEY (id),
+	KEY index_account_id (account_id),
+	KEY index_name (name),
+	KEY index_level (level)	
+);
+
+CREATE TABLE fee (
+	time_stamp char(14) binary NOT NULL  , 
+	server_name char(15) binary NOT NULL  , 
+	user_name char(15) binary NOT NULL  , 
+	user_id int(4) unsigned zerofill NOT NULL  , 
+	start_time char(19) binary NOT NULL  , 
+	last_point char(19) binary NOT NULL  , 
+	end_time char(19) binary NOT NULL  , 
+	fee_name char(15) binary NOT NULL  , 
+	fee_id int(4) unsigned zerofill NOT NULL  , 
+	fee_type char(15) binary NOT NULL  , 
+	point int(4) unsigned zerofill NOT NULL  , 
+	end_type char(15) binary NOT NULL  , 
+	ip_addr char(15) binary NOT NULL   
+);
+
+CREATE TABLE logon (
+	time_stamp char(14) binary NOT NULL  , 
+	account char(15) binary NOT NULL  , 
+	account_id int(4) unsigned zerofill NOT NULL  , 
+	fee_type int(4) unsigned zerofill NOT NULL  , 
+	server char(15) binary NOT NULL  , 
+	authen int(4) unsigned zerofill NOT NULL  , 
+	client_ip char(15) binary NOT NULL  , 
+	fee_account char(15) binary NOT NULL  , 
+	notify char(15) binary NOT NULL  , 
+	rejoin tinyint(1) unsigned zerofill NOT NULL   
+);
+
+#玩家点数表
+CREATE TABLE point001 (
+	account_id int(4) unsigned zerofill NOT NULL  , 
+	type int(4) unsigned zerofill NOT NULL  , 
+	point int(4) unsigned zerofill NOT NULL  , 
+	pointtime int(4) unsigned zerofill NOT NULL  , 
+	online int(4) unsigned zerofill NOT NULL  , 
+	licence int(4) unsigned NOT NULL  , 
+	netbar_ip char(15)   , 
+	ip_mask char(15)    ,
+	PRIMARY KEY (account_id)	
+);
