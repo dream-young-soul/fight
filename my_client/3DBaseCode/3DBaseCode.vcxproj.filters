@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{beaa20d5-e51e-476b-94bc-9fb34bc160e9}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{a1f262f0-27c7-4150-948d-8dd19dc8ff20}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="IRoleView">
+      <UniqueIdentifier>{9b468c44-7962-4603-829f-f77f98307afe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3DRole">
+      <UniqueIdentifier>{08280ca3-be26-41d1-8cf3-155773fa0e73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{f3ee24ff-649b-45e3-a96f-e94f6c6d4d3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ani">
+      <UniqueIdentifier>{3f2ed919-2a9b-4aca-99ef-38c94000ac64}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="3DEffect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="3DHead.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="3DSimpleObj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AlphaMask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="astar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseFunc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataControlAni.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game3DEffect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game3DEffectEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameDataSet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="m_map.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyTimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ND_Bitmap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NetStringPacker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StrRes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxtMsgSet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WinKey.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="3DStatuary.cpp">
+      <Filter>IRoleView</Filter>
+    </ClCompile>
+    <ClCompile Include="3DTarget.cpp">
+      <Filter>IRoleView</Filter>
+    </ClCompile>
+    <ClCompile Include="3DTaskNpc.cpp">
+      <Filter>IRoleView</Filter>
+    </ClCompile>
+    <ClCompile Include="BoothNpc.cpp">
+      <Filter>IRoleView</Filter>
+    </ClCompile>
+    <ClCompile Include="DiceView.cpp">
+      <Filter>IRoleView</Filter>
+    </ClCompile>
+    <ClCompile Include="IRoleView.cpp">
+      <Filter>IRoleView</Filter>
+    </ClCompile>
+    <ClCompile Include="MagicItem.cpp">
+      <Filter>IRoleView</Filter>
+    </ClCompile>
+    <ClCompile Include="SynStone.cpp">
+      <Filter>IRoleView</Filter>
+    </ClCompile>
+    <ClCompile Include="3DArmet.cpp">
+      <Filter>3DRole</Filter>
+    </ClCompile>
+    <ClCompile Include="3DArmor.cpp">
+      <Filter>3DRole</Filter>
+    </ClCompile>
+    <ClCompile Include="3DMantle.cpp">
+      <Filter>3DRole</Filter>
+    </ClCompile>
+    <ClCompile Include="3DMount.cpp">
+      <Filter>3DRole</Filter>
+    </ClCompile>
+    <ClCompile Include="3DRole.cpp">
+      <Filter>3DRole</Filter>
+    </ClCompile>
+    <ClCompile Include="3DRoleData.cpp">
+      <Filter>3DRole</Filter>
+    </ClCompile>
+    <ClCompile Include="3DRolePart.cpp">
+      <Filter>3DRole</Filter>
+    </ClCompile>
+    <ClCompile Include="3DWeapon.cpp">
+      <Filter>3DRole</Filter>
+    </ClCompile>
+    <ClCompile Include="GameInput.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Ani.cpp">
+      <Filter>Ani</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="3DEffect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3DHead.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3DSimpleObj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AlphaMask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="astar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFunc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataControlAni.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="error_code.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game3DEffect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game3DEffectEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDataSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="m_map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyTimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ND_Bitmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NetStringPacker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StrRes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="template.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxtMsgSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3DStatuary.h">
+      <Filter>IRoleView</Filter>
+    </ClInclude>
+    <ClInclude Include="3DTarget.h">
+      <Filter>IRoleView</Filter>
+    </ClInclude>
+    <ClInclude Include="3DTaskNpc.h">
+      <Filter>IRoleView</Filter>
+    </ClInclude>
+    <ClInclude Include="BoothNpc.h">
+      <Filter>IRoleView</Filter>
+    </ClInclude>
+    <ClInclude Include="DiceView.h">
+      <Filter>IRoleView</Filter>
+    </ClInclude>
+    <ClInclude Include="IRoleView.h">
+      <Filter>IRoleView</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicItem.h">
+      <Filter>IRoleView</Filter>
+    </ClInclude>
+    <ClInclude Include="SynStone.h">
+      <Filter>IRoleView</Filter>
+    </ClInclude>
+    <ClInclude Include="3DArmet.h">
+      <Filter>3DRole</Filter>
+    </ClInclude>
+    <ClInclude Include="3DArmor.h">
+      <Filter>3DRole</Filter>
+    </ClInclude>
+    <ClInclude Include="3DMantle.h">
+      <Filter>3DRole</Filter>
+    </ClInclude>
+    <ClInclude Include="3DMount.h">
+      <Filter>3DRole</Filter>
+    </ClInclude>
+    <ClInclude Include="3DRole.h">
+      <Filter>3DRole</Filter>
+    </ClInclude>
+    <ClInclude Include="3DRoleData.h">
+      <Filter>3DRole</Filter>
+    </ClInclude>
+    <ClInclude Include="3DRolePart.h">
+      <Filter>3DRole</Filter>
+    </ClInclude>
+    <ClInclude Include="3DWeapon.h">
+      <Filter>3DRole</Filter>
+    </ClInclude>
+    <ClInclude Include="GameInput.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Ani.h">
+      <Filter>Ani</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
