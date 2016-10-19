@@ -514,10 +514,11 @@ bool CGameMap::IsMoveEnable(int x, int y)
     {
         return false;
     }
-    if (m_pMapData->GetRoleAmount(x, y) > 0)
-    {
-        return false;
-    }
+	//¸ÄÎªÔÊĞí´©¹Ö2016.10.19
+	/*   if (m_pMapData->GetRoleAmount(x, y) > 0)
+	{
+	return false;
+	}*/
     return true;
 }
 
