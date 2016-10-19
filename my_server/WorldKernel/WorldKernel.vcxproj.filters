@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5175da93-75f4-4c45-bcb4-052f61e1c529}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{f6cacdd0-7ca1-4142-8bb5-ac27885776ee}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="NetWork">
+      <UniqueIdentifier>{1013ec35-8df8-4aec-b5db-2ab378c91334}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Syn">
+      <UniqueIdentifier>{229b48c6-a9e2-4119-af2c-f31de585eaf5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ClientSocket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConnectUser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MapList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageBoard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SupermanList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldKernel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NETWORK2\MsgAiNpcInfo.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NETWORK2\MsgConnect.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NETWORK2\MsgDialog.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NETWORK2\MsgFriend.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NETWORK2\MsgLogin.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NETWORK2\MsgMessageBoard.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NETWORK2\MsgName.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NETWORK2\MsgRegister.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NETWORK2\MsgTalk.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NETWORK2\MsgTime.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="NETWORK2\NetMsg.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="SynWorldManager.cpp">
+      <Filter>Syn</Filter>
+    </ClCompile>
+    <ClCompile Include="SynWorldShell.cpp">
+      <Filter>Syn</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ClientSocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConnectUser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptClient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MapList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageBoard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SupermanList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldKernel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NETWORK2\AllMsg.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NETWORK2\MsgAccount_A.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NETWORK2\MsgAiNpcInfo.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NETWORK2\MsgConnect.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NETWORK2\MsgConnect_A.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NETWORK2\MsgDialog.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NETWORK2\MsgFee_A.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NETWORK2\MsgFriend.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NETWORK2\MsgLogin.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NETWORK2\MsgLogin_A.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NETWORK2\MsgMessageBoard.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NETWORK2\MsgName.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NETWORK2\MsgQueryFee_A.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NETWORK2\MsgRegister.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NETWORK2\MsgTalk.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NETWORK2\MsgTime.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="NETWORK2\NetMsg.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="SynWorldManager.h">
+      <Filter>Syn</Filter>
+    </ClInclude>
+    <ClInclude Include="SynWorldShell.h">
+      <Filter>Syn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\define.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\I_Shell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\protocol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
