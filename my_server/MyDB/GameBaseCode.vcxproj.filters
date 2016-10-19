@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{091b15de-91f8-4438-8754-a49f6283aab3}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\DataBase">
+      <UniqueIdentifier>{fb46d38c-6adc-47b3-8aae-907fa6a3adef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MsgBase">
+      <UniqueIdentifier>{0fd4f035-0095-4616-8d0a-5a5f40d65c23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MemBase">
+      <UniqueIdentifier>{3dbd8dc6-0546-4422-b1df-120989f147e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4480fd47-de36-4b77-b8c1-e4ba4880ebdb}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MyDatabase.cpp">
+      <Filter>Source Files\DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="MyField.cpp">
+      <Filter>Source Files\DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="MyRecord.cpp">
+      <Filter>Source Files\DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="MyRecordset.cpp">
+      <Filter>Source Files\DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgPacket.cpp">
+      <Filter>Source Files\MsgBase</Filter>
+    </ClCompile>
+    <ClCompile Include="NetStringPacker.cpp">
+      <Filter>Source Files\MsgBase</Filter>
+    </ClCompile>
+    <ClCompile Include="PrcHeap.cpp">
+      <Filter>Source Files\MemBase</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseFunc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyField.h">
+      <Filter>Source Files\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgPacket.h">
+      <Filter>Source Files\MsgBase</Filter>
+    </ClInclude>
+    <ClInclude Include="NetStringPacker.h">
+      <Filter>Source Files\MsgBase</Filter>
+    </ClInclude>
+    <ClInclude Include="PrcHeap.h">
+      <Filter>Source Files\MemBase</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFunc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="I_mydb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mydb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyDatabase.h">
+      <Filter>Source Files\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="MyRecord.h">
+      <Filter>Source Files\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="MyRecordset.h">
+      <Filter>Source Files\DataBase</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="修改日志.txt" />
+  </ItemGroup>
+</Project>
