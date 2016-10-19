@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{89b7106e-f414-457d-88b9-71c97decdb31}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Weather">
+      <UniqueIdentifier>{cebf4ad8-9c05-4f77-aef3-3e8c3414d6c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapLayer">
+      <UniqueIdentifier>{be000a2c-851a-4fbc-b2c0-4f1ed3ac24b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapObj">
+      <UniqueIdentifier>{68cde683-bc0a-45c2-931a-8499e16faae2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager">
+      <UniqueIdentifier>{580853c0-36c8-466a-9347-9d9f8495b036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameMap">
+      <UniqueIdentifier>{0407b550-bdbf-47a1-961e-da3ee6ed69a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MagicEffect">
+      <UniqueIdentifier>{51d6a449-fbad-421d-a045-8f3b310427d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{e9e54295-c0f4-4095-adbc-3a7657bd4d57}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Puzzle">
+      <UniqueIdentifier>{f686768c-a28f-4f62-be51-caab0f2ee7f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InfoView">
+      <UniqueIdentifier>{6f8328b6-cdf8-4dfc-94f1-d2e6b9c945e8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Layer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Path.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AirBubble.h">
+      <Filter>Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="Cloud.h">
+      <Filter>Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="FireBug.h">
+      <Filter>Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="fish.h">
+      <Filter>Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="FloorLayer.h">
+      <Filter>Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="HellFire.h">
+      <Filter>Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternRose.h">
+      <Filter>Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="Rose.h">
+      <Filter>Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyLayer.h">
+      <Filter>Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyRose.h">
+      <Filter>Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="Weather.h">
+      <Filter>Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="InteractiveLayer.h">
+      <Filter>MapLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="MapLayer.h">
+      <Filter>MapLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneLayer.h">
+      <Filter>MapLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="SURFACELAYER.H">
+      <Filter>MapLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainLayer.h">
+      <Filter>MapLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="2DMapCoverObj.h">
+      <Filter>MapObj</Filter>
+    </ClInclude>
+    <ClInclude Include="2DMapItem.h">
+      <Filter>MapObj</Filter>
+    </ClInclude>
+    <ClInclude Include="2DMapObj.h">
+      <Filter>MapObj</Filter>
+    </ClInclude>
+    <ClInclude Include="2DMapPuzzleObj.h">
+      <Filter>MapObj</Filter>
+    </ClInclude>
+    <ClInclude Include="2DMapRegion.h">
+      <Filter>MapObj</Filter>
+    </ClInclude>
+    <ClInclude Include="2DMapSceneObj.h">
+      <Filter>MapObj</Filter>
+    </ClInclude>
+    <ClInclude Include="2DMapTerrainObj.h">
+      <Filter>MapObj</Filter>
+    </ClInclude>
+    <ClInclude Include="2DMapTerrainObjPart.h">
+      <Filter>MapObj</Filter>
+    </ClInclude>
+    <ClInclude Include="3DMagicMapItem.h">
+      <Filter>MapObj</Filter>
+    </ClInclude>
+    <ClInclude Include="3DMapEffect.h">
+      <Filter>MapObj</Filter>
+    </ClInclude>
+    <ClInclude Include="3DMapEffectNew.h">
+      <Filter>MapObj</Filter>
+    </ClInclude>
+    <ClInclude Include="3DMapItem.h">
+      <Filter>MapObj</Filter>
+    </ClInclude>
+    <ClInclude Include="3DMapObj.h">
+      <Filter>MapObj</Filter>
+    </ClInclude>
+    <ClInclude Include="3DMapSimpleObj.h">
+      <Filter>MapObj</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObj.h">
+      <Filter>MapObj</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSound.h">
+      <Filter>MapObj</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicEffectManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="MapItemManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainEffectManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainObjManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="3DGameMap.h">
+      <Filter>GameMap</Filter>
+    </ClInclude>
+    <ClInclude Include="Radar.h">
+      <Filter>GameMap</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicEffect.h">
+      <Filter>MagicEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="PuzzleBmp.h">
+      <Filter>Puzzle</Filter>
+    </ClInclude>
+    <ClInclude Include="PuzzleBmpEX.h">
+      <Filter>Puzzle</Filter>
+    </ClInclude>
+    <ClInclude Include="AniInfoView.h">
+      <Filter>InfoView</Filter>
+    </ClInclude>
+    <ClInclude Include="IInfoView.h">
+      <Filter>InfoView</Filter>
+    </ClInclude>
+    <ClInclude Include="InfoViewManager.h">
+      <Filter>InfoView</Filter>
+    </ClInclude>
+    <ClInclude Include="StringInfoView.h">
+      <Filter>InfoView</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AirBubble.cpp">
+      <Filter>Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="Cloud.cpp">
+      <Filter>Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="FireBug.cpp">
+      <Filter>Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="fish.cpp">
+      <Filter>Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="FloorLayer.cpp">
+      <Filter>Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="HellFire.cpp">
+      <Filter>Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="MapLayer.cpp">
+      <Filter>Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternRose.cpp">
+      <Filter>Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="Rose.cpp">
+      <Filter>Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyLayer.cpp">
+      <Filter>Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyRose.cpp">
+      <Filter>Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="Weather.cpp">
+      <Filter>Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="InteractiveLayer.cpp">
+      <Filter>MapLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneLayer.cpp">
+      <Filter>MapLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="SurfaceLayer.cpp">
+      <Filter>MapLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainLayer.cpp">
+      <Filter>MapLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="2DMapCoverObj.cpp">
+      <Filter>MapObj</Filter>
+    </ClCompile>
+    <ClCompile Include="2DMapItem.cpp">
+      <Filter>MapObj</Filter>
+    </ClCompile>
+    <ClCompile Include="2DMapObj.cpp">
+      <Filter>MapObj</Filter>
+    </ClCompile>
+    <ClCompile Include="2DMapPuzzleObj.cpp">
+      <Filter>MapObj</Filter>
+    </ClCompile>
+    <ClCompile Include="2DMapRegion.cpp">
+      <Filter>MapObj</Filter>
+    </ClCompile>
+    <ClCompile Include="2DMapSceneObj.cpp">
+      <Filter>MapObj</Filter>
+    </ClCompile>
+    <ClCompile Include="2DMapTerrainObj.cpp">
+      <Filter>MapObj</Filter>
+    </ClCompile>
+    <ClCompile Include="2DMapTerrainObjPart.cpp">
+      <Filter>MapObj</Filter>
+    </ClCompile>
+    <ClCompile Include="3DMagicMapItem.cpp">
+      <Filter>MapObj</Filter>
+    </ClCompile>
+    <ClCompile Include="3DMapEffect.cpp">
+      <Filter>MapObj</Filter>
+    </ClCompile>
+    <ClCompile Include="3DMapEffectNew.cpp">
+      <Filter>MapObj</Filter>
+    </ClCompile>
+    <ClCompile Include="3DMapItem.cpp">
+      <Filter>MapObj</Filter>
+    </ClCompile>
+    <ClCompile Include="3DMapObj.cpp">
+      <Filter>MapObj</Filter>
+    </ClCompile>
+    <ClCompile Include="3DMapSimpleObj.cpp">
+      <Filter>MapObj</Filter>
+    </ClCompile>
+    <ClCompile Include="MapSound.cpp">
+      <Filter>MapObj</Filter>
+    </ClCompile>
+    <ClCompile Include="MagicEffectManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="MapItemManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainEffectManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainObjManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="3DGameMap.cpp">
+      <Filter>GameMap</Filter>
+    </ClCompile>
+    <ClCompile Include="AStar.cpp">
+      <Filter>GameMap</Filter>
+    </ClCompile>
+    <ClCompile Include="MapInfo.cpp">
+      <Filter>GameMap</Filter>
+    </ClCompile>
+    <ClCompile Include="MapManager.cpp">
+      <Filter>GameMap</Filter>
+    </ClCompile>
+    <ClCompile Include="MapRes.cpp">
+      <Filter>GameMap</Filter>
+    </ClCompile>
+    <ClCompile Include="Radar.cpp">
+      <Filter>GameMap</Filter>
+    </ClCompile>
+    <ClCompile Include="MagicEffect.cpp">
+      <Filter>MagicEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="MagicEffectArrow.cpp">
+      <Filter>MagicEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="Layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Path.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PuzzleBmp.cpp">
+      <Filter>Puzzle</Filter>
+    </ClCompile>
+    <ClCompile Include="PuzzleBmpEX.cpp">
+      <Filter>Puzzle</Filter>
+    </ClCompile>
+    <ClCompile Include="AniInfoView.cpp">
+      <Filter>InfoView</Filter>
+    </ClCompile>
+    <ClCompile Include="IInfoView.cpp">
+      <Filter>InfoView</Filter>
+    </ClCompile>
+    <ClCompile Include="InfoViewManager.cpp">
+      <Filter>InfoView</Filter>
+    </ClCompile>
+    <ClCompile Include="StringInfoView.cpp">
+      <Filter>InfoView</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
