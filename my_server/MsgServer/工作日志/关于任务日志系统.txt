@@ -1,0 +1,52 @@
+
+
+		任务日志系统
+====================================================
+冷紫龙 2003-11-25
+
+
+功能：
+====
+1、记录数据到日志数据库
+
+2、删除指定的日志
+
+3、根据给定条件查询相应的日志
+
+定位、查找日志需要指定两个键：id和time，
+
+
+数据结构：
+========
+1) 需要记录的数据
+    日志系统需要记录的数据主要有：id、时间、数据、参数串
+    各种数据类型：
+	id	INT UNSIGNED	OBJID
+	time	DATETIME	char [20]
+	data	INT		int
+	param	VARCHAR(255)	char [255]
+
+2) 数据库结构
+
+CREATE TABLE cq_log (
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	logid INT UNSIGNED NOT NULL,
+	time DATETIME NOT NULL,
+	data INT NOT NULL,
+	param VARCHAR(255) NOT NULL,
+
+	PRIMARY KEY(id),
+	INDEX(logid), INDEX(time),
+	UNIQUE(logid, time)
+);
+
+
+
+###################################################################
+
+1) 已经完成的CLogData类完全可以通过继承CGameData来实现
+
+2) 还需要一个CLogMap类来管理CLogData。CLogMap并不在创建的时候一次载入所有的LogData，而仅仅在请求一个LogData找不到时才动态从数据库中创建这个LogData。CLogMap类最好能以双键的形式存储，便于以logid+time组合的方式查找，因为id有可能重复不能单独作为键查找。(或者将logid和time组合起来形成一个键？)
+
+###################################################################
+

@@ -1,0 +1,93 @@
+
+
+		关于掉物品/金钱的算法
+==========================================================
+冷紫龙 2003-11-13
+
+
+功能要求：
+========
+　　1、每种怪都有可能掉某些特定类型的物品，掉每种物品都有特定的概率；
+　　2、怪物掉物品可以有普通、小爆、中爆、大爆等几种方式，具体的每种方式如何掉物品、掉多少物品需要与策划讨论确认
+
+
+数据库表要求：
+============
+　　1、修改cq_monstertype表
+
+	1)将drop_money和drop_itemtype字段分别改为：
+	drop_money_min		//所掉金钱的下限
+	drop_money_max		//所掉金钱的上限
+
+	★爆怪的时候如果有掉钱，则掉的金钱为正常的1.6倍
+
+	2)增加字段
+	drop_money_chance		//掉钱的概率			——需要确认是否与掉物品一起处理
+	drop_item_chance		//掉物品的概率	掉1个物品
+	explode_item_chance1		//小爆的概率	掉2 - 5个物品
+	explode_item_chance2		//中爆的概率	掉6 - 9个物品
+	explode_item_chance3		//大爆的概率	掉10 - ?个物品
+	drop_item_rule			//掉物品的规则组id
+
+	★★掉(爆)物品的数量如何计算？固定值还是某个固定范围内浮动(如上↑)
+
+
+	用于计算掉金钱的概率以及掉多少钱，避免大量的零碎银子产生
+	drop_item_chance 用于计算是否掉物品，如果drop_item_rule存在并且计算出来掉物品，才执行掉物品函数
+	drop_item_rule 指向DropItemRule表中的某个规则组
+
+
+　　2、增加cq_dropitemrule表
+	cq_dropitemrule表结构：
+---------------------------------------------------------------------------------------------------------
+| 字段名	| 类型							| 说明				| 
+---------------------------------------------------------------------------------------------------------
+| id		| INT(4) UNSIGNED zerofill NOT NULL			| 规则组ID			| 
+| RuleId	| INT(4) UNSIGNED zerofill NOT NULL DEFAULT '0000'	| 规则ID			| 
+| Chance	| INT(4) UNSIGNED zerofill NOT NULL DEFAULT '0001'	| 掉宝概率(1 / Chance)		| 
+| Item0		| INT(4) UNSIGNED zerofill NOT NULL DEFAULT '0000'	| 物品类别id			| 
+| Item1		| INT(4) UNSIGNED zerofill NOT NULL DEFAULT '0000'	| 				| 
+| Item2		| INT(4) UNSIGNED zerofill NOT NULL DEFAULT '0000'	| 				| 
+| Item3		| INT(4) UNSIGNED zerofill NOT NULL DEFAULT '0000'	| 				| 
+| Item4		| INT(4) UNSIGNED zerofill NOT NULL DEFAULT '0000'	| 				| 
+| Item5		| INT(4) UNSIGNED zerofill NOT NULL DEFAULT '0000'	| 				| 
+| Item6		| INT(4) UNSIGNED zerofill NOT NULL DEFAULT '0000'	| 				| 
+| Item7		| INT(4) UNSIGNED zerofill NOT NULL DEFAULT '0000'	| 				| 
+| Item8		| INT(4) UNSIGNED zerofill NOT NULL DEFAULT '0000'	| 				| 
+| Item9		| INT(4) UNSIGNED zerofill NOT NULL DEFAULT '0000'	| 				| 
+| Item10	| INT(4) UNSIGNED zerofill NOT NULL DEFAULT '0000'	| 				| 
+| Item11	| INT(4) UNSIGNED zerofill NOT NULL DEFAULT '0000'	| 				| 
+| Item12	| INT(4) UNSIGNED zerofill NOT NULL DEFAULT '0000'	| 				| 
+| Item13	| INT(4) UNSIGNED zerofill NOT NULL DEFAULT '0000'	| 				| 
+| Item14	| INT(4) UNSIGNED zerofill NOT NULL DEFAULT '0000'	| 				| 
+---------------------------------------------------------------------------------------------------------
+PRIMARYKEY(id, RuleId)
+
+
+该表中记录了若干组掉物品的规则，cq_monstertype表中每个记录可以对应最多一个规则组，每组规则由若干条规则(记录)组成，每条记录包括掉宝的概率以及最多15个ItemType(若同一种掉宝几率对应的不止15种物品，可以分多条记录保存，处理的时候统一处理)。
+
+★★可以有一个默认的规则组：规则组id=0，不掉任何物品
+
+
+算法设计：
+========
+
+　　掉物品概率计算：
+	1、根据monstertype表的drop_item_chance、explode_item_chance1、explode_item_chance2、explode_item_chance3字段值计算是否掉物品、掉几个物品，如果计算结果不掉，或者drop_item_rule不存在，则退出；
+
+	2、根据dropitemrule表的Probability字段，按照概率从低到高计算是否掉物品，如果计算出来掉落某条规则的物品，则从该规则的物品列表中随机选择一个，重复以上步骤直到找到足够数量的物品(爆的时候物品数大于1)。
+
+
+　　★★按照掉物品的概率从低到高计算，会导致降低高概率物品的实际概率值。
+	例如：某个规则组有10%和50%两个概率的规则，则50%的规则实际概率为(100 - 10)% * 50% = 45%
+
+
+
+　　内存中规则的存储格式：
+	应该以规则组id为键存储规则组，每个规则组又分别以规则id存储各自的规则
+	★★??是否考虑把所有概率相同的规则合并为一条
+
+
+
+
+

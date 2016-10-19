@@ -1,0 +1,22 @@
+
+物品类型：
+const int ITEMTYPE_CHEST	= 30000;
+
+
+1) 不允许丢弃
+[ 修改CItem::IsDiscardable();  OK ]
+
+2) 不允许放入另外一个百宝囊
+[ CMsgPackage消息中处理  OK ]
+
+3) 允许存入仓库
+
+4) 不允许交易
+[ 修改CItem::IsExchangeEnable(); OK ]
+
+6) 不允许放入摆摊交易
+[ 修改CBooth::AddItem  OK ]
+
+7) 死亡的时候不会掉
+[ 掉物品必须调用CUser::DropItem，根据CItem::IsDiscardable()判断此物品是否能丢弃，因此这里无需修改，因为第一步已经保证了物品不会丢弃。是否还有必要修改CUser::BeKill? ]
+
