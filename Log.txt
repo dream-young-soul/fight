@@ -1,34 +1,34 @@
-2016.10.14
-��Ϸ��Ϊ�б߿��ʽ
-��CBkWnd::Create �´����Ĵ��ڷ������Ϊ�б߿�- 
-�Ӵ����ƶ���Ҫy������Ҫ���ϱ߿�߶�- ������Ⱦ��ʵ�ʻ��λ
-������ɫ�ɹ����������ӵ�¼��Ϸ������Ϸ
-��¼��Ϸ������ҪУ��-�޸��ʺ����ش���
+﻿2016.10.14
+游戏改为有边框格式
+在CBkWnd::Create 下创建的窗口风格设置为有边框- 
+子窗口移动需要y坐标需要加上边框高度- 否则渲染与实际会错位
+创建角色成功后重新连接登录游戏进入游戏
+登录游戏密码需要校验-修改帐号网关代码
 
 2016.10.15
-�޸�itemData.cpp Ϊһ���Զ�ȡ�������ݿ�- 
-�޸Ŀͻ��˶�ȡani���ø�ʽΪani��ʽ- �����ֶ��޸��ļ�
+修改itemData.cpp 为一次性读取道具数据库- 
+修改客户端读取ani配置格式为ani格式- 方便手动修改文件
 
 
 2016.10.16
-�����༭����Ⱦλ����ʵ����굥������λ������ƫ��bug
-����CMyCombo�࣬���������������ı�������������������ΪGetLine����- ��ΪCString ��ȡGetLine--void CMyCombo::ShowChar()
-�޸�m_EditRect.Create ����λ��
+修正编辑框渲染位置与实际鼠标单击焦点位置坐标偏移bug
+修正CMyCombo类，用于聊天框的输入文本出现乱码的情况，起因为GetLine函数- 改为CString 读取GetLine--void CMyCombo::ShowChar()
+修改m_EditRect.Create 创建位置
 
 2016.10.17
-����˵������ݿ�ͬ���ͻ���
-�����˺�ƮѪ����3��ͼƬ��Դ����
-����������ɫ������������- ����role.cpp ���������� �޸��˱���timeFrameInterval timeActionTime
+服务端道具数据库同步客户端
+修正伤害飘血数字3，图片资源问题
+修正其他角色动作播放问题- 参数role.cpp 与连击技能 修改了变量timeFrameInterval timeActionTime
 
 2016.10.18
-�޸��б߿򴰿��£�win7��win10���������Ȳ�һ�£���Ϊ��̬��ȡ�������߶ȣ��Ա�����ȷ����ʾ��Χ��
+修改有边框窗口下，win7与win10标题栏宽度不一致，改为动态获取标题栏高度，以便获得正确的显示范围。
 
 2016.10.19
-�޸�Ϊ����ܲ����Ҽ��ͷ�F8��ݼ��ܣ�
-����˵�ͼ��ɫ�ƶ���Ϊ��������
+修改为左键跑步，右键释放F8快捷技能，
+服务端地图角色移动改为允许穿人
 
 
-���������
-���������һ��ʱ���mysql���Ӳ���
-��ͼ��Ϊ��������
-����ֻ֧��С���壬�պ���Ҫ����
+待解决问题
+服务端运行一段时间后mysql连接不上
+
+程序只支持小字体，日后需要更改
