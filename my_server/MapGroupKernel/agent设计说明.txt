@@ -1,0 +1,5 @@
+// agent设计说明
+// paled, 2003.8.13
+
+。暂不支持切换地图组。一是AGENT切换地图组和再生部分未完成，二是同步PROCESS_ID可能有问题。
+。暂不支持LOGOUT。需要WORLD核心和SOCKET核心的同步。

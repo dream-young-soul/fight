@@ -1,0 +1,66 @@
+赌博 骰子部分 网络通讯接口
+
+CMsgName 增加3个Action
+		NAMEACT_ADDDICE_PLAYER		= 17, //ToClient 增加骰子玩家// dwData为骰子摊ID // To Server 加入 需要原消息返回
+		NAMEACT_DELDICE_PLAYER		= 18, //ToClient 删除骰子玩家// dwData为骰子摊ID // To Server 离开 需要原消息返回
+		NAMEACT_DICE_BONUS			= 19, // 报骰子奖金 玩家// dwData为Money
+
+增加消息： CMsgDice
+const unsigned short _MSG_DICE			=_MSG_GENERAL+113;
+enum
+{
+	_ACTION_CHIPIN				= 0,		//下注  to server, to client
+											//个人下注通过这个Action广播同步
+											//新加入赌局的人也通过这个Action取得投注列表
+											//dwData为投了多少钱，ucType为投哪种注
+											// exclude self, 自己通过_ACTION_CHIPIN 返回
+	_ACTION_CHIPIN_CONFIRM		= 1,		//下注确认// only to client
+	_ACTION_CANCELCHIP			= 2,		//取消下注to server, to client
+											//dwMoney为投了多少钱，ucType为投哪种注
+											// exclude self, 自己通过_ACTION_CHIPIN 返回
+	_ACTION_CANCELCHIP_CONFIRM	= 3,		//退出下注确认// only to client
+	_ACTION_BEGINCHIP			= 4,		//开始下注 // to client 倒计时30s
+	_ACTION_ENDCHIP				= 5,		//买定离手 // to client 倒计时5S
+	_ACTION_DICE				= 6,		//骰子消息 // to client 倒计时5S // MsgName广播赢钱消息
+};
+	typedef struct
+	{
+		unsigned short	unMsgSize;
+		unsigned short	unMsgType;
+		unsigned char	ucAction;
+		unsigned char	ucAmount;
+		OBJID			idDice;
+		struct
+		{
+			unsigned char	ucType;
+			union
+			{
+				DWORD			dwData;
+				unsigned char	ucDice[4];
+			};
+		}Data[1];
+	}MSG_Info;
+		
+各种赌注定义：
+		DICE_VALUE_SMALL	= 0, 
+		DICE_VALUE_BIG		= 1,
+		DICE_VALUE_111		= 2, 
+		DICE_VALUE_222		= 3, 
+		DICE_VALUE_333		= 4,
+		DICE_VALUE_444		= 5, 
+		DICE_VALUE_555		= 6, 
+		DICE_VALUE_666		= 7,
+		DICE_VALUE_4		= 8, 
+		DICE_VALUE_5		= 9, 
+		DICE_VALUE_6		= 10,
+		DICE_VALUE_7		= 11, 
+		DICE_VALUE_8		= 12, 
+		DICE_VALUE_9		= 13,
+		DICE_VALUE_10		= 14, 
+		DICE_VALUE_11		= 15, 
+		DICE_VALUE_12		= 16,
+		DICE_VALUE_13		= 17, 
+		DICE_VALUE_14		= 18, 
+		DICE_VALUE_15		= 19,
+		DICE_VALUE_16		= 20, 
+		DICE_VALUE_17		= 21, 

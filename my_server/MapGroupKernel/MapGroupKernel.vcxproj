@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <ProjectGuid>{DB42A236-F267-1A20-C47D-3D09FFC0FA13}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)_bin</OutDir>
+    <IntDir>$(SolutionDir)_tmp\$(ProjectName)</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>.\;.\Network;..\Share;..\comm;..\common;..\MyDBMT;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NEW_EUDEMON;MAPGROUP_KERNEL;WIN32;_DEBUG;_LIB;NO_ZLONG_DEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>.;NetWork;..\..\GameBaseCode;..\..\common;..\..\comm;..\share;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>MAPGROUP_KERNEL;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\MapGroupKernel.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\MapGroupKernel.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\MapGroupKernel.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="AINpc.cpp" />
+    <ClCompile Include="Announce.cpp" />
+    <ClCompile Include="AnnounceData.cpp" />
+    <ClCompile Include="BattleSystem.cpp" />
+    <ClCompile Include="BetOutside.cpp" />
+    <ClCompile Include="Booth.cpp" />
+    <ClCompile Include="DropRule.cpp" />
+    <ClCompile Include="DropRuleGroup.cpp" />
+    <ClCompile Include="DropRuleMap.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EventPack.cpp" />
+    <ClCompile Include="Friend.cpp" />
+    <ClCompile Include="FriendData.cpp" />
+    <ClCompile Include="GameAction.cpp" />
+    <ClCompile Include="GameObj.cpp" />
+    <ClCompile Include="LeaveWord.cpp" />
+    <ClCompile Include="MapGroup.cpp" />
+    <ClCompile Include="MapGroupKernel.cpp" />
+    <ClCompile Include="MapTrap.cpp" />
+    <ClCompile Include="MercenaryTask.cpp" />
+    <ClCompile Include="MercenaryTaskData.cpp" />
+    <ClCompile Include="NpcManager.cpp" />
+    <ClCompile Include="NpcScene.cpp" />
+    <ClCompile Include="NpcTable.cpp" />
+    <ClCompile Include="Package.cpp" />
+    <ClCompile Include="PoliceWanted.cpp" />
+    <ClCompile Include="Role.cpp" />
+    <ClCompile Include="RoleManager.cpp" />
+    <ClCompile Include="SquareDeal.cpp" />
+    <ClCompile Include="Team.cpp" />
+    <ClCompile Include="Transformation.cpp" />
+    <ClCompile Include="Tutor.cpp" />
+    <ClCompile Include="TutorData.cpp" />
+    <ClCompile Include="UserManager.cpp" />
+    <ClCompile Include="UserPackage.cpp" />
+    <ClCompile Include="WantedList.cpp" />
+    <ClCompile Include="Weather.cpp" />
+    <ClCompile Include="WeatherRegion.cpp" />
+    <ClCompile Include="User.cpp" />
+    <ClCompile Include="User_Item.cpp" />
+    <ClCompile Include="User_Task.cpp" />
+    <ClCompile Include="UserData.cpp" />
+    <ClCompile Include="UserTeam.cpp" />
+    <ClCompile Include="UserWeaponSkill.cpp" />
+    <ClCompile Include="GameBlock.cpp" />
+    <ClCompile Include="GameMap.cpp" />
+    <ClCompile Include="MapItem.cpp" />
+    <ClCompile Include="MapManager.cpp" />
+    <ClCompile Include="Npc.cpp" />
+    <ClCompile Include="NpcLink.cpp" />
+    <ClCompile Include="NpcShop.cpp" />
+    <ClCompile Include="NpcStorage.cpp" />
+    <ClCompile Include="NpcTask.cpp" />
+    <ClCompile Include="SynAttr.cpp" />
+    <ClCompile Include="Syndicate.cpp" />
+    <ClCompile Include="SynManager.cpp" />
+    <ClCompile Include="Magic.cpp" />
+    <ClCompile Include="Magic_Process.cpp" />
+    <ClCompile Include="MagicData.cpp" />
+    <ClCompile Include="MagicType.cpp" />
+    <ClCompile Include="StatusMore.cpp" />
+    <ClCompile Include="StatusOnce.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemAddition.cpp" />
+    <ClCompile Include="ItemData.cpp" />
+    <ClCompile Include="ItemType.cpp" />
+    <ClCompile Include="Auction.cpp" />
+    <ClCompile Include="AuctionStorage.cpp" />
+    <ClCompile Include="AuctionSystemItemData.cpp" />
+    <ClCompile Include="TaskDetail.cpp" />
+    <ClCompile Include="TaskDetailData.cpp" />
+    <ClCompile Include="Network\MsgAction.cpp" />
+    <ClCompile Include="Network\MsgAiNpcInfo.cpp" />
+    <ClCompile Include="Network\MsgAllot.cpp" />
+    <ClCompile Include="Network\MsgAnnounceInfo.cpp" />
+    <ClCompile Include="Network\MsgAnnounceList.cpp" />
+    <ClCompile Include="Network\MsgAuction.cpp" />
+    <ClCompile Include="Network\MsgBattleSystem.cpp" />
+    <ClCompile Include="Network\MsgBetOutside.cpp" />
+    <ClCompile Include="Network\MsgCallPetInfo.cpp" />
+    <ClCompile Include="Network\MsgDataArray.cpp" />
+    <ClCompile Include="Network\MsgDialog.cpp" />
+    <ClCompile Include="Network\MsgEudemonAttrib.cpp" />
+    <ClCompile Include="Network\MsgFlushExp.cpp" />
+    <ClCompile Include="Network\MsgFriend.cpp" />
+    <ClCompile Include="Network\MsgFriendInfo.cpp" />
+    <ClCompile Include="Network\MsgGemEmbed.cpp" />
+    <ClCompile Include="Network\MsgInteract.cpp" />
+    <ClCompile Include="Network\MsgItem.cpp" />
+    <ClCompile Include="Network\MsgItemAttrib.cpp" />
+    <ClCompile Include="Network\MsgItemInfo.cpp" />
+    <ClCompile Include="Network\MsgItemInfoEx.cpp" />
+    <ClCompile Include="Network\MsgMagicEffect.cpp" />
+    <ClCompile Include="Network\MsgMagicInfo.cpp" />
+    <ClCompile Include="Network\MsgMapInfo.cpp" />
+    <ClCompile Include="Network\MsgMapItem.cpp" />
+    <ClCompile Include="Network\MsgMessageBoard.cpp" />
+    <ClCompile Include="Network\MsgName.cpp" />
+    <ClCompile Include="Network\MsgNpc.cpp" />
+    <ClCompile Include="Network\MsgNpcInfo.cpp" />
+    <ClCompile Include="Network\MsgNpcInfoEx.cpp" />
+    <ClCompile Include="Network\MsgPackage.cpp" />
+    <ClCompile Include="Network\MsgPlayer.cpp" />
+    <ClCompile Include="Network\MsgPlayerTask.cpp" />
+    <ClCompile Include="Network\MsgSchoolMember.cpp" />
+    <ClCompile Include="Network\MsgSynAttrInfo.cpp" />
+    <ClCompile Include="Network\MsgSyndicate.cpp" />
+    <ClCompile Include="Network\MsgSynInfo.cpp" />
+    <ClCompile Include="Network\MsgSynMemberInfo.cpp" />
+    <ClCompile Include="Network\MsgTalk.cpp" />
+    <ClCompile Include="Network\MsgTaskList.cpp" />
+    <ClCompile Include="Network\MsgTeam.cpp" />
+    <ClCompile Include="Network\MsgTeamMember.cpp" />
+    <ClCompile Include="Network\MsgTick.cpp" />
+    <ClCompile Include="Network\MsgTrade.cpp" />
+    <ClCompile Include="Network\MsgUserAttrib.cpp" />
+    <ClCompile Include="Network\MsgUserInfo.cpp" />
+    <ClCompile Include="Network\MsgWalk.cpp" />
+    <ClCompile Include="Network\MsgWalkEx.cpp" />
+    <ClCompile Include="Network\MsgWeaponSkill.cpp" />
+    <ClCompile Include="Network\MsgWeather.cpp" />
+    <ClCompile Include="Network\NetMsg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="User.h" />
+    <ClInclude Include="UserData.h" />
+    <ClInclude Include="UserTable.h" />
+    <ClInclude Include="UserWeaponSkill.h" />
+    <ClInclude Include="GameBlock.h" />
+    <ClInclude Include="GameMap.h" />
+    <ClInclude Include="MapItem.h" />
+    <ClInclude Include="MapManager.h" />
+    <ClInclude Include="Npc.h" />
+    <ClInclude Include="NpcLink.h" />
+    <ClInclude Include="NpcShop.h" />
+    <ClInclude Include="NpcStorage.h" />
+    <ClInclude Include="NpcTask.h" />
+    <ClInclude Include="SynAttr.h" />
+    <ClInclude Include="Syndicate.h" />
+    <ClInclude Include="SynManager.h" />
+    <ClInclude Include="Magic.h" />
+    <ClInclude Include="MagicData.h" />
+    <ClInclude Include="MagicType.h" />
+    <ClInclude Include="StatusMore.h" />
+    <ClInclude Include="StatusOnce.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemAddition.h" />
+    <ClInclude Include="ItemData.h" />
+    <ClInclude Include="ItemType.h" />
+    <ClInclude Include="Auction.h" />
+    <ClInclude Include="AuctionStorage.h" />
+    <ClInclude Include="AuctionSystemItemData.h" />
+    <ClInclude Include="TaskDetail.h" />
+    <ClInclude Include="TaskDetailData.h" />
+    <ClInclude Include="Network\MsgAction.h" />
+    <ClInclude Include="Network\MsgAiNpcInfo.h" />
+    <ClInclude Include="Network\MsgAllot.h" />
+    <ClInclude Include="Network\MsgAnnounceInfo.h" />
+    <ClInclude Include="Network\MsgAnnounceList.h" />
+    <ClInclude Include="Network\MsgAuction.h" />
+    <ClInclude Include="Network\MsgBattleSystem.h" />
+    <ClInclude Include="Network\MsgBetOutside.h" />
+    <ClInclude Include="Network\MsgCallPetInfo.h" />
+    <ClInclude Include="Network\MsgDataArray.h" />
+    <ClInclude Include="Network\MsgDialog.h" />
+    <ClInclude Include="Network\MsgEudemonAttrib.h" />
+    <ClInclude Include="Network\MsgFlushExp.h" />
+    <ClInclude Include="Network\MsgFriend.h" />
+    <ClInclude Include="Network\MsgFriendInfo.h" />
+    <ClInclude Include="Network\MsgGemEmbed.h" />
+    <ClInclude Include="Network\MsgInteract.h" />
+    <ClInclude Include="Network\MsgItem.h" />
+    <ClInclude Include="Network\MsgItemAttrib.h" />
+    <ClInclude Include="Network\MsgItemInfo.h" />
+    <ClInclude Include="Network\MsgItemInfoEx.h" />
+    <ClInclude Include="Network\MsgMagicEffect.h" />
+    <ClInclude Include="Network\MsgMagicInfo.h" />
+    <ClInclude Include="Network\MsgMapInfo.h" />
+    <ClInclude Include="Network\MsgMapItem.h" />
+    <ClInclude Include="Network\MsgMessageBoard.h" />
+    <ClInclude Include="Network\MsgName.h" />
+    <ClInclude Include="Network\MsgNpc.h" />
+    <ClInclude Include="Network\MsgNpcInfo.h" />
+    <ClInclude Include="Network\MsgNpcInfoEx.h" />
+    <ClInclude Include="Network\MsgPackage.h" />
+    <ClInclude Include="Network\MsgPlayer.h" />
+    <ClInclude Include="Network\MsgPlayerTask.h" />
+    <ClInclude Include="Network\MsgSchoolMember.h" />
+    <ClInclude Include="Network\MsgSynAttrInfo.h" />
+    <ClInclude Include="Network\MsgSyndicate.h" />
+    <ClInclude Include="Network\MsgSynInfo.h" />
+    <ClInclude Include="Network\MsgSynMemberInfo.h" />
+    <ClInclude Include="Network\MsgTalk.h" />
+    <ClInclude Include="Network\MsgTaskList.h" />
+    <ClInclude Include="Network\MsgTeam.h" />
+    <ClInclude Include="Network\MsgTeamMember.h" />
+    <ClInclude Include="Network\MsgTick.h" />
+    <ClInclude Include="Network\MsgTrade.h" />
+    <ClInclude Include="Network\MsgUserAttrib.h" />
+    <ClInclude Include="Network\MsgUserInfo.h" />
+    <ClInclude Include="Network\MsgWalk.h" />
+    <ClInclude Include="Network\MsgWalkEx.h" />
+    <ClInclude Include="Network\MsgWeaponSkill.h" />
+    <ClInclude Include="Network\MsgWeather.h" />
+    <ClInclude Include="Agent.h" />
+    <ClInclude Include="AINpc.h" />
+    <ClInclude Include="Announce.h" />
+    <ClInclude Include="AnnounceData.h" />
+    <ClInclude Include="BattleSystem.h" />
+    <ClInclude Include="BetOutside.h" />
+    <ClInclude Include="Booth.h" />
+    <ClInclude Include="DeadLoop.h" />
+    <ClInclude Include="DropRule.h" />
+    <ClInclude Include="DropRuleGroup.h" />
+    <ClInclude Include="DropRuleMap.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EventPack.h" />
+    <ClInclude Include="Friend.h" />
+    <ClInclude Include="FriendData.h" />
+    <ClInclude Include="GameAction.h" />
+    <ClInclude Include="GameObj.h" />
+    <ClInclude Include="I_Role.h" />
+    <ClInclude Include="LeaveWord.h" />
+    <ClInclude Include="MapGroup.h" />
+    <ClInclude Include="MapGroupKernel.h" />
+    <ClInclude Include="MapTrap.h" />
+    <ClInclude Include="MercenaryTask.h" />
+    <ClInclude Include="MercenaryTaskData.h" />
+    <ClInclude Include="MultiObjSet.h" />
+    <ClInclude Include="Network\NetMsg.h" />
+    <ClInclude Include="NpcManager.h" />
+    <ClInclude Include="NpcScene.h" />
+    <ClInclude Include="NpcTable.h" />
+    <ClInclude Include="Package.h" />
+    <ClInclude Include="PoliceWanted.h" />
+    <ClInclude Include="Role.h" />
+    <ClInclude Include="RoleManager.h" />
+    <ClInclude Include="SingleMap64.h" />
+    <ClInclude Include="SquareDeal.h" />
+    <ClInclude Include="T_SingleMap2.h" />
+    <ClInclude Include="T_SingleObjSet2.h" />
+    <ClInclude Include="Team.h" />
+    <ClInclude Include="Transformation.h" />
+    <ClInclude Include="Tutor.h" />
+    <ClInclude Include="TutorData.h" />
+    <ClInclude Include="UserManager.h" />
+    <ClInclude Include="UserPackage.h" />
+    <ClInclude Include="WantedList.h" />
+    <ClInclude Include="Weather.h" />
+    <ClInclude Include="WeatherRegion.h" />
+    <ClInclude Include="ActionDefine.h" />
+    <ClInclude Include="Network\AllMsg.h" />
+    <ClInclude Include="..\share\define.h" />
+    <ClInclude Include="I_MapData.h" />
+    <ClInclude Include="..\share\I_Shell.h" />
+    <ClInclude Include="..\share\networkdef.h" />
+    <ClInclude Include="..\share\protocol.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="怪物掉物品规则设计.txt" />
+    <CustomBuild Include="设计日志.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

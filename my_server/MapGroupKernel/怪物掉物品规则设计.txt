@@ -1,0 +1,76 @@
+//
+// 怪物掉宝规则设计
+// 冷紫龙
+// 2004-02-18
+////////////////////////////////////////////////////////////////////
+
+一、相关数据库表
+
+	1、cq_monstertype表部分字段说明：
+	=======================
+	drop_money_min		//所掉金钱的下限
+	drop_money_max		//所掉金钱的上限
+
+	drop_money_chance		//掉钱的概率
+	drop_item_chance		//掉物品的概率	掉1个物品
+	explode_item_chance1	//小爆的概率	掉2 - 5个物品
+	explode_item_chance2	//中爆的概率	掉6 - 9个物品
+	explode_item_chance3	//大爆的概率	掉10 - ?个物品
+	drop_item_rule			//掉物品的规则组id
+
+	2、掉物品规则表
+	===============
+	CREATE TABLE cq_dropitemrule(
+		id int unsigned NOT NULL,
+		RuleId int unsigned NOT NULL default '0',
+		Chance int unsigned NOT NULL default '0',
+		Item0 int unsigned NOT NULL default '0',
+		Item1 int unsigned NOT NULL default '0',
+		Item2 int unsigned NOT NULL default '0',
+		Item3 int unsigned NOT NULL default '0',
+		Item4 int unsigned NOT NULL default '0',
+		Item5 int unsigned NOT NULL default '0',
+		Item6 int unsigned NOT NULL default '0',
+		Item7 int unsigned NOT NULL default '0',
+		Item8 int unsigned NOT NULL default '0',
+		Item9 int unsigned NOT NULL default '0',
+		Item10 int unsigned NOT NULL default '0',
+		Item11 int unsigned NOT NULL default '0',
+		Item12 int unsigned NOT NULL default '0',
+		Item13 int unsigned NOT NULL default '0',
+		Item14 int unsigned NOT NULL default '0',
+
+		PRIMARY KEY (id, RuleId)
+	) TYPE=MyISAM;
+
+	简要说明：
+	=======================================
+	id				规则组id
+	RuleId			规则id
+	Chance			掉宝概率
+	Item0 ~ Item14	可能掉的物品typeid
+
+	★★id和RuleId两个字段共同组成主键
+
+	该表中记录了若干组掉物品的规则，
+	cq_monstertype表中每个记录可以对应最多一个规则，每组规则由若干条规则(记录)组成
+	
+	每条记录包括这条规则掉宝的概率以及最多15个ItemType(若同一种掉宝几率对应的不止15种物品，
+	可以分多条记录保存，只要Chance相同即可，处理的时候统一处理)。
+
+	★★可以有一个默认的规则组：规则组id=0，不掉任何物品
+
+	一个规则组包含多条规则的目的：可以实现不同的宝掉的概率不同。
+	
+	一个掉宝规则组中包含多条规则（所有Chance相同的规则在读入内存以后会被合并成一条，这样合并
+	以后就可以有超过15种物品同一种掉宝规则）
+
+
+二、算法设计
+　　掉物品概率计算：
+	1、根据monstertype表的drop_item_chance、explode_item_chance1、explode_item_chance2、explode_item_chance3
+	字段值计算是否掉物品、掉几个物品，如果计算结果不掉，或者drop_item_rule不存在，则退出；
+
+	2、根据dropitemrule表的Chance字段，按照概率从低到高计算是否掉物品，如果计算出来掉落某条规则的物品，
+	则从该规则的物品列表中随机选择一个，重复以上步骤直到找到足够数量的物品(爆的时候物品数大于1)。
+
