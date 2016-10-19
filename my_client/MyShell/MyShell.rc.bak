@@ -1,0 +1,2325 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MyShell.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\MyShell.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 345, 186
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 MyShell"
+FONT 12, "宋体"
+BEGIN
+END
+
+IDD_MYSHELL_DIALOG DIALOGEX 0, 0, 538, 369
+STYLE WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_APPWINDOW
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_STCBG,"Static",SS_BLACKFRAME | WS_TABSTOP,0,0,467,
+                    360
+END
+
+IDD_DIALOG_LOGIN DIALOG DISCARDABLE  0, 0, 400, 300
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "注册新账号",IDC_LOGIN_BTN_NEW,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,327,225,51,15
+    EDITTEXT        IDC_LOGIN_EDT_ACCOUNT,220,52,78,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LOGIN_EDT_PASSWORD,220,71,78,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    CONTROL         "确定",IDC_LOGIN_BTN_OK,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,87,86,51,15
+    CONTROL         "退出",IDC_LOGIN_BTN_EXIT,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,142,86,51,15
+    CONTROL         "制作团队",IDC_LOGIN_BTN_NET,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,327,269,51,15
+    CONTROL         "H",IDC_BTN_HELP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,6,239,35,15
+    CONTROL         "R",IDC_LOGIN_BTN_RECORD,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,212,123,51,15
+    CONTROL         "账户充值",IDC_LOGIN_BTN_ADD,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,327,247,51,15
+    CONTROL         "1区",IDC_LOGIN_GROUP1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,6,207,52,47
+    CONTROL         "服务器1",IDC_LOGIN_SERVER1,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,6,224,45,30
+    CONTROL         "服务器2",IDC_LOGIN_SERVER2,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,6,224,45,30
+    CONTROL         "服务器3",IDC_LOGIN_SERVER3,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,6,224,45,30
+    CONTROL         "背景1",IDC_LOGIN_EDTIMG,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,156,25,24,20
+    CONTROL         "人物",IDC_LOGIN_ROLEIMG,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,6,248,6,6
+    CONTROL         "服务器4",IDC_LOGIN_SERVER4,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,6,224,45,30
+    CONTROL         "服务器5",IDC_LOGIN_SERVER5,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,6,224,45,30
+    CONTROL         "服务器6",IDC_LOGIN_SERVER6,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,6,224,45,30
+    CONTROL         "服务器7",IDC_LOGIN_SERVER7,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,6,224,45,30
+    CONTROL         "服务器8",IDC_LOGIN_SERVER8,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,6,224,45,30
+    CONTROL         "服务器9",IDC_LOGIN_SERVER9,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,6,224,45,30
+    CONTROL         "服务器10",IDC_LOGIN_SERVER10,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,6,224,45,30
+    CONTROL         "服务器11",IDC_LOGIN_SERVER11,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,6,224,45,30
+    CONTROL         "服务器12",IDC_LOGIN_SERVER12,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,6,224,45,30
+    LTEXT           "SVR1",IDC_STCSVR1,6,244,34,10,NOT WS_VISIBLE
+    CONTROL         "2区",IDC_LOGIN_GROUP2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,6,207,52,47
+    CONTROL         "3区",IDC_LOGIN_GROUP3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,6,207,52,47
+    LTEXT           "SVR2",IDC_STCSVR2,6,244,34,10,NOT WS_VISIBLE
+    LTEXT           "SVR3",IDC_STCSVR3,6,244,34,10,NOT WS_VISIBLE
+    LTEXT           "SVR4",IDC_STCSVR4,6,244,34,10,NOT WS_VISIBLE
+    LTEXT           "SVR5",IDC_STCSVR5,6,244,34,10,NOT WS_VISIBLE
+    LTEXT           "SVR6",IDC_STCSVR6,6,244,34,10,NOT WS_VISIBLE
+    LTEXT           "SVR7",IDC_STCSVR7,6,244,34,10,NOT WS_VISIBLE
+    LTEXT           "SVR8",IDC_STCSVR8,6,244,34,10,NOT WS_VISIBLE
+    LTEXT           "SVR9",IDC_STCSVR9,6,244,34,10,NOT WS_VISIBLE
+    LTEXT           "SVR10",IDC_STCSVR10,6,244,34,10,NOT WS_VISIBLE
+    LTEXT           "SVR11",IDC_STCSVR11,6,244,34,10,NOT WS_VISIBLE
+    LTEXT           "SVR12",IDC_STCSVR12,6,244,34,10,NOT WS_VISIBLE
+    CONTROL         "背景",IDC_LOGIN_GROUPIMG,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,66,0,24,20
+END
+
+IDD_MAIN_DIALOG DIALOG DISCARDABLE  0, 0, 240, 206
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "技",IDC_MAIN_MAGIC,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,165,167,32,32
+    CONTROL         "人物",IDC_MAIN_QUERY,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,9,167,32,32
+    CONTROL         "物品",IDC_MAIN_GOOD,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,48,167,32,32
+    CONTROL         "系统",IDC_MAIN_SETUP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,205,128,32,32
+    CONTROL         "宠",IDC_MAIN_MONSTER,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,126,167,32,32
+    CONTROL         "交易",IDC_MAIN_CHAT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,205,90,32,32
+    CONTROL         "组队",IDC_MAIN_GROUP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,205,14,32,32
+    CONTROL         "帮派",IDC_MAIN_FACTION,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,204,167,32,32
+    CONTROL         "好友",IDC_MAIN_FRIEND,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,205,51,32,32
+    CONTROL         "UP",IDC_BTN_UP_HIDE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,202,0,38,14
+    CONTROL         "宝石",IDC_MAIN_STONES,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,87,167,32,32
+END
+
+IDD_DIALOG_QUERY DIALOG DISCARDABLE  0, 0, 149, 203
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "C",IDC_QUERY_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,132,188,11,11
+    LTEXT           "姓名",IDC_QUERY_NAME,55,14,42,8,WS_BORDER
+    LTEXT           "帮派",IDC_QUERY_FACTION,55,4,42,8,WS_BORDER
+    CONTROL         "UP",IDC_QUERY_BTN_UP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,4,77,12,13
+    CONTROL         "DOWN",IDC_QUERY_BTN_DOWN,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,4,107,12,13
+END
+
+IDD_DIALOG_QUERY_ROLE DIALOG DISCARDABLE  0, 0, 149, 203
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    LTEXT           "",IDC_STA_TITLE,52,87,36,8,WS_BORDER
+    LTEXT           "",IDC_STA_LEV,52,40,36,8,WS_BORDER
+    LTEXT           "",IDC_STA_PK,52,52,36,8,WS_BORDER
+    LTEXT           "",IDC_STA_STRONG,53,120,36,8,WS_BORDER
+    LTEXT           "",IDC_STA_FERE,52,75,36,8,WS_BORDER
+    LTEXT           "",IDC_STA_FAMOR,52,64,36,8,WS_BORDER
+    LTEXT           "",IDC_STA_AMOUNT,53,132,36,8,WS_BORDER
+    LTEXT           "",IDC_STA_ENERGY,53,144,36,8,WS_BORDER
+    LTEXT           "",IDC_STA_SMART,53,156,36,8,WS_BORDER
+    LTEXT           "",IDC_STA_HA,53,109,36,8,WS_BORDER
+END
+
+IDD_DIALOG_QUERY_WEAPON DIALOG DISCARDABLE  0, 0, 128, 158
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "人物勋章",IDC_IMG_HONORB,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,30,0,65,65
+    CONTROL         "人物勋章",IDC_IMG_HONOR1,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,9,80,32,32
+    CONTROL         "人物勋章",IDC_IMG_HONOR2,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,43,80,32,32
+    CONTROL         "人物勋章",IDC_IMG_HONOR3,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,78,80,32,32
+    CONTROL         "人物勋章",IDC_IMG_HONOR4,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,9,115,32,32
+    CONTROL         "人物勋章",IDC_IMG_HONOR5,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,43,115,32,32
+    CONTROL         "人物勋章",IDC_IMG_HONOR6,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,78,115,32,32
+    CONTROL         "选择显示",IDC_BTN_CHOOSE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,44,67,41,11
+    CONTROL         "U",IDC_BTN_UP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,114,80,7,7
+    CONTROL         "D",IDC_BTN_DOWN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,114,140,7,7
+END
+
+IDD_DIALOG_QUERY_MISSION DIALOG DISCARDABLE  0, 0, 128, 158
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    LTEXT           "力量",IDC_STA_POWER,36,6,8,8
+    LTEXT           "耐力",IDC_STA_RES,36,32,8,8
+    LTEXT           "敏捷",IDC_STA_CEL,36,55,8,8
+    LTEXT           "精神",IDC_STA_ENE,36,81,8,8
+    LTEXT           "剩余点数",IDC_STA_LEFTPNT,42,105,8,8
+    LTEXT           "生命值",IDC_STA_HP,89,31,24,8
+    LTEXT           "体力值",IDC_STA_MAIN,89,111,25,8
+    LTEXT           "魔法攻击",IDC_STA_MAGATK,89,88,34,8
+    LTEXT           "物理攻击",IDC_STA_ATK,89,6,33,8
+    LTEXT           "魔法值",IDC_STA_MAGIC,89,79,25,8
+    LTEXT           "最大负重",IDC_STA_BURDEN,88,39,35,8
+    LTEXT           "魔法防御",IDC_STA_MAGDEF,89,118,31,8
+    LTEXT           "物理防御",IDC_STA_DEF,89,47,34,8
+    CONTROL         "确定",IDC_BTN_OK,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,72,145,35,11
+    CONTROL         "U",IDC_BTN_UP1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,49,11,6,6
+    CONTROL         "D",IDC_BTN_DOWN1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,49,17,6,6
+    CONTROL         "U",IDC_BTN_UP2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,49,37,6,6
+    CONTROL         "D",IDC_BTN_DOWN2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,49,43,6,6
+    CONTROL         "U",IDC_BTN_UP3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,49,60,6,6
+    CONTROL         "D",IDC_BTN_DOWN3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,49,66,6,6
+    CONTROL         "U",IDC_BTN_UP4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,49,86,6,6
+    CONTROL         "D",IDC_BTN_DOWN4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,49,92,6,6
+END
+
+IDD_DIALOG_SKILL DIALOG DISCARDABLE  0, 0, 146, 203
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "技能一",IDC_SKILL_IMG_1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,21,39,20,20
+    CONTROL         "技能二",IDC_SKILL_IMG_2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,21,64,20,20
+    CONTROL         "技能三",IDC_SKILL_IMG_3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,21,88,20,20
+    CONTROL         "技能四",IDC_SKILL_IMG_4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,21,112,20,20
+    CONTROL         "技能五",IDC_SKILL_IMG_5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,21,137,20,20
+    CONTROL         "U",IDC_SKILL_BTN_UP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,137,84,7,7
+    CONTROL         "D",IDC_SKILL_BTN_DOWN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,137,112,7,7
+    CONTROL         "技能六",IDC_SKILL_IMG_6,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,21,162,20,20
+    LTEXT           "技能一",IDC_STA_NAME1,49,39,28,8
+    LTEXT           "经验值",IDC_STA_EXP1,79,50,28,8
+    LTEXT           "技能二",IDC_STA_NAME2,49,64,28,8
+    LTEXT           "经验值",IDC_STA_EXP2,79,75,28,8
+    LTEXT           "技能三",IDC_STA_NAME3,49,89,28,8
+    LTEXT           "经验值",IDC_STA_EXP3,79,99,28,8
+    LTEXT           "技能四",IDC_STA_NAME4,49,113,28,8
+    LTEXT           "经验值",IDC_STA_EXP4,79,123,28,8
+    LTEXT           "技能五",IDC_STA_NAME5,49,138,28,8
+    LTEXT           "经验值",IDC_STA_EXP5,79,148,28,8
+    LTEXT           "技能六",IDC_STA_NAME6,49,163,28,8
+    LTEXT           "经验值",IDC_STA_EXP6,79,173,28,8
+    LTEXT           "等级",IDC_STA_DESC1,49,50,28,8
+    LTEXT           "等级",IDC_STA_DESC2,49,75,28,8
+    LTEXT           "等级",IDC_STA_DESC3,49,99,28,8
+    LTEXT           "等级",IDC_STA_DESC4,49,123,28,8
+    LTEXT           "等级",IDC_STA_DESC5,49,148,28,8
+    LTEXT           "等级",IDC_STA_DESC6,49,173,28,8
+    CONTROL         "HOT",IDC_SKILLKEY_IMG1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,112,42,20,15
+    CONTROL         "HOT",IDC_SKILLKEY_IMG2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,112,69,20,15
+    CONTROL         "HOT",IDC_SKILLKEY_IMG3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,112,93,20,15
+    CONTROL         "HOT",IDC_SKILLKEY_IMG4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,112,117,20,15
+    CONTROL         "HOT",IDC_SKILLKEY_IMG5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,112,142,20,15
+    CONTROL         "HOT",IDC_SKILLKEY_IMG6,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,112,167,20,15
+END
+
+IDD_DIALOG_TRADE DIALOG DISCARDABLE  0, 0, 311, 429
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "同意",IDC_TRADE_BTN_MPCAGREE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,179,365,46,24
+    CONTROL         "对方交易物品栏",IDC_TRADE_GRI_NPC,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,32,31,139,174
+    CONTROL         "己方交易物品栏",IDC_TRADE_GRI_MPC,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,32,215,139,174
+    LTEXT           "0",IDC_TRADE_STA_NPCMONEY,179,149,103,19,WS_BORDER
+    CONTROL         "确定金",IDC_TRADE_BTN_MONEYMPCOK,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,235,302,46,24
+    LTEXT           "对方姓名",IDC_TRADE_STA_NPCNAME,173,16,34,8
+    EDITTEXT        IDC_TRADE_EDT_MPCMONEY,179,338,103,19,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "同意",IDC_TRADE_STA_NPCAGREE,179,178,46,24
+    CONTROL         "关闭",IDC_TRADE_CLOSEB,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,279,397,22,22
+    CONTROL         "确定金",IDC_TRADE_BTN_MONEYNPCOK,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | NOT WS_VISIBLE | WS_TABSTOP,236,113,46,24
+END
+
+IDD_DIALOG_SETUP DIALOG DISCARDABLE  0, 0, 340, 240
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "退出游戏",IDC_SETUP_BTN_EXIT,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,239,202,64,24
+    CONTROL         "返回",IDC_SETUP_BTN_RETURN,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,138,202,64,24
+    CONTROL         "删除人物",IDC_SETUP_BTN_DELETE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,37,202,64,24
+    CONTROL         "热键设定",IDC_SETUP_BTN_HOTKEY,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,182,22,60,20
+    CONTROL         "CHAT功能",IDC_SETUP_BTN_OTHER,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,254,22,60,20
+    CONTROL         "图形选项",IDC_SETUP_BTN_GRAPH,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,39,22,60,20
+    CONTROL         "音乐音效",IDC_SETUP_BTN_MUSIC,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,110,22,60,20
+END
+
+IDD_DIALOG_CHAT DIALOG DISCARDABLE  0, 0, 124, 104
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "C",IDC_CHAT_BTN_CLOSES,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,111,4,10,10
+    CONTROL         "H",IDC_BTN_HELP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,17,87,23,12
+    CONTROL         "关闭",IDC_CHAT_CLOSEB,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,83,87,23,12
+    CONTROL         "聊天纪录",IDC_CHAT_BTN_RECORD,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,19,74,28,11
+    CONTROL         "聊天过滤",IDC_CHAT_BTN_SIFT,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,76,74,28,11
+    CONTROL         "公聊",IDC_CHAT_CHK_G,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,15,21,27,11
+    CONTROL         "帮派",IDC_CHAT_CHK_B,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,71,21,27,11
+    CONTROL         "队伍",IDC_CHAT_CHK_D,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,15,33,27,11
+    CONTROL         "好友",IDC_CHAT_CHK_H,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,71,33,27,11
+    CONTROL         "私聊",IDC_CHAT_CHK_S,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,15,45,27,11
+    CONTROL         "禁止非好友私聊",IDC_CHAT_CHK_SF,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,15,57,27,11
+    CONTROL         "G",IDC_CHAT_IMG_GC,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,43,22,8,8
+    CONTROL         "D",IDC_CHAT_IMG_DC,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,43,34,8,8
+    CONTROL         "S",IDC_CHAT_IMG_SC,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,43,46,8,8
+    CONTROL         "B",IDC_CHAT_IMG_BC,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,99,22,8,8
+    CONTROL         "H",IDC_CHAT_IMG_HC,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,99,34,8,8
+    CONTROL         "C1",IDC_CHAT_IMG_CC1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,58,19,8,8
+    CONTROL         "C2",IDC_CHAT_IMG_CC2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,58,27,8,8
+    CONTROL         "C3",IDC_CHAT_IMG_CC3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,58,35,8,8
+    CONTROL         "C4",IDC_CHAT_IMG_CC4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,58,43,8,8
+    CONTROL         "C5",IDC_CHAT_IMG_CC5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,58,51,8,8
+    CONTROL         "C6",IDC_CHAT_IMG_CC6,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,58,59,8,8
+    CONTROL         "C7",IDC_CHAT_IMG_CC7,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,58,67,8,8
+    CONTROL         "C8",IDC_CHAT_IMG_CC8,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,58,75,8,8
+    CONTROL         "动作",IDC_CHAT_CHK_Z,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,71,45,27,11
+    CONTROL         "Z",IDC_CHAT_IMG_ZC,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,99,46,8,8
+END
+
+IDD_DIALOG_ACT DIALOGEX 0, 0, 190, 25
+STYLE WS_CHILD
+EXSTYLE WS_EX_TRANSPARENT
+FONT 12, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "扮酷",IDC_ACT_BTN1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,10,5,15,15
+    CONTROL         "半跪",IDC_ACT_BTN2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,27,5,15,15
+    CONTROL         "悲哀",IDC_ACT_BTN3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,44,5,15,15
+    CONTROL         "高兴",IDC_ACT_BTN4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,61,5,15,15
+    CONTROL         "生气",IDC_ACT_BTN5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,78,5,15,15
+    CONTROL         "躺下",IDC_ACT_BTN6,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,95,5,15,15
+    CONTROL         "舞蹈",IDC_ACT_BTN7,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,112,5,15,15
+    CONTROL         "招呼",IDC_ACT_BTN8,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,129,5,15,15
+    CONTROL         "作揖",IDC_ACT_BTN9,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,146,5,15,15
+    CONTROL         "坐下",IDC_ACT_BTN10,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,163,5,15,15
+    CONTROL         "C",IDC_BTN_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,179,1,10,10
+END
+
+IDD_DIALOG_GROUP DIALOG DISCARDABLE  0, 0, 55, 194
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "1",IDC_GROUP_BTN_1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,2,161,20,10
+    CONTROL         "2",IDC_GROUP_BTN_2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,28,161,20,10
+    CONTROL         "C",IDC_GROUP_BTN_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,39,175,9,9
+    CONTROL         "3",IDC_GROUP_CHK_3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,2,174,20,10
+    CONTROL         "4",IDC_GROUP_BTN_4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,28,174,20,10
+    CONTROL         "1",IDC_GROUP_IMG1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,19,0,32,32
+    CONTROL         "2",IDC_GROUP_IMG2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,19,40,32,32
+    CONTROL         "3",IDC_GROUP_IMG3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,19,80,32,32
+    CONTROL         "4",IDC_GROUP_IMG4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,19,120,32,32
+END
+
+IDD_DIALOG_TALK DIALOG DISCARDABLE  0, 0, 687, 85
+STYLE WS_CHILD
+FONT 5, "small fonts"
+BEGIN
+    EDITTEXT        IDC_TALK_EDT_NAME,77,57,79,22,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TALK_EDT_DATA,176,57,437,22,ES_AUTOHSCROLL
+    CONTROL         "SEND",IDC_TALK_BTN_SEND,"Button",BS_OWNERDRAW | BS_FLAT,
+                    663,61,21,18
+    CONTROL         "C",IDC_TALK_IMG_MODE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,13,56,46,21
+    CONTROL         "Progress3",IDC_PRG_EXP,"msctls_progress32",NOT 
+                    WS_VISIBLE | WS_BORDER,110,43,501,6
+    CONTROL         "PK",IDC_TALK_CHK_PK,"Button",BS_OWNERDRAW | BS_FLAT,12,
+                    31,18,18
+    CONTROL         "RUN",IDC_TALK_CHK_RUN,"Button",BS_OWNERDRAW | BS_FLAT,
+                    58,30,18,18
+    CONTROL         "MAP",IDC_TALK_BTN_MIPMAP,"Button",BS_OWNERDRAW | 
+                    BS_FLAT,35,30,18,18
+    CONTROL         "HELP",IDC_TALK_BTN_HELP,"Button",BS_OWNERDRAW | BS_FLAT,
+                    81,31,18,18
+    CONTROL         "CLEAR",IDC_TALK_CLEARBTN,"Button",BS_OWNERDRAW | 
+                    BS_FLAT,630,48,30,14
+    CONTROL         "V",IDC_BTN_HIDEGOODS,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,664,42,13,15
+    CONTROL         "",IDC_GRI_GOODBOX,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,199,6,419,34
+    CONTROL         "MYCHAT",IDC_TALK_MYCHAT,"Button",BS_OWNERDRAW | BS_FLAT,
+                    630,67,30,14
+END
+
+IDD_DIALOG_LISTBOX DIALOG DISCARDABLE  0, 0, 55, 150
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    LISTBOX         IDC_LISTBOX,0,0,55,150,NOT LBS_NOTIFY | 
+                    LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | 
+                    LBS_NOINTEGRALHEIGHT | WS_TABSTOP
+END
+
+IDD_DIALOG_ROLECHOOSE DIALOG DISCARDABLE  0, 0, 400, 300
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "角色一",IDC_ROLECHOOSE_MIMG1,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,6,8,87,51
+    CONTROL         "角色二",IDC_ROLECHOOSE_MIMG2,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,6,62,87,51
+    CONTROL         "角色三",IDC_ROLECHOOSE_MIMG3,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,6,116,87,51
+    CONTROL         "角色四",IDC_ROLECHOOSE_MIMG4,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,6,170,87,51
+    LTEXT           "",IDC_ROLECHOOSE_STA_DATA,56,234,276,11
+    CONTROL         "退出",IDC_ROLECHOOSE_BTN_RETURN,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,11,275,52,15
+    CONTROL         "确定",IDC_ROLECHOOSE_BTN_OK,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,355,275,35,15
+    CONTROL         "H",IDC_BTN_HELP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,310,275,35,15
+    CONTROL         "角色一",IDC_ROLECHOOSE_WIMG1,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,307,8,87,51
+    CONTROL         "角色二",IDC_ROLECHOOSE_WIMG2,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,307,62,87,51
+    CONTROL         "角色三",IDC_ROLECHOOSE_WIMG3,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,307,116,87,51
+    CONTROL         "角色四",IDC_ROLECHOOSE_WIMG4,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,307,170,87,51
+END
+
+IDD_DIALOG_ROLECREATE DIALOG DISCARDABLE  0, 0, 512, 384
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "确定",IDC_ROLECREATE_BTN_OK,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,425,317,73,27
+    CONTROL         "方案2",IDC_ROLECREATE_BTN_RETURN,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,390,259,34,20
+    EDITTEXT        IDC_ROLECREATE_EDT_NAME,373,25,65,15,ES_AUTOHSCROLL
+    LTEXT           "",IDC_ROLECREATE_STA_DATA,81,223,237,10
+    CONTROL         "方案1",IDC_BTN_HELP1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,352,259,34,20
+    CONTROL         "取消",IDC_ROLECREATE_BTN_EXIT,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,325,316,73,27
+    CONTROL         "角色一",IDC_ROLECHOOSE_MIMG1,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,15,14,127,185
+    CONTROL         "角色二",IDC_ROLECHOOSE_MIMG2,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,48,14,127,185
+    CONTROL         "取消自动分配",IDC_BTN_CANCELALLOT,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,428,259,71,20
+    CONTROL         "背景",IDC_IMG_BK,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,294,20,24,20
+    CONTROL         "U",IDC_BTN_UP2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,428,145,8,6
+    CONTROL         "D",IDC_BTN_DOWN5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,428,153,8,6
+    CONTROL         "U",IDC_BTN_UP5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,428,168,8,6
+    CONTROL         "D",IDC_BTN_DOWN6,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,428,176,8,6
+    CONTROL         "U",IDC_BTN_UP6,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,428,189,8,6
+    CONTROL         "D",IDC_BTN_DOWN7,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,428,197,8,6
+    CONTROL         "U",IDC_BTN_UP7,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,428,212,8,6
+    CONTROL         "D",IDC_BTN_DOWN8,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,428,220,8,6
+    CONTROL         "L",IDC_BTN_LEFT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,370,67,16,16
+    CONTROL         "R",IDC_BTN_RIGHT2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,442,67,16,16
+    CONTROL         "M",IDC_BTN_MALE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,387,50,8,8
+    CONTROL         "FM",IDC_BTN_FEMALE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,410,50,8,8
+    CONTROL         "职业",IDC_IMG_PRO,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,391,63,24,20
+    LTEXT           "力量",IDC_STA_FORCE,389,146,18,8
+    LTEXT           "耐力",IDC_STA_RES,389,169,18,8
+    LTEXT           "敏捷",IDC_STA_CEL,389,190,18,8
+    LTEXT           "精神",IDC_STA_ENERGY,389,213,18,8
+    LTEXT           "点数",IDC_STA_LEFTPNT,411,235,18,8
+    CONTROL         "种族",IDC_IMG_STIRPS,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,391,91,24,20
+END
+
+IDD_DIALOG_NPCBUY DIALOG DISCARDABLE  0, 0, 314, 226
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "出售物品栏",IDC_NPCBUY_GRI_SALE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,39,38,174,139
+    CONTROL         "CLOSE",IDC_NPCBUY_BTN_CLOSE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,276,188,22,22
+    CONTROL         "FIX",IDC_NPCBUY_BTN_FIX,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,250,50,42,23
+    CONTROL         "U",IDC_NPCBUY_BTN_UP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,215,58,25,24
+    CONTROL         "D",IDC_NPCBUY_BTN_DOWN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,215,130,25,24
+    CONTROL         "TALK",IDC_NPCBUY_BTN_TALK,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,250,97,42,23
+    CONTROL         "ASK",IDC_NPCBUY_BTN_ASK,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,250,144,42,23
+END
+
+IDD_DIALOG_MPCGOODS DIALOG DISCARDABLE  0, 0, 343, 236
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "MPC物品栏",IDC_MPCGOODS_GOODBOX,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,36,24,271,169
+    LTEXT           "",IDC_MPCGOODS_STA_MONEY,96,202,100,20,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CONTROL         "关闭",IDC_MPCGOODS_BTN_CLOSE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,310,204,22,22
+    CONTROL         "M",IDC_MPCGOODS_BTN_MONEY,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,53,200,30,22
+END
+
+IDD_DIALOG_CONFIRM DIALOG DISCARDABLE  0, 0, 112, 102
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    EDITTEXT        IDC_CONFIRM_EDT_DATA,18,22,86,18,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "确定",IDC_CONFIRM_BTN_OK,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,14,62,42,18
+    CONTROL         "取消",IDC_CONFIRM_BTN_CANCEL,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,58,62,42,18
+END
+
+IDD_DIALOG_FRIEND DIALOG DISCARDABLE  0, 0, 178, 220
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "添加",IDC_FRIEND_BTN_ADD,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,5,189,41,12
+    CONTROL         "C",IDC_FRIEND_BTN_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,150,192,15,15
+    CONTROL         "仇人",IDC_FRIEND_BTN_RESUME,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | NOT WS_VISIBLE | WS_TABSTOP,0,0,29,10
+    CONTROL         "L",IDC_BTN_LEFT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,58,167,16,16
+    CONTROL         "R",IDC_BTN_RIGHT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,103,167,16,16
+    CONTROL         "在线",IDC_BTN_SORTONLINE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,94,183,41,12
+    CONTROL         "名称",IDC_BTN_SORTNAME,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,94,195,41,12
+    CONTROL         "排序",IDC_BTN_SORT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,51,189,26,12
+    CONTROL         "人物头象",IDC_IMG_HEAD1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,13,26,32,32
+    CONTROL         "消息",IDC_BTN_MSG1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,137,29,26,12
+    CONTROL         "删除",IDC_BTN_DEL1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,137,45,26,12
+    LTEXT           "",IDC_STA_NAME1,71,27,18,8
+    LTEXT           "等级",IDC_STA_LEV1,71,39,18,8
+    LTEXT           "性别",IDC_STA_SEX1,71,52,18,8
+    LTEXT           "职业",IDC_STA_PRO1,107,39,18,8
+    LTEXT           "种族",IDC_STA_STIRPS1,107,52,18,8
+    CONTROL         "人物头象",IDC_IMG_HEAD2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,13,74,32,32
+    CONTROL         "消息",IDC_BTN_MSG2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,137,77,26,12
+    CONTROL         "删除",IDC_BTN_DEL2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,137,93,26,12
+    LTEXT           "",IDC_STA_NAME2,71,75,18,8
+    LTEXT           "等级",IDC_STA_LEV2,71,87,18,8
+    LTEXT           "性别",IDC_STA_SEX2,71,100,18,8
+    LTEXT           "职业",IDC_STA_PRO2,107,87,18,8
+    LTEXT           "种族",IDC_STA_STIRPS2,107,100,18,8
+    CONTROL         "人物头象",IDC_IMG_HEAD3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,13,122,32,32
+    CONTROL         "消息",IDC_BTN_MSG3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,137,125,26,12
+    CONTROL         "删除",IDC_BTN_DEL3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,137,141,26,12
+    LTEXT           "",IDC_STA_NAME3,71,123,18,8
+    LTEXT           "等级",IDC_STA_LEV3,71,135,18,8
+    LTEXT           "性别",IDC_STA_SEX3,71,148,18,8
+    LTEXT           "职业",IDC_STA_PRO3,107,135,18,8
+    LTEXT           "种族",IDC_STA_STIRPS3,107,148,18,8
+END
+
+IDD_DIALOG_DEPOT DIALOG DISCARDABLE  0, 0, 298, 406
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "存",IDC_DEPOT_BTN_ADD,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,165,62,52,26
+    CONTROL         "取",IDC_DEPOT_BTN_GET,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,83,62,52,26
+    EDITTEXT        IDC_DEPOT_EDT_MONEY,130,113,98,18,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "0",IDC_DEPOT_STA_LAY,130,159,98,12,WS_BORDER
+    CONTROL         "存储物品栏",IDC_DEPOT_GRI_LAY,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,50,235,174,139
+    CONTROL         "关闭",IDC_DEPOT_CLOSEB,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,265,376,24,23
+    CONTROL         "U",IDC_DEPOT_BTN_UP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,228,261,24,23
+    CONTROL         "D",IDC_DEPOT_BTN_DOWN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,228,322,24,23
+END
+
+IDD_DIALOG_QUERY_SKILL DIALOG DISCARDABLE  0, 0, 128, 158
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "人物头像",IDC_IMG_HEADB,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,30,0,65,65
+    CONTROL         "人物头像",IDC_IMG_HEAD1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,9,80,32,32
+    CONTROL         "人物头像",IDC_IMG_HEAD2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,43,80,32,32
+    CONTROL         "人物头像",IDC_IMG_HEAD3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,78,80,32,32
+    CONTROL         "人物头像",IDC_IMG_HEAD4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,9,115,32,32
+    CONTROL         "人物头像",IDC_IMG_HEAD5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,43,115,32,32
+    CONTROL         "人物头像",IDC_IMG_HEAD6,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,78,115,32,32
+    CONTROL         "选择显示",IDC_BTN_CHOOSE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,44,67,41,11
+    CONTROL         "U",IDC_BTN_UP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,114,80,7,7
+    CONTROL         "D",IDC_BTN_DOWN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,114,140,7,7
+END
+
+IDD_DIALOG_TASK DIALOG DISCARDABLE  0, 0, 176, 161
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    EDITTEXT        IDC_TASK_EDT_ANSWER,19,16,54,12,ES_AUTOHSCROLL
+    CONTROL         "C",IDC_BTN_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,160,3,13,13
+    CONTROL         "A",IDC_TASK_BTN_ANSWER,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,80,16,10,10
+END
+
+IDD_MENU_TALK DIALOG DISCARDABLE  0, 0, 23, 76
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "公聊",IDC_TALK_BTN_G,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,0,0,23,11
+    CONTROL         "私聊",IDC_TALK_BTN_S,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,0,13,23,11
+    CONTROL         "队伍",IDC_TALK_BTN_D,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,0,39,23,11
+    CONTROL         "帮派",IDC_TALK_BTN_B,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,0,52,23,11
+    CONTROL         "好友",IDC_TALK_BTN_H,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,0,26,23,11
+    CONTROL         "GM",IDC_TALK_BTN_GM,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,0,65,23,11
+END
+
+IDD_DIALOG_MAGIC DIALOG DISCARDABLE  0, 0, 169, 16
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "魔法1",IDC_MAGIC_IMG1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,9,0,16,16
+    CONTROL         "魔法2",IDC_MAGIC_IMG2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,25,0,16,16
+    CONTROL         "魔法3",IDC_MAGIC_IMG3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,41,0,16,16
+    CONTROL         "魔法4",IDC_MAGIC_IMG4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,57,0,16,16
+    CONTROL         "魔法5",IDC_MAGIC_IMG5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,73,0,16,16
+    CONTROL         "魔法6",IDC_MAGIC_IMG6,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,89,0,16,16
+    CONTROL         "魔法7",IDC_MAGIC_IMG7,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,105,0,16,16
+    CONTROL         "魔法8",IDC_MAGIC_IMG8,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,121,0,16,16
+    CONTROL         "魔法9",IDC_MAGIC_IMG9,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,137,0,16,16
+    CONTROL         "魔法10",IDC_MAGIC_IMG10,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,153,0,16,16
+    CONTROL         "U",IDC_MAGIC_BTN_UP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,0,0,9,8
+    CONTROL         "D",IDC_MAGIC_BTN_DOWN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,0,8,9,8
+END
+
+IDD_DIALOG_XP DIALOG DISCARDABLE  0, 0, 169, 16
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "XP1",IDC_XP_IMG1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,9,0,16,16
+    CONTROL         "XP2",IDC_XP_IMG2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,25,0,16,16
+    CONTROL         "XP3",IDC_XP_IMG3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,41,0,16,16
+    CONTROL         "XP4",IDC_XP_IMG4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,57,0,16,16
+    CONTROL         "XP5",IDC_XP_IMG5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,73,0,16,16
+    CONTROL         "XP6",IDC_XP_IMG6,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,89,0,16,16
+    CONTROL         "XP7",IDC_XP_IMG7,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,105,0,16,16
+    CONTROL         "XP8",IDC_XP_IMG8,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,121,0,16,16
+    CONTROL         "XP9",IDC_XP_IMG9,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,137,0,16,16
+    CONTROL         "XP10",IDC_XP_IMG10,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,153,0,16,16
+    CONTROL         "U",IDC_XP_BTN_UP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,0,0,9,8
+    CONTROL         "D",IDC_XP_BTN_DOWN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,0,8,9,8
+END
+
+IDD_DIALOG_PK DIALOG DISCARDABLE  0, 0, 100, 13
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "PK",IDC_PK_FREE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,0,0,25,13
+    CONTROL         "组队",IDC_PK_GROUP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,25,0,25,13
+    CONTROL         "安全",IDC_PK_SAFE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,50,0,25,13
+    CONTROL         "捕杀",IDC_PK_ARRESTMENT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,75,0,25,13
+END
+
+IDD_DIALOG_TITLEBAR DIALOG DISCARDABLE  0, 0, 512, 10
+STYLE WS_POPUP
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "",IDC_BTN_MIN,"Button",BS_OWNERDRAW | WS_TABSTOP,493,2,
+                    8,8
+    CONTROL         "",IDC_BTN_CLOSE,"Button",BS_OWNERDRAW | WS_TABSTOP,503,
+                    2,8,8
+END
+
+IDD_DIALOG_FRDSTATE DIALOG DISCARDABLE  0, 0, 69, 162
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "C",IDC_FRDSTATE_BTN_CLOSE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,56,5,10,10
+    LTEXT           "姓名",IDC_STA1,8,57,53,8
+    LTEXT           "等级",IDC_STA2,30,77,36,8
+    LTEXT           "职业",IDC_STA3,30,88,36,8
+    LTEXT           "PK值",IDC_STA4,30,98,36,8
+    CONTROL         "删除",IDC_FRDSTATE_BTN_DEL,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,18,132,29,10
+    LTEXT           "帮派",IDC_STA5,8,108,36,8
+    LTEXT           "帮派职务",IDC_STA6,8,118,36,8
+    LTEXT           "配偶",IDC_STA7,8,68,53,8
+    CONTROL         "FACE",IDC_FRDSTATE_IMAFACE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,19,20,30,30
+END
+
+IDD_DIALOG_IMPROVE DIALOG DISCARDABLE  0, 0, 95, 93
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "物品",IDC_IMPROVE_IMA_GOOD,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,16,28,32,32
+    CONTROL         "宝石",IDC_IMPROVE_IMA_GEM,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,56,33,21,21
+    CONTROL         "改良",IDC_IMPROVE_BTN_IMP,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,36,72,23,12
+    CONTROL         "C",IDC_IMPROVE_BTN_CLOSE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,76,7,10,10
+    CONTROL         "H",IDC_BTN_HELP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,10,72,23,12
+    CONTROL         "关闭",IDC_IMPROVE_BTN_CLOSEB,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,62,72,23,12
+END
+
+IDD_DIALOG_NPCFACE DIALOG DISCARDABLE  0, 0, 128, 120
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "C",IDC_NPCFACE_BTN_CLOSE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,111,5,10,10
+    CONTROL         "1",IDC_NPCFACE_IMA1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,11,19,32,32
+    CONTROL         "2",IDC_NPCFACE_IMA2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,48,19,32,32
+    CONTROL         "3",IDC_NPCFACE_IMA3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,85,19,32,32
+    CONTROL         "4",IDC_NPCFACE_IMA4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,11,57,32,32
+    CONTROL         "5",IDC_NPCFACE_IMA5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,48,57,32,32
+    CONTROL         "6",IDC_NPCFACE_IMA6,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,85,57,32,32
+    CONTROL         "确定",IDC_NPCFACE_BTN_AGREE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,49,106,30,13
+    CONTROL         "上一页",IDC_NPCFACE_BTN_UP,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,19,93,29,10
+    CONTROL         "下一页",IDC_NPCFACE_BTN_DOWN,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,80,93,29,10
+END
+
+IDD_DIALOG_KONGFU DIALOG DISCARDABLE  0, 0, 259, 25
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "功夫1",IDC_KONGFU_IMG1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,9,0,25,25
+    CONTROL         "功夫2",IDC_KONGFU_IMG2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,34,0,25,25
+    CONTROL         "功夫3",IDC_KONGFU_IMG3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,59,0,25,25
+    CONTROL         "功夫4",IDC_KONGFU_IMG4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,84,0,25,25
+    CONTROL         "功夫5",IDC_KONGFU_IMG5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,109,0,25,25
+    CONTROL         "功夫6",IDC_KONGFU_IMG6,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,134,0,25,25
+    CONTROL         "功夫7",IDC_KONGFU_IMG7,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,159,0,25,25
+    CONTROL         "功夫8",IDC_KONGFU_IMG8,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,184,0,25,25
+    CONTROL         "功夫9",IDC_KONGFU_IMG9,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,209,0,25,25
+    CONTROL         "功夫10",IDC_KONGFU_IMG10,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,234,0,25,25
+    CONTROL         "U",IDC_KONGFU_BTN_UP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,0,0,9,9
+    CONTROL         "D",IDC_KONGFU_BTN_DOWN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,0,16,9,9
+END
+
+IDD_DIALOG_HELP DIALOG DISCARDABLE  0, 0, 357, 229
+STYLE WS_POPUP | WS_BORDER
+FONT 12, "宋体"
+BEGIN
+    PUSHBUTTON      "X",IDC_BUTTON_CLOSE,347,3,8,8,BS_BITMAP | BS_FLAT
+    PUSHBUTTON      "删除当前纪录",IDC_HELP_MORE,317,29,33,10,BS_BITMAP | 
+                    BS_FLAT
+END
+
+IDD_DIALOG_LOG DIALOG DISCARDABLE  0, 0, 332, 203
+STYLE WS_POPUP
+FONT 10, "新宋体"
+BEGIN
+    COMBOBOX        IDC_LOG_FILE,6,26,60,50,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "X",IDC_LOG_CLOSE,317,7,9,9,BS_BITMAP | BS_FLAT
+    CONTROL         "",IDC_LOG_RECORD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    183,28,8,8
+    PUSHBUTTON      "删除当前纪录",IDC_LOG_DEL,232,26,45,12,BS_BITMAP | 
+                    BS_FLAT
+    PUSHBUTTON      "删除全部记录",IDC_LOG_DELALL,280,26,45,12,BS_BITMAP | 
+                    BS_FLAT
+    PUSHBUTTON      "察看全部记录",IDC_LOG_LOGALL,292,41,33,12,BS_BITMAP | 
+                    BS_FLAT
+    PUSHBUTTON      "察看公聊记录",IDC_LOG_LOGG,92,41,33,12,BS_BITMAP | 
+                    BS_FLAT
+    PUSHBUTTON      "察看私聊记录",IDC_LOG_LOGS,132,41,33,12,BS_BITMAP | 
+                    BS_FLAT
+    PUSHBUTTON      "察看帮派记录",IDC_LOG_LOGFAC,172,41,33,12,BS_BITMAP | 
+                    BS_FLAT
+    PUSHBUTTON      "察看好友记录",IDC_LOG_LOGFRD,212,41,33,12,BS_BITMAP | 
+                    BS_FLAT
+    PUSHBUTTON      "察看队伍记录",IDC_LOG_LOGTEAM,252,41,33,12,BS_BITMAP | 
+                    BS_FLAT
+    EDITTEXT        IDC_LOG_DATA,6,57,319,137,ES_MULTILINE | NOT WS_BORDER | 
+                    WS_VSCROLL
+END
+
+IDD_DIALOG_EMBED DIALOG DISCARDABLE  0, 0, 96, 113
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    CONTROL         "物品",IDC_EMBED_IMA_GOOD,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,16,32,32,32
+    CONTROL         "宝石",IDC_EMBED_IMA_GEM1,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,56,26,19,19
+    CONTROL         "宝石",IDC_EMBED_IMA_GEM2,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,56,53,19,19
+    CONTROL         "镶嵌",IDC_EMBED_BTN_EMBED,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,11,84,30,11
+    CONTROL         "去除",IDC_EMBED_BTN_TACKOFF,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,52,84,30,11
+    CONTROL         "H",IDC_BTN_HELP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,15,96,23,12
+    CONTROL         "关闭",IDC_EMBED_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,57,96,23,12
+    CONTROL         "C",IDC_EMBED_CLOSES,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,83,3,10,10
+END
+
+IDD_DIALOG_HOTKEY DIALOG DISCARDABLE  0, 0, 200, 145
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "更改",IDC_HOTKEY_BTN_CHANGE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,138,78,29,10
+    CONTROL         "还原",IDC_HOTKEY_BTN_REVERT,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,138,93,29,10
+    CONTROL         "C",IDC_HOTKEY_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,187,5,10,10
+    CONTROL         "H",IDC_BTN_HELP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,32,126,23,12
+    CONTROL         "关闭",IDC_HOTKEY_CLOSEB,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,145,126,23,12
+    LISTBOX         IDC_HOTKEY_LST_PARENT,23,37,43,81,NOT LBS_NOTIFY | 
+                    LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | 
+                    LBS_NOINTEGRALHEIGHT | NOT WS_BORDER | WS_VSCROLL | 
+                    WS_TABSTOP
+    LISTBOX         IDC_HOTKEY_LST_CHILD,71,37,43,81,NOT LBS_NOTIFY | 
+                    LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | 
+                    LBS_NOINTEGRALHEIGHT | NOT WS_BORDER | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "",IDC_HOTKEY_STA_OLD,122,39,8,8
+    CONTROL         "HotKey8",IDC_HOTKEY,"msctls_hotkey32",WS_BORDER | 
+                    WS_TABSTOP,0,0,6,6
+    CONTROL         "触发",IDC_HOTKEY_BTN_SET,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,122,60,66,11
+    CONTROL         "删除",IDC_HOTKEY_BTN_DEL,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,138,108,29,10
+END
+
+IDD_DIALOG_MSGSEND DIALOG DISCARDABLE  0, 0, 176, 114
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "关闭",IDC_MSGSEND_CLOSEB,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,149,86,16,16
+    CONTROL         "发送",IDC_MSGSEND_SEND,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,108,87,26,12
+    LTEXT           "姓名",IDC_MSGSEND_NAME,58,20,26,7
+    EDITTEXT        IDC_MSGSEND_DATA,10,30,151,42,ES_MULTILINE
+END
+
+IDD_DIALOG_MPCBOOTH DIALOG DISCARDABLE  0, 0, 189, 128
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "C",IDC_MPCBOOTH_BTN_CLOSES,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,174,5,10,10
+    CONTROL         "H",IDC_BTN_HELP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,22,112,23,12
+    CONTROL         "关闭",IDC_MPCBOOTH_CLOSEB,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,144,112,23,12
+    CONTROL         "U",IDC_MPCBOOTH_BTN_UP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,171,23,11,10
+    CONTROL         "D",IDC_MPCBOOTH_BTN_DOWN,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,171,92,11,10
+    CONTROL         "撤回摊位",IDC_MPCBOOTH_BTN_RECALL,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,56,112,33,11
+    CONTROL         "设置叫卖",IDC_MPCBOOTH_BTN_HAWK,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,100,112,33,11
+    CONTROL         "修改1",IDC_MPCBOOTH_BTN_CHANGE1,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_DISABLED | WS_TABSTOP,41,35,23,12
+    CONTROL         "取回1",IDC_MPCBOOTH_BTN_GETBACK1,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,41,35,23,12
+    CONTROL         "修改2",IDC_MPCBOOTH_BTN_CHANGE2,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_DISABLED | WS_TABSTOP,119,35,23,12
+    CONTROL         "取回2",IDC_MPCBOOTH_BTN_GETBACK2,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,119,35,23,12
+    CONTROL         "修改3",IDC_MPCBOOTH_BTN_CHANGE3,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_DISABLED | WS_TABSTOP,41,63,23,12
+    CONTROL         "取回3",IDC_MPCBOOTH_BTN_GETBACK3,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,41,63,23,12
+    CONTROL         "修改4",IDC_MPCBOOTH_BTN_CHANGE4,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_DISABLED | WS_TABSTOP,119,63,23,12
+    CONTROL         "取回4",IDC_MPCBOOTH_BTN_GETBACK4,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,119,63,23,12
+    CONTROL         "修改5",IDC_MPCBOOTH_BTN_CHANGE5,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_DISABLED | WS_TABSTOP,41,92,23,12
+    CONTROL         "取回5",IDC_MPCBOOTH_BTN_GETBACK5,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,41,92,23,12
+    CONTROL         "修改6",IDC_MPCBOOTH_BTN_CHANGE6,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_DISABLED | WS_TABSTOP,119,92,23,12
+    CONTROL         "取回6",IDC_MPCBOOTH_BTN_GETBACK6,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,119,92,23,12
+    CONTROL         "物品1",IDC_MPCBOOTH_IMA_GOOD1,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,15,23,22,22
+    CONTROL         "物品2",IDC_MPCBOOTH_IMA_GOOD2,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,93,23,22,22
+    CONTROL         "物品3",IDC_MPCBOOTH_IMA_GOOD3,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,15,52,22,22
+    CONTROL         "物品4",IDC_MPCBOOTH_IMA_GOOD4,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,93,52,22,22
+    CONTROL         "物品5",IDC_MPCBOOTH_IMA_GOOD5,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,15,81,22,22
+    CONTROL         "物品6",IDC_MPCBOOTH_IMA_GOOD6,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,93,80,22,22
+    LTEXT           "",IDC_STA_PRICE1,41,26,47,8
+    LTEXT           "",IDC_STA_PRICE2,119,26,47,8
+    LTEXT           "",IDC_STA_PRICE3,41,53,47,8
+    LTEXT           "",IDC_STA_PRICE4,119,53,47,8
+    LTEXT           "",IDC_STA_PRICE5,41,82,47,8
+    LTEXT           "",IDC_STA_PRICE6,119,82,47,8
+END
+
+IDD_DIALOG_NPCBOOTH DIALOG DISCARDABLE  0, 0, 189, 128
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "H",IDC_BTN_HELP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,22,112,23,12
+    CONTROL         "购买",IDC_NPCBOOTH_BTN_BUY1,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,41,35,23,12
+    CONTROL         "购买",IDC_NPCBOOTH_BTN_BUY2,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,119,35,23,12
+    CONTROL         "购买",IDC_NPCBOOTH_BTN_BUY3,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,41,63,23,12
+    CONTROL         "购买",IDC_NPCBOOTH_BTN_BUY4,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,119,63,23,12
+    CONTROL         "购买",IDC_NPCBOOTH_BTN_BUY5,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,41,92,23,12
+    CONTROL         "购买",IDC_NPCBOOTH_BTN_BUY6,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,119,92,23,12
+    CONTROL         "U",IDC_NPCBOOTH_BTN_UP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,171,23,11,10
+    CONTROL         "D",IDC_NPCBOOTH_BTN_DOWN,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,171,92,11,10
+    CONTROL         "C",IDC_NPCBOOTH_BTN_CLOSE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,174,5,10,10
+    CONTROL         "C",IDC_NPCBOOTH_BTN_CLOSEB,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,128,112,23,12
+    CONTROL         "物品1",IDC_NPCBOOTH_IMA_GOOD1,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,15,23,22,22
+    CONTROL         "物品2",IDC_NPCBOOTH_IMA_GOOD2,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,93,23,22,22
+    CONTROL         "物品3",IDC_NPCBOOTH_IMA_GOOD3,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,15,52,22,22
+    CONTROL         "物品4",IDC_NPCBOOTH_IMA_GOOD4,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,93,52,22,22
+    CONTROL         "物品5",IDC_NPCBOOTH_IMA_GOOD5,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,15,81,22,22
+    CONTROL         "物品6",IDC_NPCBOOTH_IMA_GOOD6,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,93,80,22,22
+    LTEXT           "",IDC_STA_PRICE11,41,26,47,8
+    LTEXT           "",IDC_STA_PRICE22,119,26,47,8
+    LTEXT           "",IDC_STA_PRICE33,41,53,47,8
+    LTEXT           "",IDC_STA_PRICE44,119,53,47,8
+    LTEXT           "",IDC_STA_PRICE55,41,82,47,8
+    LTEXT           "",IDC_STA_PRICE66,119,82,47,8
+END
+
+IDD_DIALOG_HAWK DIALOG DISCARDABLE  0, 0, 242, 65
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "确定",IDC_HAWK_BTN_AGREE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,198,48,30,13
+    CONTROL         "C",IDC_HAWK_BTN_CLOSES,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,227,6,10,10
+    EDITTEXT        IDC_HAWK_EDT_DATA,17,29,205,12,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_MSGRECEIVE DIALOG DISCARDABLE  0, 0, 176, 114
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "关闭",IDC_MSGRECEIVE_CLOSEB,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,149,86,16,16
+    LTEXT           "姓名",IDC_MSGRECEIVE_NAME,41,26,26,7
+    EDITTEXT        IDC_MSGRECEIVE_DATA,10,45,141,36,ES_MULTILINE | 
+                    ES_READONLY
+    CONTROL         "回复",IDC_MSGRECEIVE_REVERT,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,107,88,26,12
+    CONTROL         "U",IDC_BTN_UP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,157,19,17,17
+    CONTROL         "D",IDC_BTN_DOWN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,157,61,17,17
+    LTEXT           "时间",IDC_MSGRECEIVE_TIME,121,26,26,7
+END
+
+IDD_DIALOG_BLACK DIALOG DISCARDABLE  0, 0, 124, 104
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "C",IDC_BLACK_BTN_CLOSES,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,111,4,10,10
+    CONTROL         "H",IDC_BTN_HELP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,17,87,23,12
+    CONTROL         "关闭",IDC_BLACK_CLOSEB,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,83,87,23,12
+    CONTROL         "删除",IDC_BLACK_BTN_DEL,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,15,74,28,11
+    CONTROL         "添加",IDC_BLACK_BTN_ADD,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,78,74,28,11
+    LISTBOX         IDC_BLACK_LST_DATA,10,18,98,41,NOT LBS_NOTIFY | 
+                    LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | 
+                    LBS_NOINTEGRALHEIGHT | NOT WS_BORDER | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_BLACK_EDT_NAME,54,60,56,12,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_LEVWORD DIALOG DISCARDABLE  0, 0, 330, 153
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "C",IDC_LEVWORD_BTN_CLOSES,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,317,5,10,10
+    CONTROL         "H",IDC_BTN_HELP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,267,137,23,12
+    CONTROL         "关闭",IDC_LEVWORD_CLOSEB,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,293,137,23,12
+    CONTROL         "发布",IDC_LEVWORD_BTN_SEND,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,14,124,29,10
+    CONTROL         "查看",IDC_LEVWORD_BTN_WATCH,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,46,124,29,10
+    CONTROL         "上一页",IDC_LEVWORD_BTN_UP,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,222,124,29,10
+    CONTROL         "下一页",IDC_LEVWORD_BTN_DOWN,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,254,124,29,10
+    CONTROL         "删除",IDC_LEVWORD_BTN_DEL,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,190,124,29,10
+    CONTROL         "刷新",IDC_LEVWORD_BTN_FLASH,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,287,124,29,10
+    CONTROL         "交易",IDC_LEVWORD_BTN_TRADE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,14,137,23,12
+    CONTROL         "交友",IDC_LEVWORD_BTN_FRIEND,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,47,137,23,12
+    CONTROL         "组队",IDC_LEVWORD_BTN_GROUP,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,80,137,23,12
+    CONTROL         "帮派",IDC_LEVWORD_BTN_FACTION,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,113,137,23,12
+    CONTROL         "其他",IDC_LEVWORD_BTN_OTHER,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,146,137,23,12
+    EDITTEXT        IDC_LEVWORD_EDT_DATA,27,29,279,72,ES_MULTILINE
+    LISTBOX         IDC_LEVWORD_LST_LIST,15,24,298,85,NOT LBS_NOTIFY | 
+                    LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | 
+                    LBS_NOINTEGRALHEIGHT | NOT WS_BORDER | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "确定",IDC_BTN_OK,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_DISABLED | WS_TABSTOP,256,111,23,12
+    CONTROL         "取消",IDC_BTN_CANCEL,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_DISABLED | WS_TABSTOP,282,111,23,12
+END
+
+IDD_DIALOG_EFFIGY DIALOG DISCARDABLE  0, 0, 120, 190
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "H",IDC_BTN_HELP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,6,171,23,12
+    CONTROL         "关闭",IDC_EFFIGY_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,90,171,23,12
+    CONTROL         "C",IDC_EFFIGY_CLOSES,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,106,4,10,10
+    CONTROL         "确定",IDC_EFFIGY_OK,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,48,171,23,12
+    CONTROL         "扮酷",IDC_ACT_BTN1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,93,19,15,15
+    CONTROL         "半跪",IDC_ACT_BTN2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,93,34,15,15
+    CONTROL         "悲哀",IDC_ACT_BTN3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,93,50,15,15
+    CONTROL         "高兴",IDC_ACT_BTN4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,93,65,15,15
+    CONTROL         "生气",IDC_ACT_BTN5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,93,81,15,15
+    CONTROL         "舞蹈",IDC_ACT_BTN6,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,93,96,15,15
+    CONTROL         "招呼",IDC_ACT_BTN7,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,93,112,15,15
+    CONTROL         "作揖",IDC_ACT_BTN8,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,93,127,15,15
+    CONTROL         "播放",IDC_EFFIGY_PANDP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,34,152,29,10
+    CONTROL         "左转",IDC_EFFIGY_LEFT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,17,152,10,10
+    CONTROL         "右转",IDC_EFFIGY_RIGHT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,70,152,10,10
+END
+
+IDD_DIALOG_LAY DIALOG DISCARDABLE  0, 0, 124, 104
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "C",IDC_LAY_BTN_CLOSES,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,111,4,10,10
+    CONTROL         "H",IDC_BTN_HELP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,17,87,23,12
+    CONTROL         "关闭",IDC_LAY_CLOSEB,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,83,87,23,12
+    CONTROL         "确定",IDC_BTN_OK,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,24,66,23,12
+    CONTROL         "取消",IDC_BTN_CANCEL,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,77,67,23,12
+    CONTROL         "左转",IDC_LAY_LEFT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,28,33,10,10
+    CONTROL         "右转",IDC_LAY_RIGHT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,81,33,10,10
+END
+
+IDD_DIALOG_OTHER DIALOG DISCARDABLE  0, 0, 184, 118
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "C",IDC_BTN_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,171,3,10,10
+    CONTROL         "H",IDC_BTN_HELP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,31,103,23,12
+    CONTROL         "关闭",IDC_BTN_CLOSEB,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,129,103,23,12
+    CONTROL         "摆放物品",IDC_OTHER_BTN_LAY,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,70,24,35,11
+    CONTROL         "删除物品",IDC_OTHER_BTN_DEL,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,119,24,35,11
+END
+
+IDD_DIALOG_FACSTATE DIALOG DISCARDABLE  0, 0, 73, 77
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "C",IDC_FACSTATE_BTN_CLOSE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,60,4,10,10
+    LTEXT           "姓名",IDC_STA1,11,21,8,8
+    LTEXT           "帮派贡献",IDC_STA4,36,53,8,8
+    LTEXT           "帮派职务",IDC_STA3,36,43,8,8
+    LTEXT           "等级",IDC_STA2,36,33,8,8
+END
+
+IDD_DIALOG_NPCEQUIP DIALOG DISCARDABLE  0, 0, 122, 207
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "C",IDC_BTN_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,91,171,15,15
+    CONTROL         "?",IDC_IMG_OTHER,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,22,37,19,19
+    CONTROL         "精灵",IDC_IMG_NUMEN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,77,37,19,19
+    CONTROL         "左手",IDC_IMG_LWEAPON,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,22,65,19,19
+    CONTROL         "头盔",IDC_IMG_HEAD,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,49,37,19,19
+    CONTROL         "项链",IDC_IMG_NECK,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,49,65,19,19
+    CONTROL         "戒指",IDC_IMG_GEAR,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,77,65,19,19
+    CONTROL         "盔甲",IDC_IMG_BODY,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,49,92,19,19
+    CONTROL         "右手",IDC_IMG_RWEAPON,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,77,92,19,19
+    CONTROL         "座骑",IDC_IMG_PET,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,22,118,19,19
+    CONTROL         "鞋子",IDC_IMG_SHOE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,67,157,19,19
+END
+
+IDD_DIALOG_DICE DIALOG DISCARDABLE  0, 0, 158, 184
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "全1",IDC_DICE_IMA_ALL1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,4,5,25,25
+    CONTROL         "全2",IDC_DICE_IMA_ALL2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,29,5,25,25
+    CONTROL         "全3",IDC_DICE_IMA_ALL3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,54,5,25,25
+    CONTROL         "全4",IDC_DICE_IMA_ALL4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,79,5,25,25
+    CONTROL         "全5",IDC_DICE_IMA_ALL5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,104,5,25,25
+    CONTROL         "全6",IDC_DICE_IMA_ALL6,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,129,5,25,25
+    CONTROL         "4",IDC_DICE_IMA_4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,4,30,25,25
+    CONTROL         "5",IDC_DICE_IMA_5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,4,55,25,25
+    CONTROL         "6",IDC_DICE_IMA_6,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,4,80,25,25
+    CONTROL         "7",IDC_DICE_IMA_7,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,4,105,25,25
+    CONTROL         "8",IDC_DICE_IMA_8,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,4,130,25,25
+    CONTROL         "9",IDC_DICE_IMA_9,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,29,130,25,25
+    CONTROL         "10",IDC_DICE_IMA_10,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,54,130,25,25
+    CONTROL         "11",IDC_DICE_IMA_11,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,79,130,25,25
+    CONTROL         "12",IDC_DICE_IMA_12,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,104,130,25,25
+    CONTROL         "13",IDC_DICE_IMA_13,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,129,130,25,25
+    CONTROL         "14",IDC_DICE_IMA_14,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,129,105,25,25
+    CONTROL         "15",IDC_DICE_IMA_15,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,129,80,25,25
+    CONTROL         "16",IDC_DICE_IMA_16,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,129,55,25,25
+    CONTROL         "17",IDC_DICE_IMA_17,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,129,30,25,25
+    CONTROL         "小",IDC_DICE_IMA_SMALL,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,29,30,50,100
+    CONTROL         "大",IDC_DICE_IMA_BIG,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,79,30,50,100
+    CONTROL         "下注",IDC_DICE_BTN_CHIPIN,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,126,158,20,10
+    CONTROL         " 隐藏",IDC_DICE_BTN_HIDE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,126,169,20,10
+    CONTROL         "100元",IDC_DICE_BTN_CHIP100,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,16,162,12,12
+    CONTROL         "1000元",IDC_DICE_BTN_CHIP1000,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,37,162,12,12
+    CONTROL         "10000元",IDC_DICE_BTN_CHIP10000,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,58,162,12,12
+    LTEXT           "玩家赌注",IDC_DICE_STA_MPC,98,158,8,8
+    LTEXT           "全部赌注",IDC_DICE_STA_ALL,98,169,8,8
+    CONTROL         "列表",IDC_DICE_BTN_DICELIST,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,5,168,10,10
+    LTEXT           "赌注",IDC_DICE_STA_CHIP,4,155,8,8
+    CONTROL         "恢复",IDC_DICE_BTN_RESUME,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,1,169,37,15
+END
+
+IDD_DIALOG_DICELIST DIALOG DISCARDABLE  0, 0, 80, 184
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    LISTBOX         IDC_DICELIST_LIST,5,5,70,174,NOT LBS_NOTIFY | 
+                    LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | 
+                    LBS_NOINTEGRALHEIGHT | WS_TABSTOP
+END
+
+IDD_MENU_GROUP DIALOG DISCARDABLE  0, 0, 37, 45
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "STOP",IDC_GROUP_CHK_STOP,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,26,33,9,10
+    CONTROL         "MONEY",IDC_GROUP_CHK_MONEY,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,26,7,9,10
+    CONTROL         "ITEM",IDC_GROUP_CHK_ITEM,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,26,20,9,10
+END
+
+IDD_DIALOG_ENEMY DIALOG DISCARDABLE  0, 0, 97, 172
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    LISTBOX         IDC_ENEMY_LST_DATA,16,24,67,118,NOT LBS_NOTIFY | 
+                    LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | 
+                    LBS_NOINTEGRALHEIGHT | NOT WS_BORDER | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "C",IDC_ENEMY_BTN_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,82,156,11,11
+    CONTROL         "H",IDC_BTN_HELP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_DISABLED | WS_TABSTOP,87,3,8,8
+    CONTROL         "添加好友",IDC_ENEMY_BTN_ADD,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,15,145,26,10
+    CONTROL         "好友/敌人",IDC_ENEMY_BTN_FRIEND,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,52,145,26,10
+    CONTROL         "UP",IDC_BTN_UP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,86,24,7,10
+    CONTROL         "D",IDC_BTN_DOWN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,86,134,7,10
+END
+
+IDD_DIALOG_ENMSTATE DIALOG DISCARDABLE  0, 0, 97, 169
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "C",IDC_ENMSTATE_BTN_CLOSE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,81,156,12,11
+    LTEXT           "姓名",IDC_STA1,21,68,53,8
+    LTEXT           "等级",IDC_STA2,36,88,36,8
+    LTEXT           "职业",IDC_STA3,36,98,36,8
+    LTEXT           "PK值",IDC_STA4,36,108,36,8
+    CONTROL         "删除",IDC_ENMSTATE_BTN_DEL,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,34,151,29,11
+    LTEXT           "帮派",IDC_STA5,21,120,36,8
+    LTEXT           "帮派职务",IDC_STA6,21,131,36,8
+    LTEXT           "配偶",IDC_STA7,21,78,53,8
+    CONTROL         "FACE",IDC_ENMSTATE_IMAFACE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,30,18,30,30
+END
+
+IDD_DIALOG_PROINTRO DIALOG DISCARDABLE  0, 0, 252, 82
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    LTEXT           "",IDC_STA_1,10,27,21,8
+    LTEXT           "",IDC_STA_2,10,40,21,8
+    LTEXT           "",IDC_STA_3,10,53,21,8
+    CONTROL         "C",IDC_BTN_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,239,3,10,10
+END
+
+IDD_DIALOG_INSHELP DIALOG DISCARDABLE  0, 0, 247, 144
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "C",IDC_INSHELP_BTN_CLOSES,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,234,3,10,10
+    CONTROL         "更多帮助",IDC_INSHELP_BTN_MORE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,12,128,28,11
+    CONTROL         "帮助",IDC_INSHELP_BTN_HELP,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,0,0,19,16
+    CONTROL         "关闭",IDC_INSHELP_BTN_CLOSEB,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,214,129,23,12
+    CONTROL         "技巧",IDC_INSHELP_BTN_TIP,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,88,128,28,11
+    CONTROL         "上页",IDC_INSHELP_BTN_PAGEUP,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,125,128,28,11
+    CONTROL         "下页",IDC_INSHELP_BTN_PAGEDOWN,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,162,128,28,11
+END
+
+IDD_DIALOG_LOGO DIALOG DISCARDABLE  0, 0, 320, 240
+STYLE DS_CENTER | WS_POPUP
+FONT 12, "宋体"
+BEGIN
+END
+
+IDD_DIALOG_TALKACT DIALOG DISCARDABLE  0, 0, 113, 59
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "关闭",IDC_TALKACT_BTN_CLOSEB,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,84,41,23,12
+    CONTROL         "帮助",IDC_TALKACT_BTN_HELP,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,6,41,23,12
+    CONTROL         "上翻",IDC_TALKACT_BTN_PAGEUP,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,32,41,23,12
+    CONTROL         "下翻",IDC_TALKACT_BTN_PAGEDOWN,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,58,41,23,12
+END
+
+IDD_DIALOG_QUERY_TITLE DIALOG DISCARDABLE  0, 0, 128, 158
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "选择显示",IDC_BTN_SHOW,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,43,48,41,11
+    CONTROL         "U",IDC_BTN_UP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,116,61,7,7
+    CONTROL         "D",IDC_BTN_DOWN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,116,129,7,7
+END
+
+IDD_DIALOG_HEAD DIALOG DISCARDABLE  0, 0, 66, 75
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "人物头象",IDC_IMG_HEADB,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,1,10,65,65
+    CONTROL         "人物头象",IDC_IMG_HEADS,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,33,43,32,32
+    LTEXT           "称号",IDC_STA_TITLE,48,2,18,8
+    LTEXT           "公爵",IDC_STA_DUKE,15,2,18,8
+END
+
+IDD_DIALOG_MIPMAP DIALOG DISCARDABLE  0, 0, 66, 82
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "C",IDC_BTN_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,58,0,8,8
+    CONTROL         "C",IDC_BTN_ZOOMIN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,52,0,6,6
+    CONTROL         "C",IDC_BTN_ZOOMOUT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,60,8,6,6
+    LTEXT           "",IDC_STA_NAME,1,1,32,8
+END
+
+IDD_DIALOG_EQUIP DIALOG DISCARDABLE  0, 0, 149, 203
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "披风",IDC_IMG_MANTLE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,21,73,17,17
+    CONTROL         "头盔",IDC_IMG_HEAD,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,21,44,17,17
+    CONTROL         "项链",IDC_IMG_NECK,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,113,44,17,17
+    CONTROL         "戒指",IDC_IMG_GEAR,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,113,104,17,17
+    CONTROL         "盔甲",IDC_IMG_BODY,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,113,73,17,17
+    CONTROL         "武器",IDC_IMG_WEAPON,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,21,104,17,17
+    CONTROL         "鞋子",IDC_IMG_SHOE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,67,129,17,17
+    LTEXT           "",IDC_ROLE_HP,44,155,33,8,WS_BORDER
+    LTEXT           "",IDC_ROLE_XP,44,166,33,8,WS_BORDER
+    LTEXT           "",IDC_ROLE_FIGHT,44,177,33,8,WS_BORDER
+    LTEXT           "",IDC_ROLE_MAGIC,44,188,33,8,WS_BORDER
+    LTEXT           "",IDC_ROLE_MP,102,155,33,8,WS_BORDER
+    LTEXT           "",IDC_ROLE_AVOID,102,166,33,8,WS_BORDER
+    LTEXT           "",IDC_ROLE_FIGHTDEF,102,177,33,8,WS_BORDER | NOT 
+                    WS_GROUP
+    LTEXT           "",IDC_ROLE_MAGICDEF,102,188,33,8,WS_BORDER | NOT 
+                    WS_GROUP
+END
+
+IDD_DIALOG_MSG DIALOG DISCARDABLE  0, 0, 256, 139
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "U",IDC_BTN_UPALL,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,55,128,10,10
+    CONTROL         "U",IDC_BTN_UPCUR,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,85,128,10,10
+    CONTROL         "U",IDC_BTN_UPFRIEND,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,115,128,10,10
+    CONTROL         "U",IDC_BTN_UPTEAM,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,145,128,10,10
+    CONTROL         "U",IDC_BTN_UPPRIVATE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,175,128,10,10
+    CONTROL         "U",IDC_BTN_UPKNIGHT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,205,128,10,10
+    CONTROL         "全部",IDC_BTN_ALL,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,37,128,18,10
+    CONTROL         "当前",IDC_BTN_CUR,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,67,128,18,10
+    CONTROL         "好友",IDC_BTN_FRIEND,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,97,128,18,10
+    CONTROL         "队伍",IDC_BTN_TEAM,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,127,128,18,10
+    CONTROL         "私聊",IDC_BTN_PRIVATE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,157,128,18,10
+    CONTROL         "骑士团",IDC_BTN_KNIGHT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,187,128,18,10
+    CONTROL         "清屏",IDC_BTN_CLEAR,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,231,128,25,10
+    CONTROL         "U",IDC_BTN_UP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,249,0,7,7
+    CONTROL         "D",IDC_BTN_DOWN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,249,120,7,7
+    CONTROL         "恢复",IDC_BTN_RESUME,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    NOT WS_VISIBLE | WS_TABSTOP,0,0,14,14
+END
+
+IDD_DIALOG_IDENTIFY DIALOG DISCARDABLE  0, 0, 176, 161
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "确定",IDC_BTN_OK,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,142,105,25,11
+    CONTROL         "取消",IDC_BTN_CANCEL,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,160,145,13,13
+    CONTROL         "物品",IDC_IMG_GOOD,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,52,50,65,65
+END
+
+IDD_DIALOG_PROGRESS DIALOG DISCARDABLE  0, 0, 96, 104
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "Progress1",IDC_PRG_HERO_HP,"msctls_progress32",
+                    PBS_VERTICAL | PBS_SMOOTH | NOT WS_VISIBLE | WS_BORDER,
+                    10,18,35,74
+    CONTROL         "Progress1",IDC_PRG_HERO_MP,"msctls_progress32",
+                    PBS_VERTICAL | PBS_SMOOTH | NOT WS_VISIBLE | WS_BORDER,
+                    53,18,36,74
+    CONTROL         "Progress1",IDC_PRG_HERO_FORCE,"msctls_progress32",
+                    PBS_VERTICAL | PBS_SMOOTH | NOT WS_VISIBLE | WS_BORDER,
+                    47,70,3,22
+    CONTROL         "Progress1",IDC_PRG_HERO_XP,"msctls_progress32",
+                    PBS_VERTICAL | PBS_SMOOTH | NOT WS_VISIBLE | WS_BORDER,4,
+                    11,89,90
+    CONTROL         "Progress1",IDC_PRG_HERO_FORCE2,"msctls_progress32",
+                    PBS_VERTICAL | PBS_SMOOTH | WS_BORDER,47,18,3,22
+    LTEXT           "",IDC_STA_MP,54,41,34,14,WS_DISABLED
+    LTEXT           "",IDC_STA_HP,12,41,31,14,WS_DISABLED
+END
+
+IDD_DIALOG_EMBLEMBUY DIALOG DISCARDABLE  0, 0, 176, 161
+STYLE WS_CHILD
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "帮派徽章",IDC_IMG_EMBLEM1,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,29,60,32,32
+    CONTROL         "帮派徽章",IDC_IMG_EMBLEM2,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,63,60,32,32
+    CONTROL         "帮派徽章",IDC_IMG_EMBLEM3,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,98,60,32,32
+    CONTROL         "帮派徽章",IDC_IMG_EMBLEM4,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,29,96,32,32
+    CONTROL         "帮派徽章",IDC_IMG_EMBLEM5,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,63,96,32,32
+    CONTROL         "帮派徽章",IDC_IMG_EMBLEM6,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,98,96,32,32
+    CONTROL         "关闭",IDC_BTN_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,160,145,13,13
+    CONTROL         "U",IDC_BTN_UP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,139,108,27,10
+    CONTROL         "D",IDC_BTN_DOWN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,139,125,27,10
+    CONTROL         "确定",IDC_BTN_OK,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,105,142,25,11
+END
+
+IDD_DIALOG_MONSTER DIALOG DISCARDABLE  0, 0, 296, 406
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    LTEXT           "",IDC_STATIC_MONSTER1,35,50,108,17,WS_BORDER
+    LTEXT           "",IDC_STATIC_MONSTER2,35,82,108,17,WS_BORDER
+    LTEXT           "",IDC_STATIC_MONSTER3,35,114,108,17,WS_BORDER
+    LTEXT           "",IDC_MONSTER_NAME,84,185,110,16,WS_BORDER
+    LTEXT           "",IDC_MONSTER_LEVEL,84,207,110,16,WS_BORDER
+    LTEXT           "",IDC_MONSTER_MASTER,84,229,110,16,WS_BORDER
+    LTEXT           "",IDC_MONSTER_EXP,84,251,110,16,WS_BORDER
+    LTEXT           "",IDC_MONSTER_HP,78,270,50,16,WS_BORDER
+    LTEXT           "",IDC_MONSTER_FIGHT,78,292,50,16,WS_BORDER
+    LTEXT           "",IDC_MONSTER_MAGIC,78,314,50,16,WS_BORDER
+    LTEXT           "",IDC_MONSTER_SMART,179,270,50,16,WS_BORDER
+    LTEXT           "",IDC_MONSTER_FIGHTDEF,179,292,50,16,WS_BORDER
+    LTEXT           "",IDC_MONSTER_MAGICDEF,179,314,50,16,WS_BORDER
+    CONTROL         "CALL",IDC_BTN_CALL,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,33,133,32,48
+    CONTROL         "CHANGE",IDC_BTN_CHANGE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,73,133,32,48
+    CONTROL         "DROP",IDC_BTN_DROP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,113,133,32,48
+    CONTROL         "IMG",IDC_IMG_MONSTER,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,158,37,120,136
+    CONTROL         "UP",IDC_BTN_UP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,250,178,13,15
+    CONTROL         "DOWN",IDC_BTN_DOWN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,250,303,13,15
+    CONTROL         "SKILL",IDC_GRI_SKILL,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,241,198,32,101
+    CONTROL         "EGGS",IDC_GRI_EGGS,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,46,331,212,32
+    CONTROL         "CLOSE",IDC_BTN_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,268,378,22,22
+END
+
+IDD_DIALOG_QGOOD DIALOG DISCARDABLE  0, 0, 517, 36
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "STONEQ",IDC_GRI_STONEQ,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,2,2,513,32
+END
+
+IDD_DIALOG_STONEGOODS DIALOG DISCARDABLE  0, 0, 403, 233
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "C",IDC_BTN_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,371,202,22,22
+    CONTROL         "GRI1",IDC_STONE_GRI1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,32,64,339,33
+    CONTROL         "GRI2",IDC_STONE_GRI2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,32,97,169,33
+    CONTROL         "GRI3",IDC_STONE_GRI3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,202,97,169,33
+    CONTROL         "GRI4",IDC_STONE_GRI4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,32,131,169,33
+    CONTROL         "GRI5",IDC_STONE_GRI5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,202,131,169,33
+    CONTROL         "GRI6",IDC_STONE_GRI6,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,32,166,169,33
+    CONTROL         "GRI7",IDC_STONE_GRI7,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,202,166,169,33
+    CONTROL         "GRI0",IDC_STONE_GRI0,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,32,31,339,33
+END
+
+IDD_DIALOG_SETUP_GRAPH DIALOG DISCARDABLE  0, 0, 340, 240
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "S",IDC_CHK_SHADOW,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,192,64,20,20
+    CONTROL         "N",IDC_CHK_ROLENAME,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,192,109,20,20
+    CONTROL         "W",IDC_CHK_WEATHER,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,192,153,20,20
+END
+
+IDD_DIALOG_SETUP_CHAT DIALOG DISCARDABLE  0, 0, 340, 240
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "C1",IDC_BTN_COLOR1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,183,145,20,20
+    CONTROL         "P",IDC_BTN_PUB,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,113,51,20,20
+    CONTROL         "S",IDC_BTN_SEC,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,113,86,20,20
+    CONTROL         "T",IDC_BTN_TEAM,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,113,121,20,20
+    CONTROL         "F",IDC_BTN_FRIEND,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,265,50,20,20
+    CONTROL         "B",IDC_BTN_BAN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,265,86,20,20
+    CONTROL         "C1",IDC_BTN_COLOR2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,204,145,20,20
+    CONTROL         "C1",IDC_BTN_COLOR3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,225,145,20,20
+    CONTROL         "C1",IDC_BTN_COLOR4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,246,145,20,20
+    CONTROL         "C1",IDC_BTN_COLOR5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,267,145,20,20
+    CONTROL         "C1",IDC_BTN_COLOR6,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,183,166,20,20
+    CONTROL         "C1",IDC_BTN_COLOR7,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,204,166,20,20
+    CONTROL         "C1",IDC_BTN_COLOR8,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,225,166,20,20
+    CONTROL         "C1",IDC_BTN_COLOR9,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,246,166,20,20
+    CONTROL         "C1",IDC_BTN_COLOR10,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,267,166,20,20
+END
+
+IDD_DIALOG_SETUP_HOTKEY DIALOG DISCARDABLE  0, 0, 340, 240
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    LTEXT           "KEY",IDC_STA_KEY,224,61,78,22,WS_BORDER
+    CONTROL         "SET",IDC_BTN_SETKEY,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,229,107,66,22
+    CONTROL         "RESET",IDC_BTN_RESETKEYS,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,229,141,66,22
+    LISTBOX         IDC_LIST_HOTKEYM,17,61,96,120,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_LIST_HOTKEYN,118,61,96,120,NOT LBS_NOTIFY | 
+                    LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DIALOG_SETUP_MUSIC DIALOG DISCARDABLE  0, 0, 340, 240
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "S",IDC_CHK_SOUND,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,151,69,20,20
+    CONTROL         "M",IDC_CHK_MUSIC,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,152,134,20,20
+    CONTROL         "<",IDC_BTN_SOUNDLEFT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,114,102,16,12
+    CONTROL         ">",IDC_BTN_SOUNDRIGHT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,240,102,16,12
+    CONTROL         "<",IDC_BTN_MUSICLEFT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,117,170,16,12
+    CONTROL         ">",IDC_BTN_MUSICRIGHT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,240,170,16,12
+    LTEXT           "",IDC_STA_SOUND,167,102,32,12,WS_BORDER
+    LTEXT           "",IDC_STA_MUSIC,167,170,35,12,WS_BORDER
+END
+
+IDD_DIALOG_FACTION DIALOG DISCARDABLE  0, 0, 430, 297
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+END
+
+IDD_DIALOG_KNIGHTAGE DIALOG DISCARDABLE  0, 0, 441, 418
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "BASE",IDC_CHK_BASE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,29,348,56,24
+    CONTROL         "MEMBER",IDC_CHK_MEMBER,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,95,348,56,24
+    CONTROL         "RESOURCE",IDC_CHK_RESOURCE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,160,348,56,24
+    CONTROL         "BILLBOARD",IDC_CHK_BILLBOARD,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,226,348,56,24
+    CONTROL         "LEVWORD",IDC_CHK_LEVWORD,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,292,348,56,24
+    CONTROL         "ENEMY",IDC_CHK_ENEMY,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,358,348,56,24
+    CONTROL         "CLOSE",IDC_BTN_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,408,388,21,21
+END
+
+IDD_DIALOG_KNIGHTAGE_BASE DIALOG DISCARDABLE  0, 0, 420, 400
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "MARK",IDC_IMG_KNIGHTMARK,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,309,35,80,66
+    LTEXT           "JOB",IDC_STA_JOB,146,65,91,17,WS_BORDER
+    LTEXT           "OFFER",IDC_STA_OFFER,146,97,91,17,WS_BORDER
+    LTEXT           "KNIGHT NAME",IDC_STA_KNIGHTNAME,146,129,91,17,WS_BORDER
+    LTEXT           "HEAD NAME",IDC_STA_HEADNAME,146,161,91,17,WS_BORDER
+    LTEXT           "NUMBER",IDC_STA_KNIGHTNUM,146,193,91,17,WS_BORDER
+    LTEXT           "LEVER",IDC_STA_KNIGHTLEV,146,257,91,17,WS_BORDER
+    LTEXT           "FAMOR",IDC_STA_KNIGHTFAMOR,146,225,91,17,WS_BORDER
+    LTEXT           "MONEY",IDC_STA_KNIGHTMONEY,146,289,91,17,WS_BORDER
+END
+
+IDD_DIALOG_KNIGHTAGE_MEMBER DIALOG DISCARDABLE  0, 0, 420, 400
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    LISTBOX         IDC_LIST_MEMBER,248,151,136,161,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "军团长",IDC_STA_HEADNAME,173,73,204,18,WS_BORDER
+    CONTROL         "ADD",IDC_BTN_ADD,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,39,268,40,26
+    CONTROL         "ORDER",IDC_BTN_ORDER,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,39,297,40,26
+    CONTROL         "DOEDIT",IDC_BTN_DOEDIT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,86,268,40,26
+    CONTROL         "OUT",IDC_BTN_OUT,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,86,297,40,26
+    EDITTEXT        IDC_EDT_TEAMHEAD,248,125,83,22,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_SECOND,174,94,203,22,ES_AUTOHSCROLL
+    CONTROL         "ORDEROK",IDC_BTN_ORDEROK,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,141,298,40,23
+    CONTROL         "ORDERCANCEL",IDC_BTN_ORDERCANCEL,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,188,298,40,23
+END
+
+IDD_DIALOG_KNIGHTAGE_ENEMY DIALOG DISCARDABLE  0, 0, 420, 400
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    LISTBOX         IDC_LIST_ENEMY,217,77,157,239,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_LIST_FRIEND,44,77,157,239,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DIALOG_KNIGHTAGE_RESOURCE DIALOG DISCARDABLE  0, 0, 420, 400
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "SEL",IDC_CHK_SEL1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,128,79,21,18
+    CONTROL         "UP",IDC_BTN_LISTUP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,155,79,21,18
+    CONTROL         "DN",IDC_BTN_LISTDOWN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,155,303,21,18
+    LISTBOX         IDC_LIST_MEMBERS,184,65,157,230,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Button11",IDC_BUTTON11,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,345,65,18,20
+    CONTROL         "Button11",IDC_BUTTON12,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,345,276,18,20
+    CONTROL         "SEL",IDC_CHK_SEL2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,128,111,21,18
+    CONTROL         "SEL",IDC_CHK_SEL3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,128,143,21,18
+    CONTROL         "SEL",IDC_CHK_SEL4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,128,175,21,18
+    CONTROL         "SEL",IDC_CHK_SEL5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,128,207,21,18
+    CONTROL         "SEL",IDC_CHK_SEL6,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,128,239,21,18
+    CONTROL         "SEL",IDC_CHK_SEL7,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,128,271,21,18
+    CONTROL         "SEL",IDC_CHK_SEL8,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,128,303,21,18
+    LTEXT           "Static",IDC_STATIC,34,79,72,19,WS_BORDER
+    LTEXT           "Static",IDC_STATIC,34,111,72,19,WS_BORDER
+    LTEXT           "Static",IDC_STATIC,34,143,72,19,WS_BORDER
+    LTEXT           "Static",IDC_STATIC,34,175,72,19,WS_BORDER
+    LTEXT           "Static",IDC_STATIC,34,207,72,19,WS_BORDER
+    LTEXT           "Static",IDC_STATIC,34,239,72,19,WS_BORDER
+    LTEXT           "Static",IDC_STATIC,34,271,72,19,WS_BORDER
+    LTEXT           "Static",IDC_STATIC,34,303,72,19,WS_BORDER
+END
+
+IDD_DIALOG_KNIGHTAGE_LEVWORD DIALOG DISCARDABLE  0, 0, 420, 400
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    LISTBOX         IDC_LIST_LEVWORD,14,56,363,235,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DIALOG_KNIGHTAGE_BILLBOARD DIALOG DISCARDABLE  0, 0, 420, 400
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    EDITTEXT        IDC_EDT_BILLBOARD,30,79,358,272,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+END
+
+IDD_DIALOG_KNIGHTAGE_STATE DIALOG DISCARDABLE  0, 0, 370, 260
+STYLE WS_CHILD | WS_VISIBLE
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "MARK",IDC_IMG_MARK,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,266,20,87,74
+    LTEXT           "NAME",IDC_STA_NAME,100,35,102,19,SS_CENTERIMAGE | 
+                    WS_BORDER
+    LTEXT           "HEADNAME",IDC_STA_HEADNAME,100,70,102,19,SS_CENTERIMAGE | 
+                    WS_BORDER
+    LTEXT           "NUMBER",IDC_STA_NUMBER,101,105,102,19,SS_CENTERIMAGE | 
+                    WS_BORDER
+    LTEXT           "FAMOR",IDC_STA_FAMOR,100,140,102,19,SS_CENTERIMAGE | 
+                    WS_BORDER
+    LTEXT           "LEVEL",IDC_STA_LEVEL,101,175,102,19,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CONTROL         "CLOSE",IDC_BTN_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,346,236,23,23
+END
+
+IDD_DIALOG_KNIGHTAGE_WORDLOOK DIALOG DISCARDABLE  0, 0, 387, 231
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "CLOSE",IDC_BTN_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,361,206,25,24
+END
+
+IDD_DIALOG_KNIGHTAGE_WORDSEND DIALOG DISCARDABLE  0, 0, 421, 294
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "OK",IDC_BTN_OK,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,243,249,49,25
+    CONTROL         "CANCEL",IDC_BTN_CANCEL,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,321,249,49,25
+END
+
+IDD_DIALOG_KNIGHTAGE_SELDOEDIT DIALOG DISCARDABLE  0, 0, 185, 83
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "REGROUP",IDC_BTN_REGROUP,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,16,18,68,21
+    CONTROL         "RENAME",IDC_BTN_RENAME,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,100,18,68,21
+    CONTROL         "CLOSE",IDC_BTN_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,163,62,19,18
+END
+
+IDD_DIALOG_KNIGHTAGE_REGROUP DIALOG DISCARDABLE  0, 0, 560, 352
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    LISTBOX         IDC_LIST_SELMEMBER,131,118,120,198,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_LIST_OVERMEMBER,384,119,120,198,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "TEAM1",IDC_STA_SELTEAM1,44,136,78,21,WS_BORDER
+    LTEXT           "TEAM2",IDC_STA_SELTEAM2,44,172,78,21,WS_BORDER
+    LTEXT           "TEAM3",IDC_STA_SELTEAM3,44,208,78,21,WS_BORDER
+    LTEXT           "TEAM4",IDC_STA_SELTEAM4,44,244,78,21,WS_BORDER
+    LTEXT           "TEAM5",IDC_STA_SELTEAM5,44,280,78,21,WS_BORDER
+    LTEXT           "TEAM1",IDC_STA_OVERTEAM1,294,134,78,21,WS_BORDER
+    LTEXT           "TEAM2",IDC_STA_OVERTEAM2,294,170,78,21,WS_BORDER
+    LTEXT           "TEAM3",IDC_STA_OVERTEAM3,294,206,78,21,WS_BORDER
+    LTEXT           "TEAM4",IDC_STA_OVERTEAM4,294,242,78,21,WS_BORDER
+    LTEXT           "TEAM5",IDC_STA_OVERTEAM5,294,278,78,21,WS_BORDER
+    LTEXT           "SEL1",IDC_STA_LISTSEL1,44,52,103,17,WS_BORDER
+    LTEXT           "SEL2",IDC_STA_LISTSEL2,379,52,103,17,WS_BORDER
+    CONTROL         "V",IDC_BTN_LISTDOWN1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,148,51,21,18
+    CONTROL         "V",IDC_BTN_LISTDOWN2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,483,51,21,18
+    CONTROL         "MOVE",IDC_BTN_MEMBERMOVE,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,242,47,68,19
+    CONTROL         "CLOSE",IDC_BTN_CLOSE,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,533,326,27,26
+    CONTROL         "A",IDC_BTN_LEFTLISTUP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,257,117,17,17
+    CONTROL         "V",IDC_BTN_LEFTLISTDOWN,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,257,299,17,17
+    CONTROL         "A",IDC_BTN_RIGHTLISTUP,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,511,119,17,17
+    CONTROL         "V",IDC_BTN_RIGHTLISTDOWN,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,511,299,17,17
+END
+
+IDD_DIALOG_KNIGHTAGE_RENAME DIALOG DISCARDABLE  0, 0, 421, 401
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CTEXT           "总团部",IDC_STA_NAME1,40,100,102,24,WS_BORDER
+    EDITTEXT        IDC_EDIT_NAMEDATA,303,101,103,17,ES_AUTOHSCROLL
+    CONTROL         "OK",IDC_BTN_RENAMEOK,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,314,156,81,21
+    CONTROL         "CANCEL",IDC_BTN_RENAMECANCEL,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,314,202,81,21
+    CTEXT           "分团部1",IDC_STA_NAME2,40,146,102,24,WS_BORDER
+    CTEXT           "分团部2",IDC_STA_NAME3,42,192,102,24,WS_BORDER
+    CTEXT           "分团部3",IDC_STA_NAME8,42,238,102,24,WS_BORDER
+    CTEXT           "分团部4",IDC_STA_NAME9,43,284,102,24,WS_BORDER
+    CTEXT           "分团部5",IDC_STA_NAME10,43,330,102,24,WS_BORDER
+    CTEXT           "骑士队1",IDC_STA_NAME11,169,101,102,24,WS_BORDER
+    CTEXT           "骑士队2",IDC_STA_NAME12,170,147,102,24,WS_BORDER
+    CTEXT           "骑士队3",IDC_STA_NAME13,170,193,102,24,WS_BORDER
+    CTEXT           "骑士队4",IDC_STA_NAME14,170,239,102,24,WS_BORDER
+    CTEXT           "骑士队5",IDC_STA_NAME15,170,285,102,24,WS_BORDER
+END
+
+IDD_DIALOG_SERVER DIALOG DISCARDABLE  0, 0, 336, 343
+STYLE WS_CHILD
+FONT 5, "Small Fonts"
+BEGIN
+    CONTROL         "SERVER1",IDC_BTN_SERVER1,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,104,40,127,21
+    CONTROL         "",IDC_STA_SERVER1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,104,64,127,9
+    CONTROL         "",IDC_STA_SERVER2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,104,122,127,9
+    CONTROL         "",IDC_STA_SERVER3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,104,177,127,9
+    CONTROL         "",IDC_STA_SERVER4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,104,229,127,9
+    CONTROL         "",IDC_STA_SERVER5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,104,282,127,9
+    CONTROL         "SERVER2",IDC_BTN_SERVER2,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,104,98,127,21
+    CONTROL         "SERVER3",IDC_BTN_SERVER3,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,104,152,127,21
+    CONTROL         "SERVER4",IDC_BTN_SERVER4,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,104,204,127,21
+    CONTROL         "SERVER5",IDC_BTN_SERVER5,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,104,257,127,21
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "MyShell Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "MyShell\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2002\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MyShell.EXE\0"
+            VALUE "ProductName", "MyShell 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 338
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 179
+    END
+
+    IDD_MAIN_DIALOG, DIALOG
+    BEGIN
+        VERTGUIDE, 197
+        HORZGUIDE, 160
+    END
+
+    IDD_DIALOG_ACT, DIALOG
+    BEGIN
+        RIGHTMARGIN, 189
+    END
+
+    IDD_DIALOG_ROLECHOOSE, DIALOG
+    BEGIN
+        HORZGUIDE, 290
+    END
+
+    IDD_DIALOG_TITLEBAR, DIALOG
+    BEGIN
+        RIGHTMARGIN, 501
+    END
+
+    IDD_DIALOG_KONGFU, DIALOG
+    BEGIN
+        RIGHTMARGIN, 258
+    END
+
+    IDD_DIALOG_LOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 331
+        BOTTOMMARGIN, 202
+    END
+
+    IDD_MENU_GROUP, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 44
+    END
+
+    IDD_DIALOG_HEAD, DIALOG
+    BEGIN
+        RIGHTMARGIN, 65
+    END
+
+    IDD_DIALOG_PROGRESS, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 98
+    END
+
+    IDD_DIALOG_SERVER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 329
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 336
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_POINT        CURSOR  DISCARDABLE     "res\\sword.cur"
+IDC_CURSOR_PK           CURSOR  DISCARDABLE     "res\\cursor1.cur"
+IDC_CURSOR_FIX          CURSOR  DISCARDABLE     "res\\H_NS.CUR"
+IDC_CURSOR_TEAMJOIN     CURSOR  DISCARDABLE     "res\\TeamJoin.cur"
+IDC_CURSOR_TEAMINVITE   CURSOR  DISCARDABLE     "res\\TeamInvite.cur"
+IDC_CURSOR_FACOUT       CURSOR  DISCARDABLE     "res\\FacOut.cur"
+IDC_CURSOR_FRDADD       CURSOR  DISCARDABLE     "res\\FrdAdd.cur"
+IDC_CURSOR_MARRY        CURSOR  DISCARDABLE     "res\\Marry.cur"
+IDC_CURSOR_FACIN        CURSOR  DISCARDABLE     "res\\FacIn.cur"
+IDC_CURSOR_TRADE        CURSOR  DISCARDABLE     "res\\Trade.cur"
+IDC_CURSOR_DELNPC       CURSOR  DISCARDABLE     "res\\DelNpc.cur"
+IDC_CURSOR_NPCEQUIP     CURSOR  DISCARDABLE     "res\\NpcEquip.cur"
+IDC_CURSOR_CHIP10000    CURSOR  DISCARDABLE     "res\\Chip10000.cur"
+IDC_CURSOR_CHIP1000     CURSOR  DISCARDABLE     "res\\Chip1000.cur"
+IDC_CURSOR_CHIP100      CURSOR  DISCARDABLE     "res\\Chip100.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 MyShell(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\MyShell.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
