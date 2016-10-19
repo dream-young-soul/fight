@@ -1,0 +1,728 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Network">
+      <UniqueIdentifier>{f8e585d0-a95d-4f87-96d6-c4addae8d2e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Channel">
+      <UniqueIdentifier>{6bedeb1c-1e11-4156-a039-45df19cc9187}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Item">
+      <UniqueIdentifier>{99762a51-5db0-44b8-abca-673d6e68e178}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Friend">
+      <UniqueIdentifier>{a40b0d17-14b3-4ba9-8457-09c57fcae1a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AniEffect">
+      <UniqueIdentifier>{0f748a10-fcd6-4c41-a243-380d6e627a66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog">
+      <UniqueIdentifier>{4171ae3a-545b-4b15-a687-d97b87799c3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ZoomNum">
+      <UniqueIdentifier>{a6071ce8-27a0-408d-b713-cff3ff411a4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Skill">
+      <UniqueIdentifier>{ff4b0246-673b-4feb-bedf-1f3ebd55f25a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Team">
+      <UniqueIdentifier>{58ce3487-c5eb-4fca-a750-91b63a391772}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Professional">
+      <UniqueIdentifier>{b3a50666-5d09-4ad4-b7e6-70ddf2aa98b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LOG">
+      <UniqueIdentifier>{0e872eb7-a469-4bd4-af5a-7669e435cdf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Magic">
+      <UniqueIdentifier>{0383d1b4-897f-41ad-b22f-9065bda9ee98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Role">
+      <UniqueIdentifier>{a6b1f871-1926-4616-8caa-dcbb7477b264}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TxtMsg">
+      <UniqueIdentifier>{2edf3ada-64cc-4f7b-9bfe-8fc8bb60355a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DiceManager">
+      <UniqueIdentifier>{24e03202-c3b9-4bf0-8c7e-29abc2d0e609}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Network\AllMsg.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\EncryptClient.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="LocalEncrypt.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgAccount.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgAction.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgAllot.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgAnnounceInfo.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgAnnounceList.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgAuction.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgBoard.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgConnect.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgDataArray.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgDice.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgEudemonAttrib.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgFlushExp.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgFriend.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgFriendInfo.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgGemEmbed.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgInteract.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgItem.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgItemAttrib.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgItemInfo.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgItemInfoEx.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgLogin.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgLoginAccountEx.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgLoginReplyEx.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgMagicEffect.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgMagicInfo.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgMagicIntone.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgMapInfo.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgMapItem.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgName.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgNpc.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgNpcInfo.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgNpcInfoEX.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgPackage.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgPetInfo.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgPlayer.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgPlayerTask.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgRegister.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgSchoolMember.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgSyndicate.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgSyndicateAttributeInfo.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgSyndicateInfo.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgSynMemberInfo.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgTalk.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgTaskDialog.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgTaskList.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgTeam.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgTeamMember.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgTick.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgTime.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgTrade.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgUserAttrib.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgUserInfo.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgWalk.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgWalkEx.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgWeaponSkill.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\MsgWeather.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\NetMsg.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\NetworkDef.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="RC5_321216.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\Socket.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Entrance.h">
+      <Filter>Channel</Filter>
+    </ClInclude>
+    <ClInclude Include="Register.h">
+      <Filter>Channel</Filter>
+    </ClInclude>
+    <ClInclude Include="Bank.h">
+      <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Booth.h">
+      <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="BoothManager.h">
+      <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="IItemPackage.h">
+      <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemData.h">
+      <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemPackage.h">
+      <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Package.h">
+      <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Shop.h">
+      <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ShopData.h">
+      <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Trade.h">
+      <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Friend</Filter>
+    </ClInclude>
+    <ClInclude Include="Friend.h">
+      <Filter>Friend</Filter>
+    </ClInclude>
+    <ClInclude Include="SchoolMember.h">
+      <Filter>Friend</Filter>
+    </ClInclude>
+    <ClInclude Include="AniEffect.h">
+      <Filter>AniEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="FloatingStr.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="SayHello.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskDialog.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="XpCounterDown.h">
+      <Filter>ZoomNum</Filter>
+    </ClInclude>
+    <ClInclude Include="ZoomNum.h">
+      <Filter>ZoomNum</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponSkill.h">
+      <Filter>Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="Team.h">
+      <Filter>Team</Filter>
+    </ClInclude>
+    <ClInclude Include="Professional.h">
+      <Filter>Professional</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatLog.h">
+      <Filter>LOG</Filter>
+    </ClInclude>
+    <ClInclude Include="Magic.h">
+      <Filter>Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicData.h">
+      <Filter>Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="3DSimpleRole.h">
+      <Filter>Role</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoAllot.h">
+      <Filter>Role</Filter>
+    </ClInclude>
+    <ClInclude Include="Dummy.h">
+      <Filter>Role</Filter>
+    </ClInclude>
+    <ClInclude Include="GamePlayerSet.h">
+      <Filter>Role</Filter>
+    </ClInclude>
+    <ClInclude Include="Hero.h">
+      <Filter>Role</Filter>
+    </ClInclude>
+    <ClInclude Include="Pet.h">
+      <Filter>Role</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Role</Filter>
+    </ClInclude>
+    <ClInclude Include="Role.h">
+      <Filter>Role</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainNpcView.h">
+      <Filter>Role</Filter>
+    </ClInclude>
+    <ClInclude Include="Bulletin.h">
+      <Filter>TxtMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMsg.h">
+      <Filter>TxtMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="DiceManager.h">
+      <Filter>DiceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="AllChanel.h" />
+    <ClInclude Include="Check.h" />
+    <ClInclude Include="EncryptData.h" />
+    <ClInclude Include="FDword.h" />
+    <ClInclude Include="ImageString.h" />
+    <ClInclude Include="ImgNumCounter.h" />
+    <ClInclude Include="ItemObserver.h" />
+    <ClInclude Include="MsgEudemonInfo.h" />
+    <ClInclude Include="NetCmd.h" />
+    <ClInclude Include="TxtCommand.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LocalEncrypt.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgAccount.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgAction.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgAllot.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgAnnounceInfo.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgAnnounceList.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgAuction.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgBoard.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgConnect.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgDataArray.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgDice.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgEudemonAttrib.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgFlushExp.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgFriend.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgFriendInfo.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgGemEmbed.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgInteract.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgItem.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgItemAttrib.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgItemInfo.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgItemInfoEx.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgLogin.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgLoginAccountEx.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgLoginReplyEx.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgMagicEffect.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgMagicInfo.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgMagicIntone.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgMapInfo.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgMapItem.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgName.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgNpc.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgNpcInfo.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgNpcInfoEX.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgPackage.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgPetInfo.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgPlayer.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgPlayerTask.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgRegister.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgSchoolMember.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgSyndicate.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgSyndicateAttributeInfo.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgSyndicateInfo.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgSynMemberInfo.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgTalk.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgTaskDialog.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgTaskList.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgTeam.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgTeamMember.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgTick.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgTime.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgTrade.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgUserAttrib.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgUserInfo.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgWalk.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgWalkEx.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgWeaponSkill.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\MsgWeather.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\NetMsg.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="RC5_321216.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Entrance.cpp">
+      <Filter>Channel</Filter>
+    </ClCompile>
+    <ClCompile Include="Register.cpp">
+      <Filter>Channel</Filter>
+    </ClCompile>
+    <ClCompile Include="Bank.cpp">
+      <Filter>Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Booth.cpp">
+      <Filter>Item</Filter>
+    </ClCompile>
+    <ClCompile Include="BoothManager.cpp">
+      <Filter>Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemData.cpp">
+      <Filter>Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemPackage.cpp">
+      <Filter>Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Package.cpp">
+      <Filter>Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Shop.cpp">
+      <Filter>Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ShopData.cpp">
+      <Filter>Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Trade.cpp">
+      <Filter>Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Friend</Filter>
+    </ClCompile>
+    <ClCompile Include="Friend.cpp">
+      <Filter>Friend</Filter>
+    </ClCompile>
+    <ClCompile Include="SchoolMember.cpp">
+      <Filter>Friend</Filter>
+    </ClCompile>
+    <ClCompile Include="AniEffect.cpp">
+      <Filter>AniEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="FloatingStr.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="SayHello.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskDialog.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="XpCounterDown.cpp">
+      <Filter>ZoomNum</Filter>
+    </ClCompile>
+    <ClCompile Include="ZoomNum.cpp">
+      <Filter>ZoomNum</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponSkill.cpp">
+      <Filter>Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="Team.cpp">
+      <Filter>Team</Filter>
+    </ClCompile>
+    <ClCompile Include="Professional.cpp">
+      <Filter>Professional</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatLog.cpp">
+      <Filter>LOG</Filter>
+    </ClCompile>
+    <ClCompile Include="Magic.cpp">
+      <Filter>Magic</Filter>
+    </ClCompile>
+    <ClCompile Include="MagicData.cpp">
+      <Filter>Magic</Filter>
+    </ClCompile>
+    <ClCompile Include="3DSimpleRole.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoAllot.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="Dummy.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="GamePlayerSet.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="Hero.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroBank.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroDummy.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroEnemy.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroFriend.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroHelpTips.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroItem.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroMagic.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroPackage.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroSchool.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroSyndicate.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroTask.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="heroteam.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroTrade.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroWeaponSkill.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="Pet.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="Role.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="RoleAction.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="RoleInfo.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainNpcView.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="Bulletin.cpp">
+      <Filter>TxtMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMsg.cpp">
+      <Filter>TxtMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="DiceManager.cpp">
+      <Filter>DiceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Check.cpp" />
+    <ClCompile Include="EncryptData.cpp" />
+    <ClCompile Include="FDword.cpp" />
+    <ClCompile Include="GameMain.cpp" />
+    <ClCompile Include="ImageString.cpp" />
+    <ClCompile Include="ImgNumCounter.cpp" />
+    <ClCompile Include="ItemObserver.cpp" />
+    <ClCompile Include="MsgEudemonInfo.cpp" />
+    <ClCompile Include="NetCmd.cpp" />
+    <ClCompile Include="TxtCommand.cpp" />
+    <ClCompile Include="PetMagic.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
