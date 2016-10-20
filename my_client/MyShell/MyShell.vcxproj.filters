@@ -381,6 +381,9 @@
     <ClCompile Include="webbrowser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CrashDumper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DlgNorMsg.h">
@@ -750,6 +753,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="webbrowser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CrashDumper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

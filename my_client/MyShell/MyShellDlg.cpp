@@ -441,10 +441,14 @@ BOOL CMyShellDlg::OnInitDialog()
     // Test the system font
     LOGFONT SystemLogFont ;
     CMyShellDlg::GetFont ()->GetLogFont ( &SystemLogFont ) ;
+
     if ( SystemLogFont.lfHeight != -12 )
     {
         AfxMessageBox ( CMyShellApp::StringChange ( g_objGameDataSet.GetStr ( 10407 ) ) ) ;
-       CMyShellDlg::OnExit ( 1 ) ;
+		//OnExit会抛出异常- 直接终止当前进程比较好- 因为程序确定要结束了
+		::ExitProcess(0);
+		
+       //CMyShellDlg::OnExit ( 1 ) ;
     }
     // create form
     const int nFrmPosX	= _SCR_WIDTH, nFrmPosY = 0;
