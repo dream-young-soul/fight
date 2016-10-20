@@ -328,7 +328,8 @@ bool CMapData::LoadTerrainItemData(FILE* fp)
             break;
         default:
 			{
-				return false;
+				break; //¼æÈİĞÂµØÍ¼ 2016.10.20
+				//return false;
 			}
         }
     }
