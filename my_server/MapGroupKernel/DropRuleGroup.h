@@ -51,7 +51,7 @@ public:
     bool	LoadInfo(IRecordset*	pRes);
     OBJID	GetDropItem();
 
-    bool	IsValid()	{ for (int i = 0; i < m_setRule.size(); i++) if (!m_setRule[i] || !m_setRule[i]->IsValid()) { return false; } return true; }
+    bool	IsValid()	{ for (int i = 0; i < (int)m_setRule.size(); i++) if (!m_setRule[i] || !m_setRule[i]->IsValid()) { return false; } return true; }
 protected:
     typedef std::vector<CDropRule*> RULE_SET;
 

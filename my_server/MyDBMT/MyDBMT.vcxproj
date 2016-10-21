@@ -115,6 +115,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ActionManagerConfig.cpp" />
     <ClCompile Include="source\MyConstRecord.cpp" />
     <ClCompile Include="source\mydatabase.cpp" />
     <ClCompile Include="source\MyField.cpp" />
@@ -122,6 +123,7 @@
     <ClCompile Include="source\myrecordset.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ActionManagerConfig.h" />
     <ClInclude Include="source\myConstrecord.h" />
     <ClInclude Include="source\mydatabase.h" />
     <ClInclude Include="source\MyField.h" />

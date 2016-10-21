@@ -123,7 +123,7 @@ public: // login/logout
     virtual bool	LogoutAgent(CUser* pAgent, BOOL bOffline = true);
     virtual bool	KickOutSocket(SOCKET_ID idSocket, LPCTSTR szReason = NULL);
     virtual void	LogoutAllUser();
-    virtual bool	IsLoginMapGroup(SOCKET_ID idSocket)			{ return (idSocket >= 0 && idSocket < m_setUser.size() && m_setUser[idSocket]); }		// && m_setUser[m_setUser]->idProcess >= MSGPORT_MAPGROUP_FIRST
+    virtual bool	IsLoginMapGroup(SOCKET_ID idSocket)			{ return (idSocket >= 0 && idSocket < (SOCKET_ID)m_setUser.size() && m_setUser[idSocket]); }		// && m_setUser[m_setUser]->idProcess >= MSGPORT_MAPGROUP_FIRST
 
 public: // get user
     virtual CUser*	GetUser(OBJID idUser);

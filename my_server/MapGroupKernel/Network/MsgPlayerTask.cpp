@@ -113,8 +113,7 @@ void CMsgPlayerTask::Process(void* pInfo)
         pUser->SendSysMsg(STR_NOT_SO_MUCH_MONEY);
         return;
     }
-    // ½±Æ·¼ì²é
-    int i;
+
     for (int i = 0; i < _MAX_PRIZE; i++)
     {
         if (m_pInfo->infoItem[i].idItem != ID_NONE)

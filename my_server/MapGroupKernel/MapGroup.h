@@ -29,7 +29,7 @@
 #include "DropRuleMap.h"	//add by zlong 2003-11-15
 #include "MercenaryTask.h"
 #include "Announce.h"
-
+#include "ActionManagerConfig.h"
 #include <vector>
 using namespace std;
 
@@ -269,7 +269,8 @@ inline CItemType*		ItemType()				{ extern CItemType* g_pItemType; CHECKF(g_pItem
 inline CDropRuleMap*	DropRuleMap()			{ extern CDropRuleMap* g_pDropRuleMap; CHECKF(g_pDropRuleMap); return g_pDropRuleMap; }
 
 inline ITaskSet*		TaskSet()				{ extern ITaskSet* g_setTask; CHECKF(g_setTask); return g_setTask; }
-inline IActionSet*		ActionSet()				{ extern IActionSet* g_setAction; CHECKF(g_setAction); return g_setAction; }
+//inline IActionSet*		ActionSet()				{ extern IActionSet* g_setAction; CHECKF(g_setAction); return g_setAction; }
+inline CActionManagerConfig* ActionSet() {return CActionManagerConfig::GetInstance();}
 inline ILevupexpSet*	LevupexpSet()			{ extern ILevupexpSet* g_setLevupexp; CHECKF(g_setLevupexp); return g_setLevupexp; }
 inline IAddPointSet*	AddPointSet()			{ extern IAddPointSet* g_setAddPoint; CHECKF(g_setAddPoint); return g_setAddPoint; }
 inline IMagicTypeSet*	MagicTypeSet()			{ extern IMagicTypeSet* g_setMagicType; CHECKF(g_setMagicType); return g_setMagicType; }

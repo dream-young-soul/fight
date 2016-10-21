@@ -1,8 +1,3 @@
-
-//**********************************************************
-// ´úÂë±à¼­Æ÷
-//**********************************************************
-
 // UserManager.cpp: implementation of the CMapGroup class.
 //
 //////////////////////////////////////////////////////////////////////
@@ -31,7 +26,7 @@ CDropRuleMap*	g_pDropRuleMap	= NULL;		//add by zlong 2003-11-15
 
 IStaticMapSet*	g_setStaticMap	= NULL;
 ITaskSet*		g_setTask		= NULL;
-IActionSet*		g_setAction		= NULL;
+//IActionSet*		g_setAction		= NULL;
 ILevupexpSet*	g_setLevupexp	= NULL;
 IMagicTypeSet*	g_setMagicType	= NULL;
 IMagicTrackSet*	g_setMagicTrack	= NULL;
@@ -117,9 +112,13 @@ bool CMapGroup::Create(PROCESS_ID idProcess, ISocket* pSocket, IDatabase* pDb, I
         IF_NOT_(g_setTask && g_setTask->Create(szSQL, Database()))
         return false;
         sprintf(szSQL, "SELECT * FROM %s", _TBL_ACTION);
-        g_setAction	= CActionSet::CreateNew(true);
-        IF_NOT_(g_setAction && g_setAction->Create(szSQL, Database()))
-        return false;
+		if(!CActionManagerConfig::GetInstance()->Load())
+		{
+			return false;
+		}
+		/*  g_setAction	= CActionSet::CreateNew(true);
+		IF_NOT_(g_setAction && g_setAction->Create(szSQL, Database()))
+		return false;*/
         sprintf(szSQL, "SELECT * FROM %s", _TBL_LEVEXP);
         g_setLevupexp	= CLevupexpSet::CreateNew(true);
         IF_NOT_(g_setLevupexp && g_setLevupexp->Create(szSQL, Database()))
@@ -244,7 +243,9 @@ void CMapGroup::Destroy()
         SAFE_RELEASE (g_setMagicType);
         SAFE_RELEASE (g_setAddPoint);
         SAFE_RELEASE (g_setLevupexp);
-        SAFE_RELEASE(g_setAction);
+        //SAFE_RELEASE(g_setAction);
+		CActionManagerConfig::GetInstance()->Release();
+		
         SAFE_RELEASE(g_setTask);
         SAFE_RELEASE (g_setStaticMap);
         SAFE_RELEASE (g_pItemType);
@@ -463,7 +464,7 @@ void CMapGroup::ProcessEvent(void)
     for (OBJID id = idBegin; id < idBegin + MAX_EVENT; id++)
     {
         //this->ProcessAction(id);
-        if (ActionSet()->GetObj(id))
+        if (ActionSet()->GetActionData(id))
         {
             GameAction()->ProcessAction(id);
         }

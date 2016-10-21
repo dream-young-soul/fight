@@ -1,8 +1,3 @@
-
-//**********************************************************
-// ´úÂë±à¼­Æ÷
-//**********************************************************
-
 // MsgTalk.cpp: implementation of the CMsgTalk class.
 //
 //////////////////////////////////////////////////////////////////////
@@ -15,6 +10,7 @@
 #endif
 
 #include "user.h"
+#include "ActionManagerConfig.h"
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -626,55 +622,56 @@ void CMsgTalk::Process(void* pInfo)
         }
         else if (stricmp(szCmd, "reloadaction") == 0)
         {
-            OBJID idAction = 0;
-            if (2 == sscanf(szWords + 1, "%s %u", szCmd, &idAction))
-            {
-                if (idAction == ID_NONE)
-                {
-                    if (pUser->IsPM())
-                    {
-                        pUser->SendSysMsg(STR_WARNING_CRASH);
-                        extern IActionSet* g_setAction;
-                        if (g_setAction)
-                        {
-                            g_setAction->Release();
-                        }
-                        char	szSQL[1024];
-                        sprintf(szSQL, "SELECT * FROM %s", _TBL_ACTION);
-                        g_setAction	= CActionSet::CreateNew(true);
-                        IF_OK_(g_setAction && g_setAction->Create(szSQL, Database()))
-                        pUser->SendSysMsg("[ACTION UPDATE¡£]");
-                        LOGMSG("¡ïprocess command: %s¡ï", szCmd);
-                    }
-                }
-                else
-                {
-                    if (pUser->IsGM())
-                    {
-                        extern IActionSet* g_setAction;
-                        SQLBUF	szSQL;
-                        sprintf(szSQL, "SELECT * FROM %s WHERE id=%u LIMIT 1", _TBL_ACTION, idAction);
-                        CAutoPtr<IRecordset>	pRes = Database()->CreateNewRecordset(szSQL);
-                        CActionData* pData = CActionData::CreateNew();
-                        if (pData)
-                        {
-                            IF_OK(pData->Create(pRes))
-                            {
-                                DEBUG_TRY // VVVVVVVVVVVVVV
-                                g_setAction->DelObj(pData->GetKey());		// BUG: don't safe in multi thread
-                                g_setAction->AddObj(pData);
-                                pUser->SendSysMsg("[AN ACTION UPDATE¡£]");
-                                DEBUG_CATCH("reloadaction") // AAAAAAAAAAAAA
-                            }
-                            else
-                            {
-                                pData->Release();
-                            }
-                        }
-                        LOGMSG("%s process command: %s %d", pUser->GetName(), szCmd, idAction);
-                    }
-                }
-            }
+			CActionManagerConfig::GetInstance()->ReLoad();
+            //OBJID idAction = 0;
+            //if (2 == sscanf(szWords + 1, "%s %u", szCmd, &idAction))
+            //{
+            //    if (idAction == ID_NONE)
+            //    {
+            //        if (pUser->IsPM())
+            //        {
+            //            pUser->SendSysMsg(STR_WARNING_CRASH);
+            //            extern IActionSet* g_setAction;
+            //            if (g_setAction)
+            //            {
+            //                g_setAction->Release();
+            //            }
+            //            char	szSQL[1024];
+            //            sprintf(szSQL, "SELECT * FROM %s", _TBL_ACTION);
+            //            g_setAction	= CActionSet::CreateNew(true);
+            //            IF_OK_(g_setAction && g_setAction->Create(szSQL, Database()))
+            //            pUser->SendSysMsg("[ACTION UPDATE¡£]");
+            //            LOGMSG("¡ïprocess command: %s¡ï", szCmd);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        if (pUser->IsGM())
+            //        {
+            //            extern IActionSet* g_setAction;
+            //            SQLBUF	szSQL;
+            //            sprintf(szSQL, "SELECT * FROM %s WHERE id=%u LIMIT 1", _TBL_ACTION, idAction);
+            //            CAutoPtr<IRecordset>	pRes = Database()->CreateNewRecordset(szSQL);
+            //            CActionData* pData = CActionData::CreateNew();
+            //            if (pData)
+            //            {
+            //                IF_OK(pData->Create(pRes))
+            //                {
+            //                    DEBUG_TRY // VVVVVVVVVVVVVV
+            //                    g_setAction->DelObj(pData->GetKey());		// BUG: don't safe in multi thread
+            //                    g_setAction->AddObj(pData);
+            //                    pUser->SendSysMsg("[AN ACTION UPDATE¡£]");
+            //                    DEBUG_CATCH("reloadaction") // AAAAAAAAAAAAA
+            //                }
+            //                else
+            //                {
+            //                    pData->Release();
+            //                }
+            //            }
+            //            LOGMSG("%s process command: %s %d", pUser->GetName(), szCmd, idAction);
+            //        }
+            //    }
+            //}
         }
         else if (stricmp(szCmd, "reloadmagictype") == 0)
         {

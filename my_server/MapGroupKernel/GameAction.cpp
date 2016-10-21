@@ -772,7 +772,7 @@ bool CGameAction::ProcessAction(OBJID idAction, CUser* pUser, IRole* pRole, CIte
         while (idAction != ID_NONE)
         {
             DEADLOOP_CHECK(PID, "idAction: ")
-            CActionData* pAction	= ActionSet()->GetObj(idAction);
+            tagAction* pAction	= ActionSet()->GetActionData(idAction);
             if (!pAction)
             {
                 ::LogSave("Error: game action %u not found.", idAction);
@@ -883,7 +883,7 @@ bool CGameAction::ProcessAction(OBJID idAction, CUser* pUser, IRole* pRole, CIte
 }
 
 //////////////////////////////////////////////////////////////////////
-bool CGameAction::ProcessActionMonster(CActionData* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pszAccept)
+bool CGameAction::ProcessActionMonster(tagAction* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pszAccept)
 {
     IF_NOT (pAction)
     return false;
@@ -1027,7 +1027,7 @@ bool CGameAction::ProcessActionMonster(CActionData* pAction, LPCTSTR szParam, CU
 }
 
 //////////////////////////////////////////////////////////////////////
-bool CGameAction::ProcessActionSys(CActionData* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pszAccept)
+bool CGameAction::ProcessActionSys(tagAction* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pszAccept)
 {
     CHECKF(pAction);
     switch(pAction->GetInt(ACTIONDATA_TYPE))
@@ -1224,7 +1224,7 @@ bool CGameAction::ProcessActionSys(CActionData* pAction, LPCTSTR szParam, CUser*
 }
 
 //////////////////////////////////////////////////////////////////////
-bool CGameAction::ProcessActionNpc(CActionData* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pszAccept)
+bool CGameAction::ProcessActionNpc(tagAction* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pszAccept)
 {
     CHECKF(pAction);
     switch(pAction->GetInt(ACTIONDATA_TYPE))
@@ -1856,7 +1856,7 @@ bool CGameAction::ProcessActionNpc(CActionData* pAction, LPCTSTR szParam, CUser*
 }
 
 //////////////////////////////////////////////////////////////////////
-bool CGameAction::ProcessActionMap(CActionData* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem_no_use, LPCTSTR pszAccept)
+bool CGameAction::ProcessActionMap(tagAction* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem_no_use, LPCTSTR pszAccept)
 {
     CHECKF(pAction);
     switch(pAction->GetInt(ACTIONDATA_TYPE))
@@ -2345,7 +2345,7 @@ bool CGameAction::ProcessActionMap(CActionData* pAction, LPCTSTR szParam, CUser*
 }
 
 //////////////////////////////////////////////////////////////////////
-bool CGameAction::ProcessActionItemOnly(CActionData* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pszAccept)
+bool CGameAction::ProcessActionItemOnly(tagAction* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pszAccept)
 {
     CHECKF(pAction && pUser && pItem);
     switch(pAction->GetInt(ACTIONDATA_TYPE))
@@ -2533,7 +2533,7 @@ bool CGameAction::ProcessActionItemOnly(CActionData* pAction, LPCTSTR szParam, C
 }
 
 //////////////////////////////////////////////////////////////////////
-bool CGameAction::ProcessActionItem(CActionData* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pszAccept)
+bool CGameAction::ProcessActionItem(tagAction* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pszAccept)
 {
     CHECKF(pAction && pUser);
     switch(pAction->GetInt(ACTIONDATA_TYPE))
@@ -2942,7 +2942,7 @@ bool CGameAction::ProcessActionItem(CActionData* pAction, LPCTSTR szParam, CUser
 }
 
 //////////////////////////////////////////////////////////////////////
-bool CGameAction::ProcessActionNpcOnly(CActionData* pAction, LPCTSTR szParam, CUser* pUser_NoUse, IRole* pRole, CItem* pItem_NoUse, LPCTSTR pszAccept)
+bool CGameAction::ProcessActionNpcOnly(tagAction* pAction, LPCTSTR szParam, CUser* pUser_NoUse, IRole* pRole, CItem* pItem_NoUse, LPCTSTR pszAccept)
 {
     CHECKF(pAction);
     CNpc* pNpc;
@@ -3058,7 +3058,7 @@ bool CGameAction::ProcessActionNpcOnly(CActionData* pAction, LPCTSTR szParam, CU
 }
 
 //////////////////////////////////////////////////////////////////////
-bool CGameAction::ProcessActionSyn(CActionData* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pszAccept)
+bool CGameAction::ProcessActionSyn(tagAction* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pszAccept)
 {
     CHECKF(pAction && pUser);
     int nActionType = pAction->GetInt(ACTIONDATA_TYPE);
@@ -4283,7 +4283,7 @@ bool CGameAction::ProcessActionSyn(CActionData* pAction, LPCTSTR szParam, CUser*
 }
 
 //////////////////////////////////////////////////////////////////////
-bool CGameAction::ProcessActionUser(CActionData* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pszAccept)
+bool CGameAction::ProcessActionUser(tagAction* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pszAccept)
 {
     CHECKF(pAction && pUser);
     switch(pAction->GetInt(ACTIONDATA_TYPE))
@@ -6123,7 +6123,7 @@ bool CGameAction::ProcessActionUser(CActionData* pAction, LPCTSTR szParam, CUser
 }
 
 //////////////////////////////////////////////////////////////////////
-bool CGameAction::ProcessActionEvent(CActionData* pAction, LPCTSTR szParam, CUser* pUser_NoUse, IRole* pRole_NoUse, CItem* pItem_NoUse, LPCTSTR pszAccept)
+bool CGameAction::ProcessActionEvent(tagAction* pAction, LPCTSTR szParam, CUser* pUser_NoUse, IRole* pRole_NoUse, CItem* pItem_NoUse, LPCTSTR pszAccept)
 {
     CHECKF(pAction);
     switch(pAction->GetInt(ACTIONDATA_TYPE))
@@ -6522,7 +6522,7 @@ bool CGameAction::ProcessActionEvent(CActionData* pAction, LPCTSTR szParam, CUse
 }
 
 //////////////////////////////////////////////////////////////////////
-bool CGameAction::ProcessActionWanted(CActionData* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pszAccept)
+bool CGameAction::ProcessActionWanted(tagAction* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pszAccept)
 {
     CHECKF(pAction && pUser);
     switch(pAction->GetInt(ACTIONDATA_TYPE))
@@ -6788,7 +6788,7 @@ bool CGameAction::ProcessActionWanted(CActionData* pAction, LPCTSTR szParam, CUs
 }
 
 //////////////////////////////////////////////////////////////////////
-bool CGameAction::ProcessActionMagic(CActionData* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pazAccept)
+bool CGameAction::ProcessActionMagic(tagAction* pAction, LPCTSTR szParam, CUser* pUser, IRole* pRole, CItem* pItem, LPCTSTR pazAccept)
 {
     CHECKF(pAction && pUser);
     switch(pAction->GetInt(ACTIONDATA_TYPE))

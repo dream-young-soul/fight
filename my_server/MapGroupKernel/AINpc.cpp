@@ -1661,7 +1661,8 @@ bool CMonster::ProcessAction(CUser* pUser, OBJID idAction, LPCTSTR pszAccept)
         DWORD dwActionCount	= 0;
         while (idAction != ID_NONE)
         {
-            CActionData* pAction	= ActionSet()->GetObj(idAction);
+			tagAction* pAction = ActionSet()->GetActionData(idAction);
+            //CActionData* pAction	= ActionSet()->GetObj(idAction);
             if (!pAction)
             {
                 ::LogSave("Error: game action %u not found.", idAction);
@@ -1670,6 +1671,7 @@ bool CMonster::ProcessAction(CUser* pUser, OBJID idAction, LPCTSTR pszAccept)
             // process action now!
             idAction = pAction->GetInt(ACTIONDATA_IDNEXTFAIL);
             int nActionType = pAction->GetInt(ACTIONDATA_TYPE);
+			
             switch(nActionType)
             {
             case ACTION_RAND:
@@ -1677,15 +1679,18 @@ bool CMonster::ProcessAction(CUser* pUser, OBJID idAction, LPCTSTR pszAccept)
                     // 检测随机率。"data1 data2"。"10 100"表示有1/10的机会是true。
                     DWORD dwChance = 0, dwMax = 0;
                     if (2 == sscanf(pAction->GetStr(ACTIONDATA_PARAM), "%u %u", &dwChance, &dwMax))
+					
                     {
                         if (::RandGet(dwMax) < dwChance)
                         {
                             idAction	= pAction->GetInt(ACTIONDATA_IDNEXT);
+							
                         }
                     }
                     else
                     {
                         LOGERROR("ACTION %u: 错误的参数数量", pAction->GetID());
+						
                     }
                 }
                 break;
