@@ -65,6 +65,7 @@ CMonster::CMonster()
     m_nKillNum4Potential	= 0;
     m_nKillNum4RelationShip	= 0;
     m_nAtkMode		= EATK_MODE_NONE;		// 默认攻击类型为无
+	m_nLookFace = 0;
 }
 
 //////////////////////////////////////////////////////////////////////

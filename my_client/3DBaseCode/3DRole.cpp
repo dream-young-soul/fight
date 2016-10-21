@@ -271,7 +271,7 @@ int  C3DRole::SetCloneAction (int nActionType, BOOL bPlaySound, int nWorldX, int
         if (!pBodyMotion)
         {
             const OBJID idActionError =  500000;
-            ::ErrorOut(g_objGameDataSet.GetStr(idActionError), idBodyMotion, idDefaultMotion);
+            ::LogMsg(g_objGameDataSet.GetStr(idActionError), idBodyMotion, idDefaultMotion);
             return 0;
         }
         else
@@ -721,7 +721,7 @@ int		C3DRole::SetAction(int nActionType, BOOL bResetMotion, BOOL bPlaySound, int
                 if (!m_pMotionArmor)
                 {
                     const OBJID idActionError =  500000;
-                    ::ErrorOut(g_objGameDataSet.GetStr(idActionError), idBodyMotion, idDefaultMotion);
+                    ::LogMsg(g_objGameDataSet.GetStr(idActionError), idBodyMotion, idDefaultMotion);
                     return 0;
                 }
             }

@@ -699,7 +699,7 @@ BOOL CRole::ProcessAction(void)
 				int nSectionTime = timeCost * pInfo->nTimePercent[i] / 100 - nPreSectionTime;
 
 				// 当前时间在段时间中的百分比例, 注意加上0.5是为了4舍5入
-				int nSectionPassTimePercent = 0.5f + 100.0f * (timePass - nPreSectionTime) / __max(1, nSectionTime);
+				int nSectionPassTimePercent = (int)(0.5f + 100.0f * (timePass - nPreSectionTime) / __max(1, nSectionTime));
 				if (nSectionPassTimePercent > 100)
 					nSectionPassTimePercent = 100;
 
@@ -1023,7 +1023,7 @@ void CRole::Show()
 			int nDeltaX = (m_Info.posActionEnd.x - m_Info.posDir.x);
 			int nDeltaY = (m_Info.posActionEnd.y - m_Info.posDir.y);
 			double dAtan = atan2((double)nDeltaX, (double)nDeltaY);
-			nRotate = (180.0 * dAtan)/3.1415926 + 90;
+			nRotate = (int)((180.0 * dAtan)/3.1415926 + 90);
 		}
 		if (m_Info.bAdjustDir &&(m_Info.posActionBegin.x != m_Info.posDir.x 
 			|| m_Info.posActionBegin.y != m_Info.posDir.y))
@@ -1037,7 +1037,7 @@ void CRole::Show()
 				int nDeltaY = m_Info.posActionEnd.y - m_Info.posDir.y;
 				
 				double dAtan = atan2((double)nDeltaY, (double)nDeltaX);
-				nRotate = (180.0 * dAtan)/3.1415926 + 90;
+				nRotate = (int)((180.0 * dAtan)/3.1415926 + 90);
 			}
 			
 			if(_ACTION_RUNL == m_Info.iActType 
@@ -1047,7 +1047,7 @@ void CRole::Show()
 				int nDeltaY = m_Info.posActionBegin.y - m_Info.posDir.y;
 				
 				double dAtan = atan2((double)nDeltaY, (double)nDeltaX);
-				nRotate = (180.0 * dAtan)/3.1415926 + 90;
+				nRotate =(int)((180.0 * dAtan)/3.1415926 + 90);
 			}
 		}
 		
@@ -1117,7 +1117,7 @@ void CRole::Show()
 		g_objGameMap.World2Bg(posView.x, posView.y, nViewportBgX, nViewportBgY);
 		
 		m_pIRoleView->SetAction(this->GetActionType(), false);
-		m_pIRoleView->SetVariable(_VAR_STATUS, this->GetStatus());
+		m_pIRoleView->SetVariable(_VAR_STATUS, (DWORD)this->GetStatus());
 		m_pIRoleView->SetVariable(_VAR_FRAME, m_Info.iActFrameIndex);
 
 
@@ -1128,11 +1128,11 @@ void CRole::Show()
 		{
 			DWORD dwTimeGoesBy = ::TimeGet()-m_tmDisappear;
 
-			alpha = 1.0-0.2*dwTimeGoesBy/1000;
+			alpha = (float)(1.0-0.2*dwTimeGoesBy/1000);
 			if (alpha < 0.0)
 				alpha = 0.0;
 
-			alphaShadow = 0.8-0.15*dwTimeGoesBy/1000;
+			alphaShadow = (float)(0.8-0.15*dwTimeGoesBy/1000);
 			if (alphaShadow < 0.0)
 				alphaShadow = 0.0;
 		}
@@ -1149,7 +1149,7 @@ void CRole::Show()
 			}InfoColor;
 		};
 		dwColor = g_objGameMap.GetARGB();
-		float fColor = 0.1 * (InfoColor.ucRed + InfoColor.ucGreen + InfoColor.ucBlue)/(255*3);
+		float fColor = (float)(0.1 * (InfoColor.ucRed + InfoColor.ucGreen + InfoColor.ucBlue)/(255*3));
 
 		if (this->TestStatus(USERSTATUS_GHOST) && !this->IsPet())
 			m_pIRoleView->SetLightOffset(SHADOW_NONE, 300, -300, -1000, 0.8f, fColor, fColor, fColor);
@@ -1160,13 +1160,13 @@ void CRole::Show()
 		unsigned char ucA, ucR, ucG, ucB;
 			
 		ucA = m_dwARGB >> 24;
-		ucR = (m_dwARGB & 0x00ff0000) >> 16;
-		ucG = (m_dwARGB & 0x0000ff00) >> 8;
-		ucB = m_dwARGB & 0x000000ff;
+		ucR = (unsigned char)((m_dwARGB & 0x00ff0000) >> 16);
+		ucG = (unsigned char)((m_dwARGB & 0x0000ff00) >> 8);
+		ucB = (unsigned char)(m_dwARGB & 0x000000ff);
 		if ((this->TestStatus(USERSTATUS_GHOST) || this->TestStatus(USERSTATUS_LURKER)) && !this->IsPet())
-			m_pIRoleView->SetRGBA(1.0*ucA/(255*alpha*2), 1.0*ucR/255, 1.0*ucG/255, 1.0*ucB/255);
+			m_pIRoleView->SetRGBA((float)(1.0*ucA/(255*alpha*2)), (float)(1.0*ucR/255), (float)(1.0*ucG/255),(float)(1.0*ucB/255));
 		else
-			m_pIRoleView->SetRGBA(1.0*ucA/255*alpha, 1.0*ucR/255, 1.0*ucG/255, 1.0*ucB/255);
+			m_pIRoleView->SetRGBA((float)(1.0*ucA/255*alpha), (float)(1.0*ucR/255), (float)(1.0*ucG/255), (float)(1.0*ucB/255));
 		
 
 		m_pIRoleView->Draw(nViewportBgX, nViewportBgY); //画角色-- 
@@ -1239,7 +1239,7 @@ void CRole::Show()
 					break;
 				}
 				
-				s_fRadii = ( 60 + ::RandGet( 60 ) ) / 100;
+				s_fRadii = (float)(( 60 + ::RandGet( 60 ) ) / 100);
 				s_dwBeginTime = ::TimeGet();
 				s_bDir = ::TimeGet() % 2;
 				s_bOK = false;
@@ -1351,8 +1351,8 @@ int	CRole::GetJumpHeight()
 		g_objGameMap.Cell2World(posHighest.x, posHighest.y, posHighestWorldPos.x, posHighestWorldPos.y);
 	}
 
-	nHightestAltitude = nHightestAltitude + sqrt((posBeginWorldPos.x - posEndWorldPos.x) * (posBeginWorldPos.x - posEndWorldPos.x) +
-			(posBeginWorldPos.y - posEndWorldPos.y) * (posBeginWorldPos.y - posEndWorldPos.y))/3;
+	nHightestAltitude = nHightestAltitude + (int)(sqrt((posBeginWorldPos.x - posEndWorldPos.x) * (posBeginWorldPos.x - posEndWorldPos.x) +
+			(posBeginWorldPos.y - posEndWorldPos.y) * (posBeginWorldPos.y - posEndWorldPos.y))/3);
 
 	posHighestWorldPos.x = (posBeginWorldPos.x + posEndWorldPos.x)/2;
 	posHighestWorldPos.y = (posBeginWorldPos.y + posEndWorldPos.y)/2;

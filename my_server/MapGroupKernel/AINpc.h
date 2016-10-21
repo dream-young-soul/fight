@@ -196,7 +196,7 @@ public: // IRole
 
     int				AdjustFrenzy2Dmg	(int nDamage);
 
-    virtual DWORD	GetLookFace()						{ return m_pType->GetInt(NPCTYPEDATA_LOOKFACE); }
+    virtual DWORD	GetLookFace()						{ return m_nLookFace == 0 ? m_pType->GetInt(NPCTYPEDATA_LOOKFACE) : m_nLookFace; }
     virtual char	GetLength			()				{ return m_pType->GetInt(NPCTYPEDATA_LENGTH); }
     virtual char	GetFat				()				{ return m_pType->GetInt(NPCTYPEDATA_FAT); }
 
@@ -238,11 +238,12 @@ public: // map
 
 public: // foot print
     void	GetFootPrint	(int& nPosX, int& nPosY);
-
+	void	SetLookFace(DWORD look){m_nLookFace = look;}
 protected:
     DWORD	m_tFootPrint;
     POINT	m_posFootPrint;
-
+private:
+		DWORD	m_nLookFace; //测试用的怪物模型，可动态修改
 public: // get
     virtual OBJID	GetID()			{ return m_idNpc; }
     virtual int		GetObjType()	{ return CGameObj::GetObjType(); }

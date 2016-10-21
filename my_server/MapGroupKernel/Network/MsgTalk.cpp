@@ -268,24 +268,36 @@ void CMsgTalk::Process(void* pInfo)
         }
         else if (stricmp(szCmd, "testmonster") == 0)
         {
-            DWORD dwType = 0, dwAmount = 0;
-            if (3 == sscanf(szWords + 1, "%s %u %u", szCmd, &dwType, &dwAmount))
+            DWORD dwType = 0, dwAmount = 0, dwLook = 0;
+            if (4 == sscanf(szWords + 1, "%s %u %u %u", szCmd, &dwType,&dwLook, &dwAmount))
             {
+				
                 CNpcType* pType = MonsterType()->GetObj(dwType);
                 if (pType)
                 {
-                    for (int j = 0; j < dwAmount; j++)
+                    for (int j = 2000; j < dwAmount+2000; j++)
                     {
                         ST_CREATENEWNPC info;
                         memset(&info, 0L, sizeof(info));
+						
                         info.id		= MONSTERID_FIRST + j;
-                        info.idMap	= 1002;
+                        info.idMap	= pUser->GetMapID();
+						info.usPosX = pUser->GetPosX();
+						info.usPosY = pUser->GetPosY();
+						info.usAction = MSGAINPCINFO_CREATENEW;
+						info.usType = dwType;
                         CMonster* pMonster = CMonster::CreateNew();
-                        if (pMonster->Create(m_idProcess, pType, &info))
-                        {
-                            pMonster->BeKill(pUser->QueryRole());
-                        }
-                        pMonster->ReleaseByOwner();
+						if(pMonster->Create(m_idProcess, pType, &info))
+						{
+							pMonster->SetLookFace(dwLook);
+							RoleManager()->QuerySet()->AddObj(pMonster->QueryRole());
+							pMonster->EnterMapGroup();
+						}
+						/*        if (pMonster->Create(m_idProcess, pType, &info))
+						{
+						pMonster->BeKill(pUser->QueryRole());
+						}
+						pMonster->ReleaseByOwner();*/
                     }
                 }
             }
