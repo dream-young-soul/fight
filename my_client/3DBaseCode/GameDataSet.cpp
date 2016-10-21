@@ -501,7 +501,8 @@ CAni* CGameDataSet::GetDataAni	(const char* pszFileName, const char* pszTitle, i
                 break;
             default:
                 {
-                    ::ErrorOut("ERROR: Ani:[%s] of [%s] got invalid status:%u CGameDataSet::GetDataAni()", pszTitle, pszFileName, pDAni->GetStatus());
+					//::ErrorOut
+                    ::LogMsg("ERROR: Ani:[%s] of [%s] got invalid status:%u CGameDataSet::GetDataAni()", pszTitle, pszFileName, pDAni->GetStatus());
                     m_mapDataAni.erase(iter);
                     SAFE_DELETE (pDAni);
                     return NULL;
@@ -535,7 +536,7 @@ CAni* CGameDataSet::GetDataAni	(const char* pszFileName, const char* pszTitle, i
         else
         {
 #ifdef _DEBUG
-            ::ErrorOut("ERROR: Ani:[%s] not found in [%s]", pszTitle, pszFileName);
+            ::LogMsg("ERROR: Ani:[%s] not found in [%s]", pszTitle, pszFileName);
 #endif
             // Test if the resource is the second resource
             if ( strcmp ( pszFileName, "ani/Control2.Ani" ) == 0 )

@@ -295,9 +295,9 @@ CNetMsg* CNetMsg::CreateMsg(char* pbufMsg, DWORD dwMsgSize)
     }
     assert((int)dwMsgSize == CNetMsg::GetSize(pbufMsg, dwMsgSize));
     // make it...
-#ifdef _DEBUG
-    ::DebugMsg("MsgType:%d\n", CNetMsg::GetType(pbufMsg,dwMsgSize));
-#endif
+//#ifdef _DEBUG
+//   ::DebugMsg("MsgType:%d\n", CNetMsg::GetType(pbufMsg,dwMsgSize));
+//#endif
     CNetMsg* pMsg	= NULL;
     switch(CNetMsg::GetType(pbufMsg, dwMsgSize))
     {

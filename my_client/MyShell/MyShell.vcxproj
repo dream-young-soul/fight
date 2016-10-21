@@ -47,13 +47,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)_bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)_tmp\$(ProjectName)\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)_bin\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)_tmp\$(ProjectName)\</IntDir>
     <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IncludePath);C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(IncludePath);C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Midl>
@@ -68,7 +71,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\91usdk\include;..\C3_CORE_DLL\include;..\3DGameMap\include;..\3DGameMap;..\3DRole;..\3DRole\Network;..\3dbasecode;..\ndsound;..\datamodule;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\C3_CORE_DLL\include;..\3DGameMap;..\3DRole;..\3DRole\Network;..\3dbasecode;..\ndsound;..\datamodule;C:\DXSDK\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_ANALYSIS_ON;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -85,13 +88,15 @@
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>ws2_32.lib;91usdk.lib;netapi32.lib;3DRole.lib;3DGameMap.lib;3DBaseCode.lib;c3_core_dll.lib;winmm.lib;d3d8.lib;d3dx8.lib;NDSound.lib;dinput8.lib;quartz.lib;dxguid.lib;datamodule.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>E:\魔域\soul.exe</OutputFile>
+      <AdditionalDependencies>ws2_32.lib;netapi32.lib;3DRole_R.lib;3DGameMap_R.lib;3DBaseCode_R.lib;c3_core_dll_R.lib;winmm.lib;d3d9.lib;d3dx9.lib;NDSound_R.lib;dinput8.lib;dxguid.lib;datamodule_R.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>../libR;../91usdk/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../_bin;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>.\Release/soul.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>libci.lib</IgnoreSpecificDefaultLibraries>
+      <AdditionalOptions>/SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
