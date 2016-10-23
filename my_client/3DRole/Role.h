@@ -517,7 +517,7 @@ public:
     void	ResetActionData	(void);
 
     DWORD   GetFrameInterval(int nActType);
-
+	BOOL    IsUseFrameInterval(); //是否使用帧间隔模式
     DWORD	GetDistance	(CRole* pRole);
     BOOL	IsMapAttainable	(int iMapX, int iMapY);
     BOOL	IsWalking	(void);

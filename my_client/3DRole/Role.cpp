@@ -519,10 +519,10 @@ void CRole::SetActionData(void)
 
 	
 
-	if(m_Info.cmdProc.bUseFrameInterval)
+	if(this->IsUseFrameInterval())
 	{
-			m_Info.timeFrameInterval = this->GetFrameInterval(m_Info.iActType);
-		if(m_Info.cmdProc.nFrameInterval != 0)
+		m_Info.timeFrameInterval = this->GetFrameInterval(m_Info.iActType);
+		if(m_Info.cmdProc.nFrameInterval != 0)	
 			m_Info.timeFrameInterval = m_Info.cmdProc.nFrameInterval;
 		if(bAccelerate)
 			m_Info.timeFrameInterval = m_Info.timeFrameInterval/4;
@@ -593,7 +593,22 @@ void CRole::SetActionData(void)
 	this->m_objEffect.Add("elf",false,0,this->GetLook());*/
 
 }
-
+BOOL  CRole::IsUseFrameInterval()
+{
+	if(m_Info.cmdProc.bUseFrameInterval)return TRUE;
+	switch(m_Info.iActType)
+	{
+		case 700: //星魔剑
+			{
+				return true;
+			}
+		case 262://拾取
+			{
+				return true;
+			}
+	}
+	return FALSE;
+}
 //--------------------------------------------------------------
 void CRole::ResetActionData(void)
 {
@@ -634,7 +649,7 @@ BOOL CRole::ProcessAction(void)
 	}
 
 	DWORD timeCurrent	=::TimeGet();
-	if(m_Info.cmdProc.bUseFrameInterval)
+	if(this->IsUseFrameInterval())
 	{
 			// get the current frame index
 		
@@ -669,7 +684,7 @@ BOOL CRole::ProcessAction(void)
 	if (nDeltaX != 0 || nDeltaY != 0)
 	{
 		DWORD timeCost	=__max(1, m_Info.timeFrameInterval*m_Info.iActFrameAmount);
-		if(!m_Info.cmdProc.bUseFrameInterval)
+		if(!this->IsUseFrameInterval())
 		{
 			 timeCost	=__max(1, m_Info.timeActionTime);//总共需要的时间
 		}

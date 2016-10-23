@@ -1200,18 +1200,17 @@ void CMyShellDlg::OnLButtonDown(UINT nFlags, CPoint point)
             }
             return ;
         }
-        else if ((nFlags & MK_CONTROL) && g_objHero.TestStatus(USERSTATUS_XPFULL))
-        {
-            for(int i = 0; i < g_objHero.GetXpSkillAmount(); i++)
-            {
-                CMagic* pXp = g_objHero.GetXpSkillByIndex(i);
-                if (pXp && pXp->GetIDType() == m_XpID)
-                {
-                    //					if (pXp->TestTarget ( MAGIC_TARGET_NONE ) || pXp->m_infoMagicType.dwActionSort == MAGICSORT_LINE)
-                    CMyShellDlg::AttackMagicXp();
-                }
-            }
-        }
+		/*  else if ((nFlags & MK_CONTROL) && g_objHero.TestStatus(USERSTATUS_XPFULL))
+		{
+		for(int i = 0; i < g_objHero.GetXpSkillAmount(); i++)
+		{
+		CMagic* pXp = g_objHero.GetXpSkillByIndex(i);
+		if (pXp && pXp->GetIDType() == m_XpID)
+		{
+		CMyShellDlg::AttackMagicXp();
+		}
+		}
+		}*/
         else
         {
             OBJID idItem = ID_NONE;
@@ -7106,8 +7105,23 @@ void CMyShellDlg::OnRButtonDown(UINT nFlags, CPoint point)
 	{
 		return;
 	}
-	const int RIGHT_MAGIC = 7;//F8
-	gpDlgShell->AttackMagic(RIGHT_MAGIC, false);
+	//优先释放xp技能
+	if (g_objHero.TestStatus(USERSTATUS_XPFULL))
+	{
+		for(int i = 0; i < g_objHero.GetXpSkillAmount(); i++)
+		{
+			CMagic* pXp = g_objHero.GetXpSkillByIndex(i);
+			if (pXp && pXp->GetIDType() == m_XpID)
+			{
+				CMyShellDlg::AttackMagicXp();
+			}
+		}
+	}else
+	{
+		const int RIGHT_MAGIC = 7;//F8
+		gpDlgShell->AttackMagic(RIGHT_MAGIC, false);
+	}
+
 	//屏蔽 右键现在用来释放技能 F8
 	/* if ( m_bRbuttonDown == false)
 	{
