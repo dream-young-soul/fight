@@ -393,6 +393,10 @@ void CGameDataSet::LoadRes(const char* pszResFile, MAP_RES& mapRes)
         {
             break;
         }
+		if(szLine[0]=='/' && szLine[1] =='/')
+		{
+			continue;
+		}
         OBJID id = ID_NONE;
         char szFile[256]	= "";
         if (2 == sscanf(szLine, "%u=%s", &id, szFile))
