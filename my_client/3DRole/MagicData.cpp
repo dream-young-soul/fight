@@ -93,7 +93,9 @@ void CMagicData::Create()
         char	szTargetSound[_MAX_PATH];	// 受击音效
         char	szGroundEffect[64];			// 地效索引
         char	szTraceEffect[64];			// 轨迹特效
-        int nResult = fscanf(fp, "%u %u %s %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %s %s %s %s %s %u %s %s %s %s %u %u %u %u %u/n",
+		char szValue[64];
+		DWORD dwValue[5];
+        int nResult = fscanf(fp, "%u %u %s %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %s %s %s %s %s %u %s %s %s %s %u %u %u %u %u %s %u %u %u %u %u/n",
                              &dwData[0], &dwData[1], szFileName,
                              &dwData[2], &dwData[3], &dwData[4], &dwData[5], &dwData[6],
                              &dwData[7], &dwData[8], &dwData[9], &dwData[10], &dwData[11],
@@ -105,13 +107,13 @@ void CMagicData::Create()
                              &dwData[34], szDisc, szIntoneEffect, szIntoneSound, szSenderEffect,
                              szSenderSound, &dwTargetDelay, szTargetEffect, szTargetSound,
                              szGroundEffect, szTraceEffect, &dwData[35], &dwData[36], &dwData[37], &dwData[38],
-                             &dwData[39]);
+                             &dwData[39],szValue,&dwValue[0],&dwValue[1],&dwValue[2],&dwValue[3],&dwValue[4]);
         if (nResult == EOF)
         {
             fclose(fp);
             return;
         }
-        if (nResult != 51)
+        if (nResult != 57)
         {
             fscanf(fp, "%s/n", szLine);
             continue;

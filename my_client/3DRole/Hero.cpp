@@ -1700,6 +1700,7 @@ DWORD CHero::SetCommand(CCommand* pCommand)
     }
     m_dwCommandIndex++;
     pCommand->dwIndex = m_dwCommandIndex;
+	::DebugMsg("setcommand:%d  begin",pCommand->iType);
     // lock attack 命令不可积累
     if (pCommand->iType == _COMMAND_LOCKATK || 
 		pCommand->iType == _COMMAND_WALK || 
@@ -1728,11 +1729,21 @@ DWORD CHero::SetCommand(CCommand* pCommand)
             }
         }
 	}
+	
     if (pCommand->iType == _COMMAND_INTONE && !pCommand->bAddUp)
     {
         if (m_PlayerInfo.setCmd.size() != 0)
         {
-            return false;
+			//交互动作- 比如释放技能 xp技能-播放一下动画，所以不return。重置动作 2016.10.24
+			if(m_PlayerInfo.setCmd.size() == 1 && 
+				m_PlayerInfo.setCmd[0].iType == _COMMAND_STOP)
+			{
+				this->ResetActionData();
+				m_PlayerInfo.setCmd.clear();
+			}else
+			{
+				return false;
+			}
         }
     }
     m_PlayerInfo.setCmd.push_back(*pCommand);
