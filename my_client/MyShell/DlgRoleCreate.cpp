@@ -526,8 +526,8 @@ void CDlgRoleCreate::OnRolecreateBtnReset()
 void CDlgRoleCreate::OnRolechooseMimg3()
 {
     // TODO: Add your control notification handler code here
-    this->MessageBox( g_objGameDataSet.GetStr ( 10039 ), g_objGameDataSet.GetStr ( 10040 ) ) ; //这个职业未开放！
-    return;
+    //this->MessageBox( g_objGameDataSet.GetStr ( 10039 ), g_objGameDataSet.GetStr ( 10040 ) ) ; //这个职业未开放！
+    //return;
     m_Img1.EnableWindow(false);
     m_Img2.EnableWindow(false);
     m_Img3.EnableWindow(false);
