@@ -698,6 +698,8 @@ bool CGameMap::FindDropItemCell(int nRange, POINT* pPos)		// pos: in/out
     CollectMapThing(setItem, *pPos, nRange, OBJ_MAPITEM);
     // ÏÈËæ»ú
     int		nIndex = ::RandGet(nBufSize);
+	if(nIndex < 0 || nIndex >= (int)setItem.size())
+	{return false;}
     if (!setItem[nIndex])
     {
         POINT	posTest;

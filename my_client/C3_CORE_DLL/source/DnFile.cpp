@@ -305,7 +305,7 @@ bool	CDnFile::OpenFile(const char* pszFile)
 	DnpInfo* pDnpInfo = new DnpInfo;
 	char szTemp[100];
 	sprintf(szTemp, "new 0x%x\n", pDnpInfo);
-	::OutputDebugString(szTemp);
+	//::OutputDebugString(szTemp);
 	if(!pDnpInfo)
 		return false;
 
@@ -413,7 +413,7 @@ void	CDnFile::Destroy()
 			delete(pDnp);
 			char szTemp[100];
 			sprintf(szTemp, "delete 0x%x\n", pDnp);
-			::OutputDebugString(szTemp);
+			//::OutputDebugString(szTemp);
 		}
 		iter ++;
 	}
@@ -499,11 +499,11 @@ _skip:
 			xor esi,edi
 			mov v,esi
 	}
-#ifdef _DEBUG
-	char szTemp[512];
-	sprintf(szTemp, "%s FileID: %u\n", str,v);
-	::OutputDebugString(szTemp);	
-#endif
+//#ifdef _DEBUG
+//	char szTemp[512];
+//	sprintf(szTemp, "%s FileID: %u\n", str,v);
+//	::OutputDebugString(szTemp);	
+//#endif
 	return v;
 }
 //--------------------------------------------------------------------------------------

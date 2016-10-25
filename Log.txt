@@ -35,8 +35,16 @@
 客户端release版本编译设置
 程序地图信息字段匹配数据库地图字段
 GM命令 testmonster 创建怪物 支持外观参数-
-
+2016.2.26
+开放创建异能者
 待解决问题
 服务端运行一段时间后mysql连接不上
 程序只支持小字体，日后需要更改
 音效会莫名其妙的没有声音
+
+2016.10.24
+配置客户端技能资源文件- 战士与法师的完成
+交互动作修正
+//会报异常
+//bool CGameMap::FindDropItemCell(int nRange, POINT* pPos)
+bool CMonster::DropMoney(DWORD dwMoney, OBJID idOwner)

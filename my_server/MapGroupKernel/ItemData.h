@@ -322,7 +322,9 @@ enum EUDEMONDATA
 {
     EUDEMONDATA_ID = 0,				// 幻兽ID
     EUDEMONDATA_OWNERID,			// 幻兽物品ID
+	EUDEMONDATA_OWNER_NAME,			//所属角色
     EUDEMONDATA_NAME,				// 幻兽名字
+	
     EUDEMONDATA_RELATIONSHIP,		// 与其它幻兽关系
 };
 

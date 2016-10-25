@@ -471,6 +471,7 @@ LPCTSTR CItemData::GetStr(ITEMDATA idx)
         case ITEMDATA_NAME:
             return m_pEudemonData->GetStr(EUDEMONDATA_NAME);
             break;
+		
         }
     }
     if (idx < ITEMTYPEDATA_OFFSET)
