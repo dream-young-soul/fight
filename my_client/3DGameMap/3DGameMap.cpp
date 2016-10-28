@@ -939,6 +939,11 @@ BOOL CGameMap::LoadDataMap(char* pszFileName)
     // read amount ...
     int nAmount;
     fread(&nAmount, sizeof(int), 1, fp);
+	//¼æÈÝÐÂµØÍ¼
+	if(nAmount == 0)
+	{
+		fread(&nAmount, sizeof(int), 1, fp);
+	}
     for(i = 0; i < nAmount; i++)
     {
         int nIndex, nType;
@@ -2555,10 +2560,10 @@ int CGameMap::GetRegionEffectInfo(CMyPos posCell)
 void CGameMap::ProcessRegionEffect(CMyPos posCell)
 {
     int nIndex = this->GetRegionEffectInfo(posCell);
-    if (nIndex == m_nCurRegionEffectIndex)
-    {
-        return;
-    }
+	  if (nIndex == m_nCurRegionEffectIndex)
+	{
+	return;
+	}
     if (m_setRegionEffect.size() <= 0)
     {
         return;
@@ -2634,10 +2639,10 @@ void CGameMap::ShowSnow()
 {
     // ×óÓÒÅÐ¶Ï
     g_objGameMap.ProcessRegionEffect(g_objHero.GetAlignPos());
-    if (m_nCurRegionEffectIndex == -1)
-    {
-        return;
-    }
+	if (m_nCurRegionEffectIndex == -1)
+	{
+		return;
+	}
     // center ...
     CMyPos posBgCenter, posWorldCenter;
     this->Screen2World(_SCR_WIDTH / 2, _SCR_HEIGHT - 100, posWorldCenter.x, posWorldCenter.y);
@@ -2781,10 +2786,10 @@ void	CGameMap::ShowScreenInfo()
 //---------------------------------------------------------------------------//
 void CGameMap::ShowBrume()
 {
-    if (!m_bBrume)
-    {
-        return;
-    }
+	if (!m_bBrume)
+	{
+	return;
+	}
     CMyBitmap::ClearBuffer(true, false, 0);
     static 	BOOL m_bInitDandelion = false;
     if (!m_bInitDandelion)

@@ -467,8 +467,15 @@ void CInteractiveLayer::LoadDataLayer(FILE* fp)
         // get obj type
         int nMapObjType;
         fread(&nMapObjType, sizeof(int), 1, fp);
+		//¼æÈÝÄ§Óò1.0ÐÂµØÍ¼
+		if(nMapObjType == 0)
+		{
+			fread(&nMapObjType, sizeof(int), 1, fp);
+		}
         switch(nMapObjType)
         {
+		case MAP_NONE:
+			break;
         case MAP_COVER:
             {
                 C2DMapCoverObj* pCoverObj = new C2DMapCoverObj;

@@ -1700,7 +1700,7 @@ DWORD CHero::SetCommand(CCommand* pCommand)
     }
     m_dwCommandIndex++;
     pCommand->dwIndex = m_dwCommandIndex;
-	::DebugMsg("setcommand:%d  begin",pCommand->iType);
+	
     // lock attack ÃüÁî²»¿É»ýÀÛ
     if (pCommand->iType == _COMMAND_LOCKATK || 
 		pCommand->iType == _COMMAND_WALK || 
@@ -1806,10 +1806,6 @@ DWORD CHero::SetCommand(CCommand* pCommand)
         if (pCommand->nData == _ACTION_INTONE)
         {
             nAcxcount ++;
-            if (nAcxcount == 2)
-            {
-                int lll = 1;
-            }
         }
     }
     memcpy(&(m_Info.cmdProc), pCommand, sizeof(CCommand));

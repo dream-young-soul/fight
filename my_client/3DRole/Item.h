@@ -280,7 +280,7 @@ public:
     unsigned short	GetSpeedRequired() {return m_infoType.usRequiredSpeed;}
     unsigned short	GetHealthRequired() {return m_infoType.usRequiredHealth;}
     unsigned short	GetSoulRequired() {return m_infoType.usRequiredSoul;}
-    unsigned char	GetMonopoly() {return m_infoType.ucMonopoly;}
+    unsigned char	GetMonopoly() {return (unsigned char)m_infoType.ucMonopoly;}
     unsigned short	GetWeight();
     unsigned int	GetPrice() {return m_infoType.uPrice;}
     unsigned short	GetMaxAttack() {return m_infoType.usMaxAttack;}

@@ -139,7 +139,7 @@ int CItem::ItemGetSort (OBJID idType)
     int nType = ITEMSORT_INVALID;
     switch((idType % 10000000) / 100000)
     {
-    case 10:
+    case 10:	
         nType = ITEMSORT_EXPEND;
         break;
     case 1:

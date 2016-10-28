@@ -243,8 +243,15 @@ bool CMapData::LoadTerrainItemData(FILE* fp)
         // get obj type
         int nMapObjType;
         fread(&nMapObjType, sizeof(int), 1, fp);
+		if(nMapObjType == 0)
+		{
+			fread(&nMapObjType, sizeof(int), 1, fp);
+		}
+
         switch(nMapObjType)
         {
+		case MAP_NONE:
+			break;
         case MAP_COVER:
             {
                 char	data[_MAX_PATH];

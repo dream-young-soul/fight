@@ -116,6 +116,7 @@ void C3DMapEffectNew::LoadDataObj(FILE* fp)
         return;
     }
     fread(m_szIndex, sizeof(char), 64, fp);
+	
     // save posworld
     fread(&m_posWorld, sizeof(CMyPos), 1, fp);
     this->Create(m_posWorld, m_szIndex);

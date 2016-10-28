@@ -209,6 +209,7 @@ void C2DMapCoverObj::LoadDataObj(FILE* fp)
     }
     fread(m_szFileName, sizeof(char), _MAX_PATH, fp);
     fread(m_szIndex, sizeof(char), _MAX_TITLESIZE, fp);
+	::DebugMsg("%s %s",m_szFileName,m_szIndex);
     fread(&m_posCell.x, sizeof(int), 1, fp);
     fread(&m_posCell.y, sizeof(int), 1, fp);
     fread(&m_sizeBase.iWidth, sizeof(UINT), 1, fp);

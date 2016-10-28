@@ -66,6 +66,7 @@ typedef struct
     int		     	nHitarte;				//33 命中
     unsigned short  usTarget;				//34 使用对象
     char			szDesc[128];			//35 描述
+	
 } ItemTypeInfo;
 
 typedef struct
@@ -93,6 +94,7 @@ public:
 
   
 	void LoadAllItemInfo();
+	void LoadAllItemInfoEx();
 	void ExportItemData(); //导出道具数据库
 private:
     BOOL	CreateIndexTable();

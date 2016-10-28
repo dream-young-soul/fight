@@ -350,7 +350,7 @@ BOOL CMyShellDlg::OnInitDialog()
         m_nScreenMode = 0 ;
         CMyShellDlg::SetScreenMode ( 0 ) ;
     }
-	CItem::s_ItemData.LoadAllItemInfo();
+	CItem::s_ItemData.LoadAllItemInfoEx();
     // init global obj
     g_obj3DRoleData.Init();
     // TODO: Add extra initialization here

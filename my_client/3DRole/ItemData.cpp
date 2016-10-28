@@ -63,18 +63,49 @@ CItemData::~CItemData()
     m_mapItemAdditional.clear();
   ;
 }
+
+void CItemData::LoadAllItemInfoEx()
+{
+	const char szFileName[] = "ini/itemtype.ini";
+	FILE* fp = fopen(szFileName, "r");
+	MYASSERT(fp);
+	ItemTypeInfo info;
+	int flag;
+	while(true)
+	{
+		
+		memset(&info,0,sizeof(ItemTypeInfo));
+
+		int nResult = fscanf(fp,"%u %s %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u %u",// %s
+			&info.uID,info.szName,&info.ucRequiredProfession,&info.ucRequiredWeaponSkill,&info.ucRequiredLevel,&info.ucRequiredSex,&info.usRequiredForce,&info.usRequiredSpeed,
+			&info.usRequiredHealth,&info.usRequiredSoul,&info.ucMonopoly,&info.usWeight,&info.uPrice,&info.usMaxAttack,&info.usMinAttack,&info.usDefense,&info.usDexterity,
+			&info.usDodge,&info.sLife,&info.sMana,&info.usAmount,&info.usAmountLimit,&info.ucStatus,&info.ucGem1,&info.ucGem2,&info.ucMagic1,&info.ucMagic2,&info.ucMagic3,&info.usMagicAttack,
+			&info.usMagicDefence,&info.usRange,&info.usAttackSpeed,&info.nHitarte,&info.usTarget);//,info.szDesc
+		if(nResult == EOF)
+		{
+			fclose(fp);
+			return;
+		}
+		if(nResult == 34)
+		{
+			s_mapItemType.insert(MAP_ITEMINFO::value_type(info.uID, info));
+		}
+	}
+	fclose(fp);
+}
 void CItemData::LoadAllItemInfo()
 {
 	FILE*	fp = NULL;
-	char szFilename[]="ini/itemtype.dat";
+	const char szFilename[]="ini/itemtype.dat";
 	fp = fopen(szFilename, "rb");
 	MYASSERT(fp);
 	fread(&m_dwRecordAmount, sizeof(DWORD), 1, fp);
+	
+	// 读取ID索引
+	/*OBJID *p_index = new OBJID[m_dwRecordAmount];
 
-	OBJID *p_index = new OBJID[m_dwRecordAmount];
-	 // 读取ID索引
-    fread(p_index, sizeof(OBJID), m_dwRecordAmount, fp);
-	delete []p_index;
+	fread(p_index, sizeof(OBJID), m_dwRecordAmount, fp);
+	delete []p_index;*/
 	ItemTypeInfo infoItemType;
 	for(DWORD i = 0; i < m_dwRecordAmount; i++)
 	{

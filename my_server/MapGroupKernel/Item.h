@@ -44,7 +44,7 @@ const int	MIN_DIVINE_ID	= 1;					// 最小神识编号
 const int	MAX_DIVINE_ID	= 8;					// 最大神识编号
 
 
-const int	EUDEMON_HATCH_SECS		= 24 * 60 * 60;			// 幻兽孵化需要24小时
+const int	EUDEMON_HATCH_SECS		= 10;//24 * 60 * 60			// 幻兽孵化需要24小时
 
 // chest
 const OBJID TYPE_CHEST_SPACE3	= 1070000;
