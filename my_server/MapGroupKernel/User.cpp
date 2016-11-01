@@ -264,6 +264,7 @@ CUser::CUser()
     m_pHelmet		= NULL;
     m_pNecklace		= NULL;
     m_pArmor		= NULL;
+	m_pFashion		= NULL;
     m_pRingR		= NULL;
     m_pRingL		= NULL;
     m_pShoes		= NULL;
@@ -514,10 +515,14 @@ bool CUser::AddAttrib(int idxAttr, __int64 i64Data, int nSynchro)
                     SetLife(__min(this->GetMaxLife(), this->GetLife() + i64Data));
                 }
                 // Ñª³¬¹ı70%µÄÊ±ºò½â³ı¿ñ±©×´Ì¬
-                if (GetLife() * 100 / GetMaxLife() > MAX_FRENZY_LIFE_PERCENT)
-                {
-                    CRole::DetachStatus(this->QueryRole(), STATUS_FRENZY);
-                }
+				if(GetLife() * 100 >0)
+				{
+					if (GetLife() * 100 / GetMaxLife() > MAX_FRENZY_LIFE_PERCENT)
+					{
+						CRole::DetachStatus(this->QueryRole(), STATUS_FRENZY);
+					}
+				}
+                
                 IF_NOT (msg.Append(_USERATTRIB_LIFE, this->GetLife()))
                 return false;
             }

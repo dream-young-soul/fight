@@ -200,7 +200,7 @@ BOOL CDlgEquip::OnInitDialog()
     m_StaRoleAvoid.Init(rect.left, rect.top);
     // Init the image
     m_ImgMantle.Init( rect.left, rect.top, NULL, ITEM_IMAGE);
-    m_ImgMantle.SetItemPos(ITEMPOSITION_MANTLE);
+    m_ImgMantle.SetItemPos(ITEMPOSITION_FASHION);
     m_ImgShoe.Init ( rect.left, rect.top, NULL, ITEM_IMAGE );
     m_ImgShoe.SetItemPos( ITEMPOSITION_SHOES ) ;
     m_ImgWeapon.Init ( rect.left, rect.top, NULL, ITEM_IMAGE );
@@ -339,7 +339,7 @@ void CDlgEquip::FlashEquip()
         m_ImgMount.InsertImage(NULL, pEquip->GetID(), pEquip->GetTypeID ());
     }
     m_ImgMantle.RemoveImage();
-    pEquip = g_objHero.GetEquipment(ITEMPOSITION_MANTLE);
+    pEquip = g_objHero.GetEquipment(ITEMPOSITION_FASHION);
     if (pEquip != NULL )
     {
         m_ImgMantle.InsertImage(NULL, pEquip->GetID(), pEquip->GetTypeID ());

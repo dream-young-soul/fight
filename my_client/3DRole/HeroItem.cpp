@@ -496,9 +496,14 @@ void CHero::UseItem(OBJID id, OBJID idTarget)
     case ITEMSORT_WEAPON_DOUBLE_HAND:
         nPosition = ITEMPOSITION_WEAPONR;
         break;
-    case ITEMSORT_TREASURE:
-        nPosition = ITEMPOSITION_TREASURE;
-        break;
+    //case ITEMSORT_TREASURE:
+    //    nPosition = ITEMPOSITION_TREASURE;
+    //    break;
+	case ITEMSORT_TREASURE:
+		{
+			nPosition = ITEMPOSITION_FASHION;
+			break;
+		}
     case ITEMSORT_SHIELD:
         {
             CItem* pItem = this->GetEquipment(ITEMPOSITION_WEAPONR);
@@ -868,6 +873,19 @@ void CHero::SetEquipment (int nPosition, CItem* pItem)
             this->SetArmor(ID_NONE);
         }
         break;
+	case ITEMPOSITION_FASHION:
+		{
+			m_pEquipment[nType] = pItem;
+		/*	if (pItem)
+			{
+				this->SetArmor(pItem->GetTypeID());
+			}
+			else
+			{
+				this->SetArmor(ID_NONE);
+			}*/
+			break;
+		}
     case ITEMPOSITION_WEAPONR:
         m_pEquipment[nType] = pItem;
         if (pItem)
@@ -919,7 +937,24 @@ void CHero::SetEquipment (int nPosition, CItem* pItem)
     case ITEMPOSITION_SPRITE:
         m_pEquipment[nType] = pItem;
         break;
+
     }
+	if(nPosition == ITEMPOSITION_FASHION || nPosition == ITEMPOSITION_ARMOR)
+	{
+		if(m_pEquipment[ITEMPOSITION_FASHION - 1] != NULL)
+		{
+			this->SetArmor(m_pEquipment[ITEMPOSITION_FASHION - 1] ->GetTypeID());
+		}else
+		{
+			if(m_pEquipment[ITEMPOSITION_ARMOR - 1] != NULL)
+			{
+				this->SetArmor(m_pEquipment[ITEMPOSITION_ARMOR - 1] ->GetTypeID());
+			}else
+			{
+				 this->SetArmor(ID_NONE);
+			}
+		}
+	}
     ::PostCmd(CMD_FLASHEQUIPMENT);
 }
 

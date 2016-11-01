@@ -62,6 +62,7 @@ BOOL CMsgPlayer::Create(IRole* pRole)
     m_pInfo->usHair		= (USHORT)pRole->GetHair();
     m_pInfo->cLength	= pRole->GetLength();
     m_pInfo->cFat		= pRole->GetFat();
+	//增加时装
     m_pInfo->dwArmorType	= pRole->GetArmorTypeID();
     m_pInfo->dwWeaponRType	= pRole->GetWeaponRTypeID();
     m_pInfo->dwMountType	= pRole->GetMountTypeID();

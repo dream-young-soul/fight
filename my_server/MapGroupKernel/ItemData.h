@@ -130,7 +130,7 @@ const int	IETMSORT_FINERY					=	1;	// 服饰
 const int	ITEMSORT_WEAPON1				=	4;	// 单手武器（武器）
 const int	ITEMSORT_MOUNT					=	6;	// 坐骑
 const int	ITEMSORT_OTHER					=	7;	// 其他, 不能直接使用
-
+const int ITEMSORT_FASHIL = 12;					//时装
 // 以下分类已经不使用
 const int	ITEMSORT_WEAPON2				=	-1;//5;	// 双手武器
 const int	ITEMSORT_SHIELD					=	-1;//9;	// 盾牌
@@ -291,7 +291,8 @@ const int	ITEMPOSITION_SHOES		= 8;	// 鞋子
 const int	ITEMPOSITION_MOUNT		= 9;
 const int	ITEMPOSITION_SPRITE		= 10;	// 精灵  -- add by zlong 2003-11-27
 const int	ITEMPOSITION_MANTLE		= 11;	// 披风 -- zlong 2004-02-04
-const int	ITEMPOSITION_EQUIPEND		= 12;
+const int	ITEMPOSITION_FASHION =  12;		//时装
+const int	ITEMPOSITION_EQUIPEND		= 13;
 
 const int	ITEMPOSITION_PACK_BEGIN				= 50;
 const int	ITEMPOSITION_BACKPACK			= 50;	// 普通物品背包

@@ -199,6 +199,7 @@ public: // 分类
     // add by zlong 3002-12-05
     bool	IsPick()		{ return 470 == (GetInt(ITEMDATA_TYPE) / 1000) % 1000; }		// 是否挖矿用的锄头
     bool	IsMantle()		{ return IsFinery() && GetItemType() == ITEMTYPE_MANTLE; }
+	bool    IsFashion()		{return GetItemSort() == IETMSORT_FINERY && (GetInt(ITEMDATA_TYPE)% 1000000) / 10000 == 19;}
 
 public: // static
     static bool	IsBowSort(int nType)	{ return CItem::IsBow(nType) || CItem::IsCrossBow(nType); }

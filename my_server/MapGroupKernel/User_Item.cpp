@@ -122,6 +122,10 @@ void CUser::SaveItemInfo()
     {
         m_pMantle->SaveInfo();
     }
+	if(m_pFashion)
+	{
+		m_pFashion->SaveInfo();
+	}
     m_pPackage->SaveAllInfo();
 }
 
@@ -139,6 +143,7 @@ void CUser::DeleteAllItem()
     SAFE_RELEASEBYOWNER(m_pMount);
     SAFE_RELEASEBYOWNER(m_pSprite);
     SAFE_RELEASEBYOWNER(m_pMantle);
+	SAFE_RELEASEBYOWNER(m_pFashion);
     m_pPackage->ClearAll();
     UpdateWeight();
 }
@@ -243,6 +248,15 @@ void CUser::SendAllItemInfo()
             this->SendMsg(&msg);
         }
     }
+	if(m_pFashion)
+	{
+		CMsgItemInfo msg;
+		if(msg.Create(m_pFashion,ITEMINFO_ADDITEM))
+		{
+
+			this->SendMsg(&msg);
+		}
+	}
     m_pPackage->SendAllItemInfo();
 }
 
@@ -338,6 +352,17 @@ void CUser::SendAllEquipInfoTo(CUser* pRecv)
             pRecv->SendMsg(&msg);
         }
     }
+
+	if(m_pFashion)
+	{
+
+		CMsgItemInfo msg;
+		if(msg.Create(m_pFashion,ITEMINFO_OTHERPLAYER_EQUIPMENT, GetID()))
+		{
+			 pRecv->SendMsg(&msg);
+
+		}
+	}
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -417,6 +442,10 @@ CItem* CUser::GetEquipItem(OBJID idItem)
     {
         return m_pMantle;
     }
+	else if(m_pFashion && m_pFashion->GetID() == idItem)
+	{
+		return m_pFashion;
+	}
     return NULL;
 }
 
@@ -458,6 +487,10 @@ CItemPtr* CUser::GetEquipItemPtr(int nPosition)
         return &m_pSprite;
     case	ITEMPOSITION_MANTLE:
         return &m_pMantle;
+	case ITEMPOSITION_FASHION:
+		{
+			return &m_pFashion;
+		}
     }
     return NULL;
 }
@@ -932,6 +965,17 @@ bool CUser::EquipItem(CItem* pItem, int nPosition, bool bSynchro)
                 bRet	= true;
             }
         }
+	case ITEMPOSITION_FASHION:
+		{
+			if (pItem->IsFashion())
+			{
+				UnEquipOnly(nPosition);
+				m_pFashion = pItem;
+				pItem->SetInt(ITEMDATA_POSITION, ITEMPOSITION_FASHION);
+				bRet	= true;
+			}
+			break;
+		}
         break;
     default:
         ASSERT(!"switch");
@@ -964,7 +1008,8 @@ bool CUser::EquipItem(CItem* pItem, int nPosition, bool bSynchro)
                     || nPosition == ITEMPOSITION_WEAPONR
                     || nPosition == ITEMPOSITION_WEAPONL
                     || nPosition == ITEMPOSITION_MANTLE
-                    || nPosition == ITEMPOSITION_MOUNT )
+                    || nPosition == ITEMPOSITION_MOUNT
+					|| nPosition == ITEMPOSITION_FASHION)
             {
                 CMsgPlayer msgPlayer;
                 if (msgPlayer.Create(this->QueryRole()))
@@ -1005,7 +1050,8 @@ bool CUser::TryItem(OBJID idItem, int nPosition)
         return false;
     }
     if (pItem->GetInt(ITEMDATA_REQ_SEX) &&
-            (pItem->GetInt(ITEMDATA_REQ_SEX) & (1 << GetSex())) == 0)
+           // (pItem->GetInt(ITEMDATA_REQ_SEX) & (1 << GetSex())) == 0)
+			   pItem->GetInt(ITEMDATA_REQ_SEX) != GetSex())
     {
         return false;
     }
@@ -1483,7 +1529,8 @@ bool CUser::UnEquipItem(int nPosition, bool bSynchro)
                 || nPosition == ITEMPOSITION_ARMOR
                 || nPosition == ITEMPOSITION_WEAPONR
                 || nPosition == ITEMPOSITION_WEAPONL
-                || nPosition == ITEMPOSITION_MANTLE )
+                || nPosition == ITEMPOSITION_MANTLE 
+				|| nPosition == ITEMPOSITION_FASHION)
         {
             CMsgPlayer msgPlayer;
             if (msgPlayer.Create(this->QueryRole()))

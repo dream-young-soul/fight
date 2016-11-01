@@ -25,7 +25,7 @@ const int _MONOPOLY_SELLCONFIRM			=   8;//8:³öÊÛÌáÊ¾-³öÊÛ¸øÉÌµêÊ±¿Í»§¶ËÌø³öÈ·ÈÏ´
 const int _MONOPOLY_NOTDROP				=  16;//16:ËÀÍö²»»áµôÂä
 const int _MONOPOLY_NOT_SELL			=  32;//32:²»¿É³öÊÛ
 
-const int _MAX_EQUIPMENT				=	11;	// ²»ÄÜĞŞÕı³É7£¬·ñÔòÎ»ÖÃ´íÂÒ
+const int _MAX_EQUIPMENT				=	12;	// ²»ÄÜĞŞÕı³É7£¬·ñÔòÎ»ÖÃ´íÂÒ
 
 // requre sex define
 const unsigned char _MAN_USEABLE		=	0x01;// ÄĞµÄ¿ÉÓÃ
@@ -45,6 +45,7 @@ const int	ITEMPOSITION_SHOES		=	8;	// Ğ¬×Ó
 const int	ITEMPOSITION_MOUNT		=	9;	// ×øÆï
 const int	ITEMPOSITION_SPRITE		=	10;	// ¾«Áé
 const int ITEMPOSITION_MANTLE		=	11; // Åû·ç
+const int ITEMPOSITION_FASHION = 12;		//Ê±×°
 
 const int ITEMPOSITION_BACKPACK			=	50; // ÆÕÍ¨ÎïÆ·±³°ü
 const int ITEMPOSITION_GHOSTGEM_PACK	=	51; // Ä§»ê±¦Ê¯±³°ü
@@ -75,7 +76,8 @@ const int	ITEMSORT_SHOES					=	8;	// Ğ¬×Ó
 const int	ITEMSORT_OTHER					=	9;	// ÆäËû, ²»ÄÜÖ±½ÓÊ¹ÓÃ
 const int	ITEMSORT_MOUNT					=	10;	// ×øÆï
 const int	ITEMSORT_SPRITE					=	11;	// ¾«Áé
-const int	ITEMSORT_TREASURE				=	12; // Öé±¦
+const int	ITEMSORT_TREASURE				=	12; // Öé±¦-Ê±×°
+
 
 // money define
 const int	ITEMTYPEMONEY_MIN			= 1090000;	// ×îĞ¡¶ÑÇ®
@@ -276,6 +278,7 @@ public:
     unsigned char	GetWeaponSkillRequired() {return m_infoType.ucRequiredWeaponSkill;}
     unsigned char	GetLevelRequired() {return m_infoType.ucRequiredLevel;}
     unsigned char	GetSexRequried() {return m_infoType.ucRequiredSex;}
+	const char* GetSexRequiriedStr();
     unsigned short	GetForceRequired() {return m_infoType.usRequiredForce;}
     unsigned short	GetSpeedRequired() {return m_infoType.usRequiredSpeed;}
     unsigned short	GetHealthRequired() {return m_infoType.usRequiredHealth;}

@@ -70,6 +70,13 @@ int	CItem::GetSort()
 {
     return CItem::ItemGetSort(m_infoType.uID);
 }
+
+const char* CItem::GetSexRequiriedStr()
+{
+	return this->GetSexRequried() == 1 ? g_objGameDataSet.GetStr(10031): g_objGameDataSet.GetStr(10030);
+
+}
+
 //-----------------------------------------------------------------
 int	CItem::GetSubType()
 {
@@ -156,8 +163,8 @@ int CItem::ItemGetSort (OBJID idType)
             case 13:
                 nType = ITEMSORT_ARMOR;
                 break;
-            case 14:
-                nType = ITEMSORT_TREASURE;
+       /*     case 14:
+                nType = ITEMSORT_TREASURE;*/
                 break;
             case 15:
                 nType = ITEMSORT_RING;
@@ -165,6 +172,11 @@ int CItem::ItemGetSort (OBJID idType)
             case 16:
                 nType = ITEMSORT_SHOES;
                 break;
+			case 19:
+				{
+					nType = ITEMSORT_TREASURE;
+					break;
+				}
             }
         }
         break;

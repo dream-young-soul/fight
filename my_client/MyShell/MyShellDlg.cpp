@@ -4144,7 +4144,7 @@ void CMyShellDlg::ShowMessage(CItem* pItem, int nItemNum, BOOL bShowDur)
             {
                 strMsgColor[nMsgNum] = STRCOLOR_RED;
             }
-            sprintf ( strMsg[nMsgNum++], g_objGameDataSet.GetStr ( 10085 ), pItem->GetSexRequried()) ;
+            sprintf ( strMsg[nMsgNum++], g_objGameDataSet.GetStr ( 10085 ), pItem->GetSexRequiriedStr()) ;
         }
     }
     if ( !pItem->TestStatus( _ITEM_STATUS_NONE ) )

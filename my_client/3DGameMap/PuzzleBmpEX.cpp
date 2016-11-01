@@ -38,9 +38,13 @@ BOOL CPuzzleBmpEX::Load(char* pszFile)
     char szHeader[8] = "";
     fread(szHeader, 1, 8, fp);
     // check header ...
-    if (strcmp(szHeader, "PUZZLE3") != 0)
+    if (strcmp(szHeader, "PUZZLE3") != 0 )
     {
-        return FALSE;
+		if(strcmp(szHeader,"PUZZLE2") != 0)
+		{
+			return FALSE;
+		}
+        
     }
     // AniFile.. (256 bytes)
     fread(m_szAniFile, 1, 256, fp);

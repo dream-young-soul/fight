@@ -144,7 +144,7 @@ void CDlgMipmap::Show()
             return ;
         }
         // Show the frame rate
-#ifdef _DEBUG
+//#ifdef _DEBUG
         static int nFrameRate = 0;
         static DWORD timeLoop	= 0;
         DWORD timeNow	=::TimeGet();
@@ -182,7 +182,7 @@ void CDlgMipmap::Show()
                                20,
                                _COLOR_YELLOW,
                                szMsg);
-#endif
+//#endif
         // Show the static
         if ( m_MapID != g_objGameMap.GetIDDoc() )
         {

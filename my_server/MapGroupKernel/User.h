@@ -408,8 +408,25 @@ public: // IRole
     virtual bool	TransferShield		(bool bMagic, IRole* pAtker, int nDamage);
 
     virtual int		GetHelmetTypeID		()			{ if (m_pHelmet) { return m_pHelmet->GetInt(ITEMDATA_TYPE); } return ID_NONE; }
-    virtual int		GetArmorTypeID		()			{ if (m_nSynDressArmorType) { return m_nSynDressArmorType; } if (m_pArmor) { return m_pArmor->GetInt(ITEMDATA_TYPE); }  return ID_NONE;}
-    virtual int		GetWeaponRTypeID	()			{ if (m_pWeaponR) { return m_pWeaponR->GetInt(ITEMDATA_TYPE); } return ID_NONE; }
+    virtual int		GetArmorTypeID		()			
+	{ 
+		if (m_nSynDressArmorType) 
+		{ 
+			return m_nSynDressArmorType; 
+		} 
+		if(m_pFashion)
+		{
+
+			return m_pFashion->GetInt(ITEMDATA_TYPE); 
+		}
+		if (m_pArmor) 
+		{ 
+			return m_pArmor->GetInt(ITEMDATA_TYPE); 
+		}  
+		return ID_NONE;
+	}
+	
+	virtual int		GetWeaponRTypeID	()			{ if (m_pWeaponR) { return m_pWeaponR->GetInt(ITEMDATA_TYPE); } return ID_NONE; }
     virtual int		GetWeaponLTypeID	()			{ if (m_pWeaponL) { return m_pWeaponL->GetInt(ITEMDATA_TYPE); } return ID_NONE; }
     virtual int		GetNecklaceTypeID	()			{ if (m_pNecklace) { return m_pNecklace->GetInt(ITEMDATA_TYPE); } return ID_NONE; }
     virtual int		GetRingRTypeID		()			{ if (m_pRingR) { return m_pRingR->GetInt(ITEMDATA_TYPE); } return ID_NONE; }
@@ -1233,7 +1250,7 @@ protected:
     CItemPtr	m_pMount;
     CItemPtr	m_pSprite;	// 精灵 -- add by zlong 2003-11-27
     CItemPtr	m_pMantle;	// 披风 -- zlong 2004-02-04
-
+	CItemPtr	m_pFashion;	//时装
     //---jinggy---2004-11-19---装备经验值---begin
     CTimeOut    m_arrTimeOutForEquipExp[ITEMPOSITION_EQUIPEND-ITEMPOSITION_EQUIPBEGIN];
     int			m_arrEquipIncExp[ITEMPOSITION_EQUIPEND-ITEMPOSITION_EQUIPBEGIN];//设备战魂经验值的增量
