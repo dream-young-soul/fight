@@ -1794,13 +1794,13 @@ BEGIN
     BEGIN
         BLOCK "080404b0"
         BEGIN
-            VALUE "CompanyName", "网龙天晴数码"
-            VALUE "FileDescription", "网络游戏魔域客户端执行程序"
+            VALUE "CompanyName", "仙剑修"
+            VALUE "FileDescription", "网络游戏圣战客户端执行程序"
             VALUE "FileVersion", "1, 0, 0, 1"
             VALUE "InternalName", "soul.exe"
-            VALUE "LegalCopyright", "版权所有 (C) 2002"
-            VALUE "OriginalFilename", "魔域.exe"
-            VALUE "ProductName", "魔域客户端执行程序"
+            VALUE "LegalCopyright", "版权所有 (C) 2016"
+            VALUE "OriginalFilename", "圣战.exe"
+            VALUE "ProductName", "圣战客户端执行程序"
             VALUE "ProductVersion", "1, 0, 0, 1"
         END
     END
@@ -1858,6 +1858,10 @@ BEGIN
     IDD_DIALOG_GROUP, DIALOG
     BEGIN
         HORZGUIDE, 3
+    END
+
+    IDD_DIALOG_TALK, DIALOG
+    BEGIN
     END
 
     IDD_DIALOG_LISTBOX, DIALOG
@@ -1958,6 +1962,10 @@ BEGIN
     IDD_DIALOG_KONGFU, DIALOG
     BEGIN
         RIGHTMARGIN, 258
+    END
+
+    IDD_DIALOG_CHAT, DIALOG
+    BEGIN
     END
 
     IDD_DIALOG_ROOMLG, DIALOG
