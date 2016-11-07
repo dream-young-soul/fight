@@ -134,7 +134,7 @@ int Init3DEx ( HWND hWnd,
     g_Present.BackBufferFormat = g_DisplayMode.Format;
     g_Present.EnableAutoDepthStencil = true;
     g_Present.AutoDepthStencilFormat = D3DFMT_D16;
-
+	
 	if ( FAILED ( g_D3D->CreateDevice ( D3DADAPTER_DEFAULT,
 									    D3DDEVTYPE_HAL,
 									    hWnd,

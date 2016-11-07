@@ -711,6 +711,9 @@ void CMyBitmap::PrepareLine ( void )
    // SetTextureStageState ( 0, D3DTSS_MINFILTER, D3DTEXF_LINEAR );
    // SetTextureStageState ( 0, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
     //SetTextureStageState ( 0, D3DTSS_MIPFILTER, D3DTEXF_LINEAR );
+
+
+
 	g_D3DDevice->SetSamplerState(0,D3DSAMP_MINFILTER,D3DTEXF_LINEAR);
 	g_D3DDevice->SetSamplerState(0,D3DSAMP_MAGFILTER,D3DTEXF_LINEAR);
 	g_D3DDevice->SetSamplerState(0,D3DSAMP_MIPFILTER,D3DTEXF_LINEAR);
@@ -808,6 +811,7 @@ void CMyBitmap::ShowRect ( int x1, int y1, int x2, int y2, DWORD color )
 }
 
 //------------------------------------------------------
+//移植到directx9 画不出来。。
 void CMyBitmap::ShowBlock( int x1, int y1, int x2, int y2, DWORD color1, DWORD color2, DWORD color3, DWORD color4)
 {
     static LineVertex s_vec[4];
@@ -905,6 +909,7 @@ void CMyBitmap::ShowBlock ( int x1, int y1, int x2, int y2, DWORD color )
     {
         CMyBitmap::PrepareLine();
     }
+	
     g_D3DDevice->SetFVF ( LINE_VERTEX );
     g_D3DDevice->DrawPrimitiveUP ( D3DPT_TRIANGLESTRIP,
                                    2,

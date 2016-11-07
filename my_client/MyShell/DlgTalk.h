@@ -81,7 +81,8 @@ public:
     CMyGrid	m_GoodBox;
     CMyButton	m_HideGoodBox;
     CMyProgress	m_PrgExp;
-    CMyCombo	m_TalkDataCob ;
+    //CMyCombo	m_TalkDataCob ;
+	CMyEdit m_TalkDataCob;
     CMyEdit		m_TalkNameEdt ;
     CMyButton	m_TalkModeImg ;
     CMyButton	m_TalkSendBtn ;

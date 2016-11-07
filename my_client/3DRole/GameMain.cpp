@@ -167,7 +167,7 @@ BOOL GameInit(HWND hWnd)
     // init font
     MYASSERT (CMyBitmap::GameFontCreate());
     // create hero
-    g_objHero.Create(2);
+    //g_objHero.Create(2);
 #ifdef _NETWORK_DISABLE
     MYASSERT (g_objGameMap.LoadDataMap ("map/map/desert.DMap"));
     g_objGameMap.m_idDoc = 1000;

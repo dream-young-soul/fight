@@ -33,6 +33,7 @@ CMyEdit::CMyEdit()
     m_EdtPar.m_bMultiLine = false ;
     m_EdtPar.m_bChinese = true;
     m_EdtPar.m_nLastSelEnd = 0;
+
 }
 
 CMyEdit::~CMyEdit()
@@ -94,6 +95,7 @@ void CMyEdit::OnLButtonDown(UINT nFlags, CPoint point)
 
 void CMyEdit::ShowChar()
 {
+	
     char strChar[1024] = "";
     memset(strChar, 0L, sizeof(strChar));
     if ( 0 >= this->GetWindowText( strChar, 1024 ) )
@@ -101,11 +103,15 @@ void CMyEdit::ShowChar()
         // Show the cursor pos
         if ( ::timeGetTime() / 500 % 2 == 0 && this->GetFocus() == this )
         {
-            CMyBitmap::ShowBlock ( m_EdtPar.m_Pnt.x,
+			CMyBitmap::ShowString(m_EdtPar.m_Pnt.x-2,
+									m_EdtPar.m_Pnt.y,
+									0xffffffff,
+									"|");
+           /* CMyBitmap::ShowBlock ( m_EdtPar.m_Pnt.x,
                                    m_EdtPar.m_Pnt.y,
                                    m_EdtPar.m_Pnt.x + 2,
                                    m_EdtPar.m_Pnt.y + CMyBitmap::GetFontSize() + 2,
-                                   0xffffffff );
+                                   0xffffffff );*/
         }
         return;
     }
@@ -163,7 +169,16 @@ void CMyEdit::ShowChar()
             {
                 strNorChar[i] = '*' ;
             }
-            strNorChar[nCharNum] = 0 ;
+            
+			//if(m_bTwinkle)
+			//{
+			//	nCharNum++;
+			//	strNorChar[nCharNum] ='|';
+			//	strNorChar[nCharNum+1]=0;
+			//}else
+			{
+				strNorChar[nCharNum] = 0 ;
+			}
         }
         else
         {
@@ -203,11 +218,15 @@ void CMyEdit::ShowChar()
         // Show the cursor pos
         if ( ::timeGetTime() / 500 % 2 == 0 && this->GetFocus() == this )
         {
-            CMyBitmap::ShowBlock ( m_EdtPar.m_Pnt.x + ( nCursor - nStart ) * ( CMyBitmap::GetFontSize() / 2 ),
+			CMyBitmap::ShowString(m_EdtPar.m_Pnt.x + ( nCursor - nStart ) * ( CMyBitmap::GetFontSize() / 2 ) - 2,
+									m_EdtPar.m_Pnt.y,
+									0xffffffff,
+									"|");
+    /*        CMyBitmap::ShowBlock ( m_EdtPar.m_Pnt.x + ( nCursor - nStart ) * ( CMyBitmap::GetFontSize() / 2 ),
                                    m_EdtPar.m_Pnt.y,
                                    m_EdtPar.m_Pnt.x + ( nCursor - nStart ) * ( CMyBitmap::GetFontSize() / 2 ) + 2,
                                    m_EdtPar.m_Pnt.y + CMyBitmap::GetFontSize() + 2,
-                                   0xffffffff ) ;
+                                   0xffffffff ) ;*/
         }
         if ( m_EdtPar.m_nSelNum > 0 )
         {

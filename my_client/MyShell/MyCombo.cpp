@@ -56,23 +56,29 @@ void CMyCombo::ShowChar()
 {
 	
 	CString strTemp; 
-	int nLineNum = 0; //行索引
-	CMyCombo::GetLine(nLineNum,strTemp.GetBufferSetLength(CMyCombo::LineLength(CMyCombo::LineIndex(nLineNum))));
+	const int nLineNum = 0; //行索引
+	int nLineLength = CMyCombo::LineLength(CMyCombo::LineIndex(nLineNum)) + 1;
+	CMyCombo::GetLine(nLineNum,strTemp.GetBufferSetLength(nLineLength));
 	strTemp.ReleaseBuffer(); 
 	char strChar[1024] = {0};
 	strcpy(strChar,(LPCTSTR)strTemp);
-	  
-    //if ( 0 >= CMyCombo::GetLine ( 0, strChar, sizeof( strChar ) ) )//GetLine 后面会出现乱码 改用CString 代替
-	if(strlen(strTemp) == 0)
+	
+    
+	if(strlen(strChar) == 0)
+	//if ( 0 >= CMyCombo::GetLine ( 0, strChar, sizeof( strChar ) ) )//GetLine 后面会出现乱码 改用CString 代替
     {
         // Show the cursor pos
         if ( ::timeGetTime() / 500 % 2 == 0 && this->GetFocus() == this )
         {
-            CMyBitmap::ShowBlock ( m_CobPar.m_Pnt.x,
+  /*          CMyBitmap::ShowBlock ( m_CobPar.m_Pnt.x,
                                    m_CobPar.m_Pnt.y,
                                    m_CobPar.m_Pnt.x + 2,
                                    m_CobPar.m_Pnt.y + CMyBitmap::GetFontSize() + 4,
-                                   0xffffffff );
+                                   0xffffffff );*/
+			CMyBitmap::ShowString(m_CobPar.m_Pnt.x - 2,
+                                   m_CobPar.m_Pnt.y,
+								    0xffffffff,
+									"|");
         }
         return;
     }
@@ -186,11 +192,15 @@ void CMyCombo::ShowChar()
         // Show the cursor pos
         if ( ::timeGetTime() / 500 % 2 == 0 && this->GetFocus() == this )
         {
-            CMyBitmap::ShowBlock ( m_CobPar.m_Pnt.x + ( nCursor - nStart ) * ( CMyBitmap::GetFontSize() / 2 ),
+			CMyBitmap::ShowString(m_CobPar.m_Pnt.x + ( nCursor - nStart ) * ( CMyBitmap::GetFontSize() / 2 ) - 2,
+                                   m_CobPar.m_Pnt.y,
+								    0xffffffff,
+									"|");
+    /*        CMyBitmap::ShowBlock ( m_CobPar.m_Pnt.x + ( nCursor - nStart ) * ( CMyBitmap::GetFontSize() / 2 ),
                                    m_CobPar.m_Pnt.y,
                                    m_CobPar.m_Pnt.x + ( nCursor - nStart ) * ( CMyBitmap::GetFontSize() / 2 ) + 2,
                                    m_CobPar.m_Pnt.y + CMyBitmap::GetFontSize() + 4,
-                                   0xffffffff ) ;
+                                   0xffffffff ) ;*/
         }
     }
 }

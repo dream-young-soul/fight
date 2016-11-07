@@ -184,6 +184,7 @@
 #define IDC_LOGIN_EDT_PASSWORD          1004
 #define IDC_MAIN_QUERY                  1005
 #define IDC_LOGIN_BTN_ADD               1005
+#define IDC_LOGIN_EDT_ACCOUNT2          1005
 #define IDC_MAIN_SKILL                  1006
 #define IDC_MAIN_QUERY4                 1006
 #define IDC_MAIN_STONES                 1006

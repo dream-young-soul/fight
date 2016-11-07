@@ -337,9 +337,10 @@ BOOL CMyShellApp::OnIdle(LONG lCount)
 {
     static DWORD timeLoop	= 0;
     DWORD timeNow	=::TimeGet();
-    if (timeNow < timeLoop + 30 && timeNow != timeLoop)
+	const DWORD FPS = 30;
+    if (timeNow < timeLoop + FPS && timeNow != timeLoop)
     {
-        ::Sleep( timeLoop + 30 - timeNow ) ;
+        ::Sleep( timeLoop + FPS - timeNow ) ;
     }
     else
     {
