@@ -384,19 +384,23 @@ void CDlgTalk::Show()
         {
             if (m_bShowGoods)
             {
-                pShowAni->Show( 0, 256, 602 );
-                pShowAni->Show( 1, 512, 602 );
+				CRect rect;
+				this->GetWindowRect(rect);
+				pShowAni->Show( 0, (_SCR_WIDTH - rect.Width()) / 2 + 160  , _SCR_HEIGHT-166) ;
+                
+                pShowAni->Show( 1, (_SCR_WIDTH - rect.Width()) / 2 + 160 + 282 - 27, _SCR_HEIGHT-166 );
             }
             else
             {
-                pShowAni->Show( 2, 256, 602 );
-                pShowAni->Show( 3, 512, 602 );
+               // pShowAni->Show( 2, 256, 602 );
+               // pShowAni->Show( 3, 512, 602 );
             }
         }
         else
         {
             return ;
         }
+		
         // Shwo the progress
         m_PrgExp.ResetValue( 0, g_objHero.GetNextLevelExp() ) ;
         m_PrgExp.Show( m_Pnt.x, m_Pnt.y, g_objHero.GetExp(), g_objHero.GetExp() ) ;
@@ -937,11 +941,12 @@ void CDlgTalk::OnTalkBtnHelp()
 
 void CDlgTalk::OnBtnHidegoods()
 {
+	return;
     // TODO: Add your control notification handler code here
     DXPlaySound ( "Sound/Dlg_Flex.wav" ) ;
-    m_bShowGoods = !m_bShowGoods;
-    m_GoodBox.EnableWindow(m_bShowGoods);
-    SetTalkDlgRgn();
+    //m_bShowGoods = !m_bShowGoods;
+    //m_GoodBox.EnableWindow(m_bShowGoods);
+    //SetTalkDlgRgn();
 }
 
 void CDlgTalk::SetTalkDlgRgn()

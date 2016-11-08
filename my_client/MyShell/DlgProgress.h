@@ -25,7 +25,7 @@ class CDlgProgress : public CDialog
 {
     // Construction
 public:
-    void Show();
+    void Show(int talk_width);
     CDlgProgress(CWnd* pParent = NULL);   // standard constructor
     BOOL				m_bShow ;
     BOOL				m_bLevUp ;

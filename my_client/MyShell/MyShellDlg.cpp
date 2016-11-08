@@ -66,6 +66,7 @@ bool TestDebuger(const char* pszFile)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
+CRect g_TalkRect;
 void GameShow ()
 {
 	extern DWORD g_dwCurTime ;
@@ -115,7 +116,9 @@ void GameShow ()
     }
     // show x?
     g_objPlayerSet.ShowX();
-    g_objHero.ShowXp () ;
+	
+	
+	g_objHero.ShowXp (g_TalkRect.Width()) ;
     if ((::TimeGet() - g_objHero.GetTimeWhoAttackme() < 10 * 1000)
             || CPlayer::s_bShowName || g_objGameMap.GetShowMapObjInfoFlag()
             || g_objHero.IsMouseFocus())
@@ -701,7 +704,8 @@ void CMyShellDlg::OnTimer(UINT nIDEvent)
                     {
                         break;
                     }
-                    GameShow() ;
+					m_DlgMain.m_DlgTalk.GetWindowRect(g_TalkRect);
+					GameShow() ;
                     g_objHero.ShowHelpTips(50, 72, _SCR_WIDTH - 230, 0xF7E38C, 0x3e000080);
                     g_objGameMsg.Show() ;
                     m_DlgMain.Show();
@@ -3073,7 +3077,7 @@ void CMyShellDlg::StartGame()
         // Set the system show state
         CMyPos pos;
         pos.x = 0;
-        pos.y = 620;
+		pos.y = _SCR_HEIGHT - 120;
         g_objGameMsg.SetNorAreaShowStates( pos, 715 ) ;
         g_objGameMsg.SetShowLines(5);
         g_objGameMsg.SetShowLinesEx(5, 5) ;

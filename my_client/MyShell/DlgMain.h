@@ -118,7 +118,7 @@ public:
     UINT			m_uCurRDlgID;			// the current right side dialog
     UINT			m_uCurMDlgID;			// the current mid side dialog
     BOOL			m_bCreate ;
-
+	
     CDlgEmotion		   m_DlgEmotion;
     CDlgMonsterHeads   m_DlgMonsterHeads;
     CDlgAddAuction     m_DlgAddAucItem;

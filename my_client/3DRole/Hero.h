@@ -261,7 +261,7 @@ public:
 
     void	Process(void* pInfo);
     void	Show	(void* pInfo);
-    void	ShowXp	(void);
+    void	ShowXp	(int talk_width);
 
 public:
     void	Talk			(CPlayer* pTarget, const char* pszWords, const char* pszEmotion = NULL, DWORD dwColor = 0xffffff, unsigned short unAttribute = _TXTATR_NORMAL, unsigned short unStyle = _TXT_NORMAL);

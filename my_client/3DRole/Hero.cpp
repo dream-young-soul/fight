@@ -2765,7 +2765,7 @@ void CHero::Show(void* pInfo)
 }
 
 //////////////////////////////////////////////////////////////////////
-void CHero::ShowXp(void)
+void CHero::ShowXp(int talk_width)
 {
     this->ShowFly();
     this->ShowTransform();
@@ -2776,20 +2776,23 @@ void CHero::ShowXp(void)
         // show time counter
         if (m_dwXpFullTime >= 0 && m_dwXpFullTime <= XPFULL_TIME)
         {
-            int x1 = 45;
-            int y1 = 635;
-            int x2 = 45 + m_dwXpFullTime / 100;
-            int y2 = 635 + 16;
+            int x1 = (_SCR_WIDTH - talk_width) / 2 + 20;
+            int y1 = _SCR_HEIGHT - 116;
+            int x2 = (_SCR_WIDTH - talk_width) / 2 + 20 + m_dwXpFullTime / 100;
+            int y2 = _SCR_HEIGHT - 116 + 16;
 #ifdef _DEBUG
             char szTemp[64];
             sprintf(szTemp, "%d %d", m_dwXpFullTime , m_dwXpStartTime);
             CMyBitmap::ShowString(25, 617, 0xffff0000, szTemp, "ËÎÌו", 16);
 #endif
-            CMyBitmap::ShowString(25, 637, 0xffff0000, "XP", "ËÎÌו", 16);
+			CMyBitmap::ShowString((_SCR_WIDTH - talk_width) / 2, _SCR_HEIGHT - 116, 0xffff0000, "XP", "ËÎÌו", 16);
             CMyBitmap::ShowBlock(x1, y1, x2, y2, 0xc00ff00, 0xc000ff00, 0xff00ff00, 0xff00ff00);
         }
+		
         // show ko counter
-        CMyPos posKo = {930, 630 };
+        CMyPos posKo ;
+		posKo.x = _SCR_WIDTH - 160 + 80;
+		posKo.y = _SCR_HEIGHT - 170;
         m_objImgNumber.SetShowPos(posKo);
         char szInfo[256] = "";
         sprintf(szInfo, "%02u", m_dwKoCount);
@@ -2811,7 +2814,9 @@ void CHero::ShowXp(void)
                 pBmp->GetSize(sizeKO.iWidth, sizeKO.iHeight);
                 sizeKO.iWidth = sizeKO.iWidth * m_dwKoScale / 100;
                 sizeKO.iHeight = sizeKO.iHeight * m_dwKoScale / 100;
-                CMyPos posShow = {950, 640};
+                CMyPos posShow;
+				posShow.x = _SCR_WIDTH - 160 + 80;
+				posShow.y = _SCR_HEIGHT - 165;
                 posShow.x = posShow.x - sizeKO.iWidth * 4 / 3 - strlen(szInfo) * 16;
                 posShow.y = posShow.y - sizeKO.iHeight / 2;
                 pBmp->ShowEx(posShow.x, posShow.y, NULL, sizeKO.iWidth, sizeKO.iHeight);

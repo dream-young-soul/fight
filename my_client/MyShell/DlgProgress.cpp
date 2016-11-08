@@ -152,7 +152,7 @@ void CDlgProgress::OnMove(int x, int y)
     m_Pnt.y = y ;
 }
 
-void CDlgProgress::Show()
+void CDlgProgress::Show(int talk_width)
 {
     if ( m_bShow )
     {
@@ -173,18 +173,7 @@ void CDlgProgress::Show()
         {
             m_PrgHeroHp.ShowMaxPercent(m_Pnt.x, m_Pnt.y, g_objHero.GetMaxLife(), g_objHero.GetMaxLifePercent(), nWidth);
         }
-        // Show the owner
-        CAni* ShowAni = g_objGameDataSet.GetDataAni ( ( char* )g_strControlAni,
-                        "Dialog58",
-                        EXIGENCE_IMMEDIATE ) ;
-        if ( ShowAni != NULL )
-        {
-            ShowAni->Show( 0, m_Pnt.x, 602) ;
-        }
-        else
-        {
-            return ;
-        }
+   
         m_PrgHeroForce.Show( m_Pnt.x, m_Pnt.y, g_objHero.GetPhysicalForce(), g_objHero.GetPhysicalForce()  ) ;
         int nForce = 0;
         if (g_objHero.GetPhysicalForce() >  g_objHero.GetMaxPhysicalForce() / 2)
@@ -213,7 +202,9 @@ void CDlgProgress::Show()
         }
         if (g_objHero.GetXP() >= g_objHero.GetMaxXP() && g_objHero.GetXpSkillAmount() > 0 && !(g_objGameMap.GetType() & MAPTYPE_BOOTH_ENABLE) )
         {
-            CMyPos pPos = {45, 780};
+            CMyPos pPos ;
+			pPos.x = (_SCR_WIDTH - talk_width) / 2 - 50;
+			pPos.y =  _SCR_HEIGHT + 25;
             CMyPos pPosWord, posBG;
             g_objGameMap.Screen2World(pPos.x, pPos.y, pPosWord.x, pPosWord.y);
             g_objGameMap.World2Bg(pPosWord.x, pPosWord.y, posBG.x, posBG.y);

@@ -109,6 +109,7 @@ BOOL CDlgMain::OnInitDialog()
     CRgn rgn ;
     rgn.CreatePolygonRgn ( pt, 6, ALTERNATE ) ;
     CDlgMain::SetWindowRgn ( rgn, true ) ;
+	CRect talk_rect;
     // Init the buttons
     //left button
     //	m_StoneGoods.Init(rect.left, rect.top, "Button42");
@@ -126,13 +127,8 @@ BOOL CDlgMain::OnInitDialog()
     // Init the image
     //	m_MagicBtn.Init ( rect.left, rect.top,  );
     // Init the child dialog ////////////////////////////////////////
-    //聊天表情
-    m_DlgEmotion.Create (IDD_DIALOG_EMOTION, CDlgMain::GetParent());
-    m_DlgEmotion.GetWindowRect(rect);
-    m_DlgEmotion.MoveWindow ( 630,
-                              565, rect.Width (), rect.Height (), false);
-    m_DlgEmotion.ShowWindow (SW_SHOW);
-    m_DlgEmotion.EnableWindow (false);
+
+	
     //幻兽头像
     m_DlgMonsterHeads.Create(IDD_DIALOG_MONSTERHEADS, CDlgMain::GetParent ());
     m_DlgMonsterHeads.GetWindowRect (rect);
@@ -313,7 +309,7 @@ BOOL CDlgMain::OnInitDialog()
     // Init the talk dialog
     m_DlgTalk.Create ( IDD_DIALOG_TALK, CDlgMain::GetParent () ) ;
     m_DlgTalk.GetWindowRect ( rect ) ;
-	m_DlgTalk.MoveWindow ( 96,
+	m_DlgTalk.MoveWindow ( (_SCR_WIDTH - rect.Width()) / 2,
                            _SCR_HEIGHT - rect.Height(),
                            rect.Width(),
                            rect.Height() ) ;
@@ -321,6 +317,17 @@ BOOL CDlgMain::OnInitDialog()
     m_DlgTalk.ShowWindow( SW_SHOW ) ;
 	
     m_DlgTalk.EnableWindow( false ) ;
+
+	m_DlgTalk.GetWindowRect ( talk_rect ) ;
+
+	    //聊天表情
+    m_DlgEmotion.Create (IDD_DIALOG_EMOTION, CDlgMain::GetParent());
+    m_DlgEmotion.GetWindowRect(rect);
+	m_DlgEmotion.MoveWindow ((_SCR_WIDTH - talk_rect.Width()) / 2 + 530,
+		_SCR_HEIGHT - 170, rect.Width (), rect.Height (), false);
+    m_DlgEmotion.ShowWindow (SW_SHOW);
+    m_DlgEmotion.EnableWindow (false);
+
     int nHeight = (CMyBitmap::GetFontSize() + 2) * g_objGameMsg.GetShowLines();
     m_DlgNorMsgDown.Create(IDD_DIALOG_NORMSG, CDlgMain::GetParent ());
     m_DlgNorMsgDown.MoveWindow(0,
@@ -333,7 +340,8 @@ BOOL CDlgMain::OnInitDialog()
     m_DlgNorMsgUp.ShowWindow( SW_SHOW );
     m_DlgNorMsgUp.m_nMsgUpDown = 1;
     m_DlgTalk.m_MenuTalk.GetWindowRect( rect ) ;
-    m_DlgTalk.m_MenuTalk.MoveWindow( 107,
+	m_DlgTalk.GetWindowRect ( talk_rect ) ;
+    m_DlgTalk.m_MenuTalk.MoveWindow( (_SCR_WIDTH - talk_rect.Width()) / 2 + 12,
                                      _SCR_HEIGHT - rect.Height() - 50,
                                      rect.Width(),
                                      rect.Height() ) ;
@@ -494,7 +502,9 @@ BOOL CDlgMain::OnInitDialog()
     // Init the progress dialog
     m_DlgProgress.Create( IDD_DIALOG_PROGRESS, CDlgMain::GetParent() ) ;
     m_DlgProgress.GetWindowRect(rect);
-    m_DlgProgress.MoveWindow( 0, _SCR_HEIGHT - rect.Height(),
+	
+	m_DlgTalk.GetWindowRect ( talk_rect ) ;
+	m_DlgProgress.MoveWindow( (_SCR_WIDTH - talk_rect.Width()) / 2 - 99, _SCR_HEIGHT - rect.Height(),
                               rect.Width(),
                               rect.Height());
     m_DlgProgress.ShowWindow( SW_SHOW ) ;
@@ -555,22 +565,40 @@ HBRUSH CDlgMain::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 
 void CDlgMain::Show()
 {
+	
     // Show the progress dialog
     if ( m_DlgProgress.m_bShow )
     {
-        m_DlgProgress.Show() ;
+		CRect rect;
+		m_DlgTalk.GetWindowRect(rect);
+		
+		m_DlgProgress.Show(rect.Width()) ;
     }
+	CAni* ShowAni = nullptr;
+	CRect rect;
+	     // Show the owner
+    ShowAni  = g_objGameDataSet.GetDataAni ( ( char* )g_strControlAni,
+                        "Dialog58",
+                        EXIGENCE_IMMEDIATE ) ;
+    if ( ShowAni != NULL )
+    {
+		m_DlgTalk.GetWindowRect ( rect ) ;
+		
+			//第一张图
+		ShowAni->Show( 0, (_SCR_WIDTH - rect.Width()) / 2 - 96 , _SCR_HEIGHT-166) ;
+     }
+        
     // Show owner
-    CAni* ShowAni = g_objGameDataSet.GetDataAni ( ( char* )g_strControlAni,
+     ShowAni = g_objGameDataSet.GetDataAni ( ( char* )g_strControlAni,
                     "Dialog4",
                     EXIGENCE_IMMEDIATE ) ;
     if ( ShowAni != NULL )
     {
         // Show the up dialog
         if ( !m_bUpHide )
-        {
-            ShowAni->Show( 0, 768, 602 ) ;
-            ShowAni->Show( 2, 956 , 530) ;
+		{
+			ShowAni->Show( 0, _SCR_WIDTH - 256, _SCR_HEIGHT-166 ) ;
+            ShowAni->Show( 2, _SCR_WIDTH - 70 , _SCR_HEIGHT-237) ;
             m_BtnUpHide.Show ( m_DlgPnt.x, m_DlgPnt.y) ;
             m_GroupBtn.Show ( m_DlgPnt.x, m_DlgPnt.y) ;
             m_FriendBtn.Show ( m_DlgPnt.x, m_DlgPnt.y ) ;
@@ -578,7 +606,7 @@ void CDlgMain::Show()
         }
         else
         {
-            ShowAni->Show( 1, 768, 602 ) ;
+            ShowAni->Show( 1, _SCR_WIDTH - 256, _SCR_HEIGHT-166  ) ;
             m_BtnUpHide.Show ( m_DlgPnt.x, m_DlgPnt.y) ;
         }
     }
@@ -595,6 +623,7 @@ void CDlgMain::Show()
     m_MonsterBtn.Show ( m_DlgPnt.x, m_DlgPnt.y) ;
     m_MagicBtn.Show ( m_DlgPnt.x, m_DlgPnt.y);
     m_DlgNorMsgDown.Show();
+	
     if (m_DlgTalk.GetIsGameMsgEx())
     {
         m_DlgNorMsgUp.Show();
@@ -622,6 +651,7 @@ void CDlgMain::Show()
     {
         m_DlgTalk.Show () ;
     }
+	
     // Show child dialog
     ShowChildDlg () ;
 }
@@ -1884,7 +1914,9 @@ void CDlgMain::OnXpFull()
     if ( nAmount > 0 )
     {
         g_objGameMsg.AddMsg((char*)g_objGameDataSet.GetStr(10342));//您的XP技能已经满了，可以使用XP技能了。
-        m_DlgXp.MoveWindow ( _SCR_WIDTH - nAmount * 50 - 55,
+		CRect talk_rect;
+		m_DlgTalk.GetWindowRect(talk_rect);
+		m_DlgXp.MoveWindow ( _SCR_WIDTH - nAmount * 50 - 55,
                              _SCR_HEIGHT - 115,
                              nAmount * 50,
                              50 ) ;
