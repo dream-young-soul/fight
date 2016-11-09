@@ -58,8 +58,8 @@ void CutString ( char *lpString, DWORD dwLevel )
 	if ( dwLevel == 0 )
 		return;
 
+	DWORD l;
 	DWORD nowS = 0;
-	DWORD l = 0;
 	for (  l = 0; l < strlen ( lpString ); l++ )
 	{
 		if ( lpString[l] == '\\' )
@@ -74,7 +74,7 @@ void CutString ( char *lpString, DWORD dwLevel )
 	}
 	if ( nowS < dwLevel )
 		return;
-	DWORD n = 0;
+	DWORD n;
 	for (  n = 0; n < strlen ( lpString ) - l; n++ )
 		lpString[n] = lpString[n + l];
 
@@ -179,7 +179,7 @@ void Common_SeekRes ( FILE *file, int seek )
 C3_CORE_DLL_API
 BOOL Common_IsEofRes ( )
 {
-	if ( ftell ( g_filetemp ) >= _filelength ( _fileno ( g_filetemp ) ) )
+	if ( ftell ( g_filetemp ) >= filelength ( fileno ( g_filetemp ) ) )
 		return true ;
 	return false ;
 }

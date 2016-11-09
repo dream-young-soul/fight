@@ -33,7 +33,7 @@ BOOL Motion_LoadPack ( C3Motion **lpMotion, HANDLE f )
 	// matrix
 	ReadFile ( f, &( *lpMotion )->dwFrames, sizeof ( DWORD ), &bytes, 0 ) ;
 
-	( *lpMotion )->matrix = new D3DXMATRIXA16[( *lpMotion )->dwBoneCount];
+	( *lpMotion )->matrix = new D3DXMATRIX[( *lpMotion )->dwBoneCount];
 	for ( DWORD n = 0; n < ( *lpMotion )->dwBoneCount; n++ )
 		D3DXMatrixIdentity ( &( *lpMotion )->matrix[n] );
 
@@ -62,7 +62,7 @@ BOOL Motion_LoadPack ( C3Motion **lpMotion, HANDLE f )
 					   &bytes,
 					   0 ) ;
 
-			( *lpMotion )->lpKeyFrame[kk].matrix = new D3DXMATRIXA16[( *lpMotion )->dwBoneCount];
+			( *lpMotion )->lpKeyFrame[kk].matrix = new D3DXMATRIX[( *lpMotion )->dwBoneCount];
 			ReadFile ( f,
 					   ( *lpMotion )->lpKeyFrame[kk].matrix,
 					   sizeof ( D3DXMATRIX ),	
@@ -89,7 +89,7 @@ BOOL Motion_LoadPack ( C3Motion **lpMotion, HANDLE f )
 			
 			( *lpMotion )->lpKeyFrame[kk].pos = ( DWORD )wPos;
 			
-			( *lpMotion )->lpKeyFrame[kk].matrix = new D3DXMATRIXA16[( *lpMotion )->dwBoneCount];
+			( *lpMotion )->lpKeyFrame[kk].matrix = new D3DXMATRIX[( *lpMotion )->dwBoneCount];
 			
 			struct TIDY_MATRIX {
 				float        _11, _12, _13;
@@ -138,7 +138,7 @@ BOOL Motion_LoadPack ( C3Motion **lpMotion, HANDLE f )
 		for ( DWORD kk = 0; kk < ( *lpMotion )->dwFrames; kk++ )
 		{
 			( *lpMotion )->lpKeyFrame[kk].pos = kk;
-			( *lpMotion )->lpKeyFrame[kk].matrix = new D3DXMATRIXA16[( *lpMotion )->dwBoneCount];
+			( *lpMotion )->lpKeyFrame[kk].matrix = new D3DXMATRIX[( *lpMotion )->dwBoneCount];
 		}
 		for ( DWORD bb = 0; bb < ( *lpMotion )->dwBoneCount; bb++ )
 		{
@@ -178,7 +178,7 @@ BOOL Motion_Load ( C3Motion **lpMotion, FILE *file )
 	// matrix
 	fread ( &( *lpMotion )->dwFrames, sizeof ( DWORD ), 1, file );
 	
-	( *lpMotion )->matrix = new D3DXMATRIXA16[( *lpMotion )->dwBoneCount];
+	( *lpMotion )->matrix = new D3DXMATRIX[( *lpMotion )->dwBoneCount];
 	for ( DWORD n = 0; n < ( *lpMotion )->dwBoneCount; n++ )
 		D3DXMatrixIdentity ( &( *lpMotion )->matrix[n] );
 	
@@ -200,7 +200,7 @@ BOOL Motion_Load ( C3Motion **lpMotion, FILE *file )
 				1,
 				file );
 			
-			( *lpMotion )->lpKeyFrame[kk].matrix = new D3DXMATRIXA16[( *lpMotion )->dwBoneCount];
+			( *lpMotion )->lpKeyFrame[kk].matrix = new D3DXMATRIX[( *lpMotion )->dwBoneCount];
 			fread ( ( *lpMotion )->lpKeyFrame[kk].matrix,
 				sizeof ( D3DXMATRIX ),
 				( *lpMotion )->dwBoneCount,
@@ -225,7 +225,7 @@ BOOL Motion_Load ( C3Motion **lpMotion, FILE *file )
 			
 			( *lpMotion )->lpKeyFrame[kk].pos = ( DWORD )wPos;
 			
-			( *lpMotion )->lpKeyFrame[kk].matrix = new D3DXMATRIXA16[( *lpMotion )->dwBoneCount];
+			( *lpMotion )->lpKeyFrame[kk].matrix = new D3DXMATRIX[( *lpMotion )->dwBoneCount];
 			
 			
 			struct DIV_INFO {
@@ -259,7 +259,7 @@ BOOL Motion_Load ( C3Motion **lpMotion, FILE *file )
 		for ( DWORD kk = 0; kk < ( *lpMotion )->dwFrames; kk++ )
 		{
 			( *lpMotion )->lpKeyFrame[kk].pos = kk;
-			( *lpMotion )->lpKeyFrame[kk].matrix = new D3DXMATRIXA16[( *lpMotion )->dwBoneCount];
+			( *lpMotion )->lpKeyFrame[kk].matrix = new D3DXMATRIX[( *lpMotion )->dwBoneCount];
 		}
 		for ( DWORD bb = 0; bb < ( *lpMotion )->dwBoneCount; bb++ )
 		{
@@ -335,7 +335,7 @@ BOOL Motion_Save ( char *lpName, C3Motion *lpMotion, BOOL bNew )
 		chunk.dwChunkSize += sizeof ( DWORD );
 
 		fwrite ( lpMotion->lpKeyFrame[kk].matrix,
-				 sizeof ( D3DXMATRIXA16 ),
+				 sizeof ( D3DXMATRIX ),
 				 lpMotion->dwBoneCount,
 				 file );
 		chunk.dwChunkSize += sizeof ( D3DXMATRIX ) * lpMotion->dwBoneCount;
@@ -375,7 +375,7 @@ void Motion_Unload ( C3Motion **lpMotion )
 }
 
 C3_CORE_DLL_API
-void Motion_GetMatrix ( C3Motion *lpMotion, DWORD dwBone, D3DXMATRIXA16 
+void Motion_GetMatrix ( C3Motion *lpMotion, DWORD dwBone, D3DXMATRIX 
 *lpMatrix )
 {
 	// alpha
@@ -466,14 +466,14 @@ BOOL Phy_Load ( C3Phy **lpPhy, FILE *file, BOOL bTex )
 	fread ( &( *lpPhy )->dwNVecCount, sizeof ( DWORD ), 1, file );
 	fread ( &( *lpPhy )->dwAVecCount, sizeof ( DWORD ), 1, file );
 
-  
+
 
 	// 创建输出 vb
 	if ( FAILED ( g_D3DDevice->CreateVertexBuffer ( ( ( *lpPhy )->dwNVecCount + ( *lpPhy )->dwAVecCount ) * sizeof ( PhyOutVertex ),
 													D3DUSAGE_WRITEONLY,
 													0,
 													D3DPOOL_MANAGED,
-													&( *lpPhy )->vb,0 ) ) )
+													&( *lpPhy )->vb ) ) )
 		return false;
 
 	// 读取顶点
@@ -486,7 +486,7 @@ BOOL Phy_Load ( C3Phy **lpPhy, FILE *file, BOOL bTex )
 	PhyOutVertex *vertex;
 	if ( FAILED ( ( *lpPhy )->vb->Lock ( 0,
 										 0,
-										 ( void** )&vertex,
+										 ( BYTE** )&vertex,
 										 D3DLOCK_NOSYSLOCK ) ) )
 		return false;
 
@@ -509,13 +509,13 @@ BOOL Phy_Load ( C3Phy **lpPhy, FILE *file, BOOL bTex )
 												   D3DUSAGE_WRITEONLY,
 												   D3DFMT_INDEX16,
 												   D3DPOOL_MANAGED,
-												   &( *lpPhy )->ib,0 ) ) )
+												   &( *lpPhy )->ib ) ) )
 		return false;
 
 	WORD *tri;
 	if ( FAILED ( ( *lpPhy )->ib->Lock ( 0,
 									0,
-									( void** )&tri,
+									( BYTE** )&tri,
 									D3DLOCK_NOSYSLOCK ) ) )
 		return false;
 	fread ( tri, sizeof ( WORD ), ( ( *lpPhy )->dwNTriCount + ( *lpPhy )->dwATriCount ) * 3, file );
@@ -591,7 +591,7 @@ BOOL Phy_Load ( C3Phy **lpPhy, FILE *file, BOOL bTex )
 	fread ( &( *lpPhy )->bboxMin, sizeof ( D3DXVECTOR3 ), 1, file );
 	fread ( &( *lpPhy )->bboxMax, sizeof ( D3DXVECTOR3 ), 1, file );
 
-	fread ( &( *lpPhy )->InitMatrix, sizeof ( D3DXMATRIXA16 ), 1, file );
+	fread ( &( *lpPhy )->InitMatrix, sizeof ( D3DXMATRIX ), 1, file );
 
 	// 用户自定义消息
 	fread ( &( *lpPhy )->dwTexRow, sizeof ( DWORD ), 1, file );
@@ -653,7 +653,7 @@ BOOL Phy_LoadPack ( C3Phy **lpPhy, HANDLE f, BOOL bTex )
 													D3DUSAGE_WRITEONLY,
 													0,
 													D3DPOOL_MANAGED,
-													&( *lpPhy )->vb,0 ) ) )
+													&( *lpPhy )->vb ) ) )
 		return false;
 
 	// 读取顶点
@@ -667,7 +667,7 @@ BOOL Phy_LoadPack ( C3Phy **lpPhy, HANDLE f, BOOL bTex )
 	PhyOutVertex *vertex;
 	if ( FAILED ( ( *lpPhy )->vb->Lock ( 0,
 										 0,
-										 ( void** )&vertex,
+										 ( BYTE** )&vertex,
 										 D3DLOCK_NOSYSLOCK ) ) )
 		return false;
 
@@ -690,13 +690,13 @@ BOOL Phy_LoadPack ( C3Phy **lpPhy, HANDLE f, BOOL bTex )
 												   D3DUSAGE_WRITEONLY,
 												   D3DFMT_INDEX16,
 												   D3DPOOL_MANAGED,
-												   &( *lpPhy )->ib,0 ) ) )
+												   &( *lpPhy )->ib ) ) )
 		return false;
 
 	WORD *tri;
 	if ( FAILED ( ( *lpPhy )->ib->Lock ( 0,
 										 0,
-										 ( void** )&tri,
+										 ( BYTE** )&tri,
 										 D3DLOCK_NOSYSLOCK ) ) )
 		return false;
 
@@ -784,7 +784,7 @@ BOOL Phy_LoadPack ( C3Phy **lpPhy, HANDLE f, BOOL bTex )
 	// bounding box
 	ReadFile ( f, &( *lpPhy )->bboxMin, sizeof ( D3DXVECTOR3 ), &bytes, 0 ) ;
 	ReadFile ( f, &( *lpPhy )->bboxMax, sizeof ( D3DXVECTOR3 ), &bytes, 0 ) ;
-	ReadFile ( f, &( *lpPhy )->InitMatrix, sizeof ( D3DXMATRIXA16), &bytes, 0 ) ;
+	ReadFile ( f, &( *lpPhy )->InitMatrix, sizeof ( D3DXMATRIX), &bytes, 0 ) ;
 	
 	// 用户自定义消息
 	ReadFile ( f, &( *lpPhy )->dwTexRow, sizeof ( DWORD ), &bytes, 0 ) ;
@@ -916,7 +916,7 @@ lpPhy->dwATriCount ) * 3, file );
 		WORD *tri;
 		if ( FAILED ( lpPhy->ib->Lock ( 0,
 										0,
-										( void** )&tri,
+										( BYTE** )&tri,
 										D3DLOCK_NOSYSLOCK ) ) )
 			return false;
 		fwrite ( tri, sizeof ( WORD ), ( lpPhy->dwNTriCount + lpPhy->dwATriCount ) 
@@ -942,8 +942,8 @@ lpPhy->dwATriCount ) * 3;
 	fwrite ( &lpPhy->bboxMax, sizeof ( D3DXVECTOR3 ), 1, file );
 	chunk.dwChunkSize += sizeof ( D3DXVECTOR3 );
 
-	fwrite ( &lpPhy->InitMatrix, sizeof ( D3DXMATRIXA16 ), 1, file );
-	chunk.dwChunkSize += sizeof ( D3DXMATRIXA16 );
+	fwrite ( &lpPhy->InitMatrix, sizeof ( D3DXMATRIX ), 1, file );
+	chunk.dwChunkSize += sizeof ( D3DXMATRIX );
 
 	// 用户自定义消息
 	fwrite ( &lpPhy->dwTexRow, sizeof ( DWORD ), 1, file );
@@ -1030,12 +1030,9 @@ void Phy_Prepare ( void )
 	SetTextureStageState ( 0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE );
 	SetTextureStageState ( 0, D3DTSS_ALPHAOP, D3DTOP_MODULATE );
 
-	//SetTextureStageState ( 0, D3DTSS_MINFILTER, D3DTEXF_LINEAR );
-	//SetTextureStageState ( 0, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
-	//SetTextureStageState ( 0, D3DTSS_MIPFILTER, D3DTEXF_LINEAR );
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MINFILTER,D3DTEXF_LINEAR);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MAGFILTER,D3DTEXF_LINEAR);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MIPFILTER,D3DTEXF_LINEAR);
+	SetTextureStageState ( 0, D3DTSS_MINFILTER, D3DTEXF_LINEAR );
+	SetTextureStageState ( 0, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
+	SetTextureStageState ( 0, D3DTSS_MIPFILTER, D3DTEXF_LINEAR );
 
 	SetTextureStageState ( 1, D3DTSS_COLORARG1, D3DTA_TEXTURE );
 	SetTextureStageState ( 1, D3DTSS_COLORARG2, D3DTA_CURRENT );
@@ -1045,13 +1042,9 @@ void Phy_Prepare ( void )
 	SetTextureStageState ( 1, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE );
 	SetTextureStageState ( 1, D3DTSS_ALPHAOP, D3DTOP_DISABLE );
 
-	//SetTextureStageState ( 1, D3DTSS_MINFILTER, D3DTEXF_NONE );
-	//SetTextureStageState ( 1, D3DTSS_MAGFILTER, D3DTEXF_NONE );
-	//SetTextureStageState ( 1, D3DTSS_MIPFILTER, D3DTEXF_NONE );
-
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MINFILTER,D3DTEXF_NONE);
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MAGFILTER,D3DTEXF_NONE);
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MIPFILTER,D3DTEXF_NONE);
+	SetTextureStageState ( 1, D3DTSS_MINFILTER, D3DTEXF_NONE );
+	SetTextureStageState ( 1, D3DTSS_MAGFILTER, D3DTEXF_NONE );
+	SetTextureStageState ( 1, D3DTSS_MIPFILTER, D3DTEXF_NONE );
 }
 C3_CORE_DLL_API
 BOOL Phy_Calculate ( C3Phy *lpPhy )
@@ -1075,14 +1068,14 @@ lpPhy->lpMotion->dwFrames, &alpha ) )
 	PhyOutVertex *vertex;
 	if ( FAILED ( lpPhy->vb->Lock ( 0,
 									0,
-									( void** )&vertex,
+									( BYTE** )&vertex,
 									D3DLOCK_NOSYSLOCK ) ) )
 		return false;
 
 	D3DXMATRIX *bone = new D3DXMATRIX[lpPhy->lpMotion->dwBoneCount];
 	for ( DWORD b = 0; b < lpPhy->lpMotion->dwBoneCount; b++ )
 	{
-		D3DXMATRIXA16 mm;
+		D3DXMATRIX mm;
 		Motion_GetMatrix ( lpPhy->lpMotion, b, &mm );
 /*
 		D3DXMatrixMultiply ( &bone[b],
@@ -1211,7 +1204,7 @@ BOOL Phy_DrawNormal ( C3Phy *lpPhy )
 		SetRenderState ( D3DRS_ZWRITEENABLE, true );
 
 		// material
-		D3DMATERIAL9 material;
+		D3DMATERIAL8 material;
 		ZeroMemory ( &material, sizeof ( material ) );
 
 		material.Diffuse.a = lpPhy->fA;
@@ -1243,22 +1236,20 @@ BOOL Phy_DrawNormal ( C3Phy *lpPhy )
 				return false;
 		}
 
-		D3DXMATRIXA16 matrix;
+		D3DXMATRIX matrix;
 		D3DXMatrixIdentity ( &matrix );
 		g_D3DDevice->SetTransform ( D3DTS_WORLD, &matrix );
-		//if ( FAILED ( g_D3DDevice->SetVertexShader ( PHY_OUT_VERTEX ) ) )
-		if ( FAILED (	g_D3DDevice->SetFVF(PHY_OUT_VERTEX)))
+		if ( FAILED ( g_D3DDevice->SetVertexShader ( PHY_OUT_VERTEX ) ) )
 			return false;
 
-		if ( FAILED ( g_D3DDevice->SetStreamSource ( 0, lpPhy->vb, 0,sizeof ( 
+		if ( FAILED ( g_D3DDevice->SetStreamSource ( 0, lpPhy->vb, sizeof ( 
 PhyOutVertex ) ) ) )
 			return false;
-		if ( FAILED ( g_D3DDevice->SetIndices ( lpPhy->ib) ) )
+		if ( FAILED ( g_D3DDevice->SetIndices ( lpPhy->ib, 0 ) ) )
 			return false;
 
 		// draw normal
 		if ( FAILED ( g_D3DDevice->DrawIndexedPrimitive ( D3DPT_TRIANGLELIST,
-														  0,//dx9
 														  0,
 														  lpPhy->dwNVecCount,
 														  0,
@@ -1287,7 +1278,7 @@ BOOL Phy_DrawAlpha ( C3Phy *lpPhy, BOOL bZ, int nAsb, int nAdb )
 		SetRenderState ( D3DRS_ALPHAFUNC, D3DCMP_GREATEREQUAL );
 
 		// material
-		D3DMATERIAL9 material;
+		D3DMATERIAL8 material;
 		ZeroMemory ( &material, sizeof ( material ) );
 
 		material.Diffuse.a = lpPhy->fA;
@@ -1319,24 +1310,22 @@ BOOL Phy_DrawAlpha ( C3Phy *lpPhy, BOOL bZ, int nAsb, int nAdb )
 				return false;
 		}
 
-		D3DXMATRIXA16 matrix;
+		D3DXMATRIX matrix;
 		D3DXMatrixIdentity ( &matrix );
 		g_D3DDevice->SetTransform ( D3DTS_WORLD, &matrix );
-//		if ( FAILED ( g_D3DDevice->SetVertexShader ( PHY_OUT_VERTEX ) ) )
-		if ( FAILED (	g_D3DDevice->SetFVF(PHY_OUT_VERTEX)))
+		if ( FAILED ( g_D3DDevice->SetVertexShader ( PHY_OUT_VERTEX ) ) )
 			return false;
 
-		if ( FAILED ( g_D3DDevice->SetStreamSource ( 0, lpPhy->vb,0, sizeof ( 
+		if ( FAILED ( g_D3DDevice->SetStreamSource ( 0, lpPhy->vb, sizeof ( 
 PhyOutVertex ) ) ) )
 			return false;
-		if ( FAILED ( g_D3DDevice->SetIndices ( lpPhy->ib ) ) )
+		if ( FAILED ( g_D3DDevice->SetIndices ( lpPhy->ib, 0 ) ) )
 			return false;
 	}
 	if ( lpPhy->dwNTriCount > 0 && lpPhy->fA != 1.0f )
 	{
 		// draw normal
 		if ( FAILED ( g_D3DDevice->DrawIndexedPrimitive ( D3DPT_TRIANGLELIST,
-														 0,//dx9
 														  0,
 														  lpPhy->dwNVecCount,
 														  0,
@@ -1347,7 +1336,6 @@ PhyOutVertex ) ) ) )
 	{
 		// draw alpha
 		if ( FAILED ( g_D3DDevice->DrawIndexedPrimitive ( D3DPT_TRIANGLELIST,
-														 0, //dx9
 														  lpPhy->dwNVecCount,
 														  lpPhy->dwAVecCount,
 														  lpPhy->dwNTriCount * 3,
@@ -1373,7 +1361,7 @@ void Phy_SetFrame ( C3Phy *lpPhy, DWORD dwFrame )
 }
 
 C3_CORE_DLL_API
-void Phy_Muliply ( C3Phy *lpPhy, int nBoneIndex, D3DXMATRIXA16 *matrix )
+void Phy_Muliply ( C3Phy *lpPhy, int nBoneIndex, D3DXMATRIX *matrix )
 {
 	int start, end;
 	if ( nBoneIndex == -1 )

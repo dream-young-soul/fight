@@ -23,10 +23,8 @@
 #include <process.h>
 #include <signal.h>
 
-//#include "d3d8.h"
-//#include "d3dx8.h"
-#include "d3d9.h"
-#include "d3dx9.h"
+#include "d3d8.h"
+#include "d3dx8.h"
 
 #ifdef _DEBUG
 	#define	Assert(Expression) ( ( Expression ) ? ( void ) NULL : ( void ) AssertDialog ( #Expression, __FILE__, __LINE__ ) )

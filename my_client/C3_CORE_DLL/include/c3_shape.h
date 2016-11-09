@@ -79,7 +79,7 @@ struct C3Shape
 	// flash
 
 	// Use for tearAir
-	LPDIRECT3DTEXTURE9	pTearAirTex;
+	LPDIRECT3DTEXTURE8	pTearAirTex;
 	D3DXVECTOR3			*pScreenPnt;
 	RECT				TearAirTexRect;
 	RECT				LastTearAirTexRect;

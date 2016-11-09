@@ -297,8 +297,8 @@ void Ptcl_Unload ( C3Ptcl **lpPtcl )
 C3_CORE_DLL_API
 void Ptcl_Prepare ( void )
 {
-//	SetRenderState ( D3DRS_SOFTWAREVERTEXPROCESSING, true );
-	g_D3DDevice->SetSoftwareVertexProcessing(TRUE);
+	SetRenderState ( D3DRS_SOFTWAREVERTEXPROCESSING, true );
+
 	SetRenderState ( D3DRS_ZENABLE, true );
 	SetRenderState ( D3DRS_ZWRITEENABLE, false );
 	SetRenderState ( D3DRS_SHADEMODE, D3DSHADE_GOURAUD );
@@ -315,12 +315,10 @@ void Ptcl_Prepare ( void )
 	SetTextureStageState ( 0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE );
 	SetTextureStageState ( 0, D3DTSS_ALPHAOP, D3DTOP_MODULATE );
 
-	//SetTextureStageState ( 0, D3DTSS_MINFILTER, D3DTEXF_LINEAR );
-	//SetTextureStageState ( 0, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
-	//SetTextureStageState ( 0, D3DTSS_MIPFILTER, D3DTEXF_NONE );
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MINFILTER,D3DTEXF_LINEAR);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MAGFILTER,D3DTEXF_LINEAR);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MIPFILTER,D3DTEXF_LINEAR);
+	SetTextureStageState ( 0, D3DTSS_MINFILTER, D3DTEXF_LINEAR );
+	SetTextureStageState ( 0, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
+	SetTextureStageState ( 0, D3DTSS_MIPFILTER, D3DTEXF_NONE );
+
 	SetTextureStageState ( 1, D3DTSS_COLORARG1, D3DTA_TEXTURE );
 	SetTextureStageState ( 1, D3DTSS_COLORARG2, D3DTA_CURRENT );
 	SetTextureStageState ( 1, D3DTSS_COLOROP, D3DTOP_DISABLE );
@@ -329,12 +327,9 @@ void Ptcl_Prepare ( void )
 	SetTextureStageState ( 1, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE );
 	SetTextureStageState ( 1, D3DTSS_ALPHAOP, D3DTOP_DISABLE );
 
-	//SetTextureStageState ( 1, D3DTSS_MINFILTER, D3DTEXF_NONE );
-	//SetTextureStageState ( 1, D3DTSS_MAGFILTER, D3DTEXF_NONE );
-	//SetTextureStageState ( 1, D3DTSS_MIPFILTER, D3DTEXF_NONE );
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MINFILTER,D3DTEXF_NONE);
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MAGFILTER,D3DTEXF_NONE);
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MIPFILTER,D3DTEXF_NONE);
+	SetTextureStageState ( 1, D3DTSS_MINFILTER, D3DTEXF_NONE );
+	SetTextureStageState ( 1, D3DTSS_MAGFILTER, D3DTEXF_NONE );
+	SetTextureStageState ( 1, D3DTSS_MIPFILTER, D3DTEXF_NONE );
 }
 C3_CORE_DLL_API
 BOOL Ptcl_Draw ( C3Ptcl *lpPtcl, int nAsb, int nAdb)
@@ -448,8 +443,7 @@ BOOL Ptcl_Draw ( C3Ptcl *lpPtcl, int nAsb, int nAdb)
 		return false;
 
 	// vertex shader
-//	if ( FAILED ( g_D3DDevice->SetVertexShader ( PTCL_VERTEX ) ) )
-	if ( FAILED (	g_D3DDevice->SetFVF(PTCL_VERTEX)))
+	if ( FAILED ( g_D3DDevice->SetVertexShader ( PTCL_VERTEX ) ) )
 		return false;
 
 	// ªÊ÷∆≥°æ∞

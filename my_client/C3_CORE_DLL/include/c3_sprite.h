@@ -74,4 +74,6 @@ void Sprite_Unlock ( C3Sprite *lpSprite );
 C3_CORE_DLL_API
 BOOL Sprite_Draw (C3Sprite *lpSpriteUp, C3Sprite *lpSpriteDn, UCHAR uAlphaA, UCHAR uAlphaB, UCHAR uAlphaC, UCHAR uAlphaD);
 
+C3_CORE_DLL_API
+BOOL Sprite_Save(C3Sprite* lpSprite,char* szName);
 #endif

@@ -49,9 +49,9 @@ FILE*	CDnFile::GetFPtr(const char* pszFile, unsigned long& usFileSize)
 		return false;
 	char szFileCopy[512];
 	strcpy(szFileCopy, pszFile);
-	_strlwr(szFileCopy);
+	strlwr(szFileCopy);
 	unsigned long uFileNameLength = strlen(szFileCopy);
-	for(unsigned long i = 0; i < uFileNameLength; i ++)
+	for(int i = 0; i < uFileNameLength; i ++)
 	{
 		if(szFileCopy[i] == '/')
 		{
@@ -62,7 +62,7 @@ FILE*	CDnFile::GetFPtr(const char* pszFile, unsigned long& usFileSize)
 	if(!this->CheckDisperseFile(idFile))
 	{
 		unsigned long uFileNameLength = strlen(szFileCopy);
-		for(unsigned long i = 0; i < uFileNameLength; i ++)
+		for(int i = 0; i < uFileNameLength; i ++)
 		{
 			if(szFileCopy[i] == '\\')
 			{
@@ -88,36 +88,20 @@ FILE*	CDnFile::GetFPtr(const char* pszFile, unsigned long& usFileSize)
 	}
 	m_fpExtend = fopen(pszFile, "rb");
 	if(m_fpExtend)
-		usFileSize = _filelength(_fileno(m_fpExtend));
+		usFileSize = filelength(fileno(m_fpExtend));
 	return 	m_fpExtend;	
 }
 //--------------------------------------------------------------------------------------
 void*	CDnFile::GetMPtr(const char* pszFile, unsigned long& usFileSize)
 {
-	//优先从绝对路径加载 2013.9.15
-	FILE* fp = fopen(pszFile,"rb");
-	if(fp != NULL)
-	{
-		fseek(fp,0,SEEK_END);
-		unsigned long nLen = ftell(fp);
-		usFileSize = nLen;
-		if(usFileSize > 0)
-		{
-			fseek(fp,0,SEEK_SET);
-			m_pExtendBuffer = new unsigned char[nLen];
-			fread(m_pExtendBuffer,nLen,1,fp);
-		}else m_pExtendBuffer = NULL;
-		fclose(fp);
-		return m_pExtendBuffer;
-	}
 	this->ClearPtr();
 	if(!pszFile)
 		return false;
 	char szFileCopy[512];
 	strcpy(szFileCopy, pszFile);
-	_strlwr(szFileCopy);
+	strlwr(szFileCopy);
 	unsigned long uFileNameLength = strlen(szFileCopy);
-	for(unsigned long i = 0; i < uFileNameLength; i ++)
+	for(int i = 0; i < uFileNameLength; i ++)
 	{
 		if(szFileCopy[i] == '/')
 		{
@@ -128,7 +112,7 @@ void*	CDnFile::GetMPtr(const char* pszFile, unsigned long& usFileSize)
 	if(!this->CheckDisperseFile(idFile))
 	{
 		unsigned long uFileNameLength = strlen(szFileCopy);
-		for(unsigned long i = 0; i < uFileNameLength; i ++)
+		for(int i = 0; i < uFileNameLength; i ++)
 		{
 			if(szFileCopy[i] == '\\')
 			{
@@ -184,7 +168,7 @@ bool	CDnFile::CheckDisperseFile(const char* pszFile)
 		return false;
 	char szFileCopy[512];
 	strcpy(szFileCopy, pszFile);
-	_strupr(szFileCopy);
+	strupr(szFileCopy);
 	unsigned long idFile = this->GenerateID(pszFile);
 	map<unsigned long, unsigned char>::iterator iter = m_mapDisperseFiles.find(idFile);
 	if(iter == m_mapDisperseFiles.end())
@@ -198,9 +182,9 @@ void	CDnFile::AddDisperseFile(const char* pszFile)
 		return;
 	char szFileCopy[512];
 	strcpy(szFileCopy, pszFile);
-	_strlwr(szFileCopy);
+	strlwr(szFileCopy);
 	unsigned long uFileNameLength = strlen(szFileCopy);
-	for(unsigned long i = 0; i < uFileNameLength; i ++)
+	for(int i = 0; i < uFileNameLength; i ++)
 	{
 		if(szFileCopy[i] == '/')
 		{
@@ -249,9 +233,9 @@ void CDnFile::ProcessDir ( const char* pszDir)
 			// Process the file name
 			char szFileCopy[512];
 			strcpy(szFileCopy, szFullName);
-			_strlwr(szFileCopy);
+			strlwr(szFileCopy);
 			unsigned long uFileNameLength = strlen(szFileCopy);
-			for(unsigned long i = 0; i < uFileNameLength; i ++)
+			for(int i = 0; i < uFileNameLength; i ++)
 			{
 				if(szFileCopy[i] == '/')
 				{
@@ -277,7 +261,7 @@ bool	CDnFile::OpenFile(const char* pszFile)
 	if(!pszFile)
 		return false;
 	// 未打包目录中的文件列表预读, 优化未打包文件搜寻
-	char* p = (char*)strchr ( pszFile, '.' ) ;
+	const char* p = strchr ( pszFile, '.' ) ;
 	if ( p )
 	{
 		char szDirName[MAX_PATH] = "";
@@ -287,7 +271,7 @@ bool	CDnFile::OpenFile(const char* pszFile)
 	}	
 	char szFileCopy[512];
 	strcpy(szFileCopy, pszFile);
-	_strlwr(szFileCopy);
+	strlwr(szFileCopy);
 
 	if(strlen(pszFile) < 4)
 		return false;
@@ -305,7 +289,7 @@ bool	CDnFile::OpenFile(const char* pszFile)
 	DnpInfo* pDnpInfo = new DnpInfo;
 	char szTemp[100];
 	sprintf(szTemp, "new 0x%x\n", pDnpInfo);
-	//::OutputDebugString(szTemp);
+	::OutputDebugString(szTemp);
 	if(!pDnpInfo)
 		return false;
 
@@ -377,7 +361,7 @@ void	CDnFile::CloseFile(const char* pszFile)
 		return;
 	char szFileCopy[512];
 	strcpy(szFileCopy, pszFile);
-	_strupr(szFileCopy);
+	strupr(szFileCopy);
 	unsigned long idFile = this->GenerateID(pszFile);
 	map<unsigned long, DnpInfo*>::iterator iter = m_mapDnp.find(idFile);
 	if(iter != m_mapDnp.end())
@@ -413,7 +397,7 @@ void	CDnFile::Destroy()
 			delete(pDnp);
 			char szTemp[100];
 			sprintf(szTemp, "delete 0x%x\n", pDnp);
-			//::OutputDebugString(szTemp);
+			::OutputDebugString(szTemp);
 		}
 		iter ++;
 	}
@@ -499,11 +483,11 @@ _skip:
 			xor esi,edi
 			mov v,esi
 	}
-//#ifdef _DEBUG
-//	char szTemp[512];
-//	sprintf(szTemp, "%s FileID: %u\n", str,v);
-//	::OutputDebugString(szTemp);	
-//#endif
+#ifdef _DEBUG
+	char szTemp[512];
+	sprintf(szTemp, "%s FileID: %u\n", str,v);
+	::OutputDebugString(szTemp);	
+#endif
 	return v;
 }
 //--------------------------------------------------------------------------------------

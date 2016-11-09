@@ -7,20 +7,19 @@
 #define C3_CORE_DLL_API __declspec ( dllimport )
 #endif
 
-//#include "d3d8.h"
-//#include "d3dx8.h"
-#include "d3d9.h"
-#include "d3dx9.h"
+#include "d3d8.h"
+#include "d3dx8.h"
+
 #include "c3_common.h"
 
 const char		C3_VERSION[64] = "MAXFILE C3 00001";
 
-extern C3_CORE_DLL_API LPDIRECT3D9				g_D3D;
-extern C3_CORE_DLL_API LPDIRECT3DDEVICE9		g_D3DDevice;
-extern C3_CORE_DLL_API D3DCAPS9				g_D3DCaps;
+extern C3_CORE_DLL_API LPDIRECT3D8				g_D3D;
+extern C3_CORE_DLL_API LPDIRECT3DDEVICE8		g_D3DDevice;
+extern C3_CORE_DLL_API D3DCAPS8					g_D3DCaps;
 extern C3_CORE_DLL_API D3DDISPLAYMODE			g_DisplayMode;
 extern C3_CORE_DLL_API HWND						g_hWnd;
-extern C3_CORE_DLL_API D3DVIEWPORT9			g_Viewport;
+extern C3_CORE_DLL_API D3DVIEWPORT8				g_Viewport;
 extern C3_CORE_DLL_API D3DXMATRIX				g_ViewMatrix;
 extern C3_CORE_DLL_API D3DXMATRIX				g_ProjectMatrix;
 extern C3_CORE_DLL_API D3DPRESENT_PARAMETERS	g_Present;
@@ -71,7 +70,7 @@ void SetTextureStageState ( DWORD dwStage,
 							D3DTEXTURESTAGESTATETYPE type,
 							DWORD dwValue );
 C3_CORE_DLL_API
-BOOL SetTexture ( DWORD dwStage, LPDIRECT3DTEXTURE9 lpTex );
+BOOL SetTexture ( DWORD dwStage, LPDIRECT3DTEXTURE8 lpTex );
 
 /* º∆À„÷°ÀŸ¬  */
 C3_CORE_DLL_API

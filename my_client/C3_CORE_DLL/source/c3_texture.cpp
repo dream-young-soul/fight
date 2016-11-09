@@ -3,6 +3,7 @@
 #include "..\include\c3_main.h"
 #include "..\include\c3_datafile.h"
 #include "..\include\DnFile.h"
+#include <direct.h>
 
 C3_CORE_DLL_API DWORD		g_dwTexCount = 0;
 C3_CORE_DLL_API C3Texture	*g_lpTex[TEX_MAX];
@@ -28,6 +29,7 @@ int Texture_Load ( C3Texture **lpTex,
 				   D3DCOLOR colorkey )
 {
 	EnterCriticalSection ( &g_CriticalSection );
+
 	if ( bDuplicate )
 	{
 		// 如果搜寻到有相同的贴图已经调入内存则传递指针
@@ -36,7 +38,7 @@ int Texture_Load ( C3Texture **lpTex,
 		{
 			if ( 0 != g_lpTex[t] )
 			{
-				if ( _stricmp ( g_lpTex[t]->lpName, lpName ) == 0 )
+				if ( stricmp ( g_lpTex[t]->lpName, lpName ) == 0 )
 				{
 					g_lpTex[t]->nDupCount++;
 					*lpTex = g_lpTex[t];
@@ -123,8 +125,29 @@ int Texture_Load ( C3Texture **lpTex,
 													NULL,
 													&( *lpTex )->lpTex ) ) )
 		{
-			LeaveCriticalSection ( &g_CriticalSection );
-			return -1;
+			int nLen = strlen(lpName);
+			lpName[nLen - 3] = 'd';
+			lpName[nLen - 2] = 'd';
+			lpName[nLen - 1] = 's';
+			if( FAILED ( D3DXCreateTextureFromFileEx ( g_D3DDevice,
+				lpName,
+				D3DX_DEFAULT,
+				D3DX_DEFAULT,
+				dwMipLevels,
+				0,
+				D3DFMT_UNKNOWN,
+				pool,
+				D3DX_FILTER_LINEAR,
+				D3DX_FILTER_LINEAR,
+				colorkey,
+				&( *lpTex )->Info,
+				NULL,
+				&( *lpTex )->lpTex ) ) )
+			{
+				LeaveCriticalSection ( &g_CriticalSection );
+				return -1;
+			}
+			
 		}
 
 		D3DSURFACE_DESC desc;
@@ -202,5 +225,75 @@ BOOL Texture_Create ( C3Texture **lpTex,
 	( *lpTex )->Info.Height = dwHeight;
 	( *lpTex )->Info.Format = format;
 
+	return true;
+}
+C3_CORE_DLL_API
+BOOL Texture_Save(C3Texture *pTexture,char* szName)
+{
+	if (szName == NULL||pTexture == NULL)
+	{
+		return false;
+	}
+	char szPathName[1024];
+	char szPath[1024];
+	char *szHead = "f:/dataout/";//暂时将存储目录设在此处
+	strcpy(szPathName,szHead);
+	strcat(szPathName,szName);
+	strcpy(szPath,szPathName);
+
+	/////////创建目录/////////////////////
+	int nLen = strlen(szPath);
+	for (int i = 0;i<nLen;i++)
+	{
+		if (szPath[i]=='/'||szPath[i] == '\\')
+		{
+			szPath[i] = '\0';
+			_mkdir(szPath);
+			szPath[i]='/';
+		}
+	}
+
+
+	///////////////////存储纹理//////////////////////////////////////
+
+	D3DXIMAGE_FILEFORMAT nFormat;// = D3DXIFF_DDS;
+	//char c = szPath[nLen];
+	//char a = szPath[nLen-2];
+	if ((szPath[nLen-3]=='D'&&szPath[nLen-2]=='D'&&szPath[nLen-1]=='S')||
+		(szPath[nLen-3]=='d'&&szPath[nLen-2]=='d'&&szPath[nLen-1]=='s'))
+	{
+		nFormat = D3DXIFF_DDS;
+	}
+	else if ((szPath[nLen-3]=='T'&&szPath[nLen-2]=='G'&&szPath[nLen-1]=='A')||
+		(szPath[nLen-3]=='t'&&szPath[nLen-2]=='g'&&szPath[nLen-1]=='a'))
+	{
+		nFormat = D3DXIFF_TGA;
+	}
+	else if ((szPath[nLen-3]=='J'&&szPath[nLen-2]=='P'&&szPath[nLen-1]=='G')||
+		(szPath[nLen-3]=='j'&&szPath[nLen-2]=='p'&&szPath[nLen-1]=='g'))
+	{
+		nFormat = D3DXIFF_JPG;
+	}
+	else if ((szPath[nLen-3]=='P'&&szPath[nLen-2]=='N'&&szPath[nLen-1]=='G')||
+		(szPath[nLen-3]=='p'&&szPath[nLen-2]=='n'&&szPath[nLen-1]=='g'))
+	{
+		nFormat = D3DXIFF_PNG;
+	}
+	else
+	{
+		return false;
+	}
+	HRESULT hr;
+	if (hr = D3DXSaveTextureToFile(szPath, nFormat, pTexture->lpTex, NULL) != D3D_OK)
+	{
+		szPath[nLen-3] = 'd';
+		szPath[nLen-2] = 'd';
+		szPath[nLen-1] = 's';
+		nFormat = D3DXIFF_DDS;
+		if (hr = D3DXSaveTextureToFile(szPath, nFormat, pTexture->lpTex, NULL) != D3D_OK)
+		{
+			return false;
+		}
+	}
 	return true;
 }

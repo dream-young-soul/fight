@@ -21,7 +21,4 @@ void* MyDataFileLoad ( const char *filename, DWORD &size );
 //------------------------------------------------------
 C3_CORE_DLL_API
 BOOL MyDnpFileOpen ( const char *filename );
-
-C3_CORE_DLL_API
-void* OpenFilePointer(const char* pszFile,unsigned long &usFileSize);
 #endif

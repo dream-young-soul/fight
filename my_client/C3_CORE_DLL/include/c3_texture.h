@@ -14,7 +14,7 @@ typedef struct
 	int							nID;
 	int							nDupCount;		// 复制数
 	char						*lpName;		// 文件名
-	LPDIRECT3DTEXTURE9			lpTex;			// 贴图地址
+	LPDIRECT3DTEXTURE8			lpTex;			// 贴图地址
 	D3DXIMAGE_INFO				Info;			// 贴图信息
 }
 C3Texture;
@@ -46,6 +46,8 @@ BOOL Texture_Create ( C3Texture **lpTex,
 					  DWORD dwMipLevels,
 					  D3DFORMAT format,
 					  D3DPOOL pool );
+C3_CORE_DLL_API
+BOOL Texture_Save(C3Texture *pTexture,char* szName);
 
 #define	TEX_MAX			10240
 extern C3_CORE_DLL_API DWORD		g_dwTexCount;

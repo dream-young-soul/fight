@@ -150,12 +150,10 @@ void Font_Prepare ( void )
 	SetTextureStageState ( 0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE );
 	SetTextureStageState ( 0, D3DTSS_ALPHAOP, D3DTOP_MODULATE );
 
-	//SetTextureStageState ( 0, D3DTSS_MINFILTER, D3DTEXF_POINT );
-	//SetTextureStageState ( 0, D3DTSS_MAGFILTER, D3DTEXF_POINT );
-	//SetTextureStageState ( 0, D3DTSS_MIPFILTER, D3DTEXF_POINT );
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MINFILTER,D3DTEXF_POINT);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MAGFILTER,D3DTEXF_POINT);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MIPFILTER,D3DTEXF_POINT);
+	SetTextureStageState ( 0, D3DTSS_MINFILTER, D3DTEXF_POINT );
+	SetTextureStageState ( 0, D3DTSS_MAGFILTER, D3DTEXF_POINT );
+	SetTextureStageState ( 0, D3DTSS_MIPFILTER, D3DTEXF_POINT );
+
 	SetTextureStageState ( 1, D3DTSS_COLORARG1, D3DTA_TEXTURE );
 	SetTextureStageState ( 1, D3DTSS_COLORARG2, D3DTA_CURRENT );
 	SetTextureStageState ( 1, D3DTSS_COLOROP, D3DTOP_DISABLE );
@@ -164,12 +162,9 @@ void Font_Prepare ( void )
 	SetTextureStageState ( 1, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE );
 	SetTextureStageState ( 1, D3DTSS_ALPHAOP, D3DTOP_DISABLE );
 
-	//SetTextureStageState ( 1, D3DTSS_MINFILTER, D3DTEXF_NONE );
-	//SetTextureStageState ( 1, D3DTSS_MAGFILTER, D3DTEXF_NONE );
-	//SetTextureStageState ( 1, D3DTSS_MIPFILTER, D3DTEXF_NONE );
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MINFILTER,D3DTEXF_NONE);
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MAGFILTER,D3DTEXF_NONE);
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MIPFILTER,D3DTEXF_NONE);
+	SetTextureStageState ( 1, D3DTSS_MINFILTER, D3DTEXF_NONE );
+	SetTextureStageState ( 1, D3DTSS_MAGFILTER, D3DTEXF_NONE );
+	SetTextureStageState ( 1, D3DTSS_MIPFILTER, D3DTEXF_NONE );
 }
 
 C3_CORE_DLL_API
@@ -284,8 +279,7 @@ BOOL Font_Draw ( C3Font *lpFont,
 	if ( FAILED ( g_D3DDevice->SetTexture ( 0, lpFont->lpChar[( BYTE )lpChar[0]][( BYTE )lpChar[1]]->lpTex ) ) )
 		return false;
 
-	//if ( FAILED ( g_D3DDevice->SetVertexShader ( FONT_VERTEX ) ) )
-	if ( FAILED ( g_D3DDevice->SetFVF( FONT_VERTEX ) ) )	
+	if ( FAILED ( g_D3DDevice->SetVertexShader ( FONT_VERTEX ) ) )
 		return false;
 
 	if ( FAILED ( g_D3DDevice->DrawPrimitiveUP ( D3DPT_TRIANGLESTRIP,

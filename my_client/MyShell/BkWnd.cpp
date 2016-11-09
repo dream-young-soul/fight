@@ -53,12 +53,14 @@ void CBkWnd::Create()
 	PUZZLE_SCRX = _SCR_WIDTH;
 	PUZZLE_SCRY = _SCR_HEIGHT;
     CRect rect = CRect( 0, 0, _SCR_WIDTH, _SCR_HEIGHT + _FRAME_SIZE  ) ;
+
+	
 	////2016.5.2 设置有有边框样式	
     CreateEx( WS_MAXIMIZEBOX,
               AfxRegisterWndClass(0, AfxGetApp()->LoadStandardCursor(IDC_ARROW)),
               "MyWnd",
               WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX,
-			  //WS_POPUP, 无边框
+			 // WS_POPUP, //无边框
               rect,
               NULL,
               NULL,

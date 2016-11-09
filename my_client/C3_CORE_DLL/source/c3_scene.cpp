@@ -219,12 +219,13 @@ BOOL Scene_Optimize ( C3Scene *lpScene )
 
 	// 公用所有重复的顶点
 	int index;
+	DWORD c;
 	for ( DWORD f = 0; f < lpScene->dwTriCount; f++ )
 	{
 		for ( DWORD i = 0; i < 3; i++ )
 		{
 			index = lpScene->lpIB[f * 3 + i];
-			DWORD c = 0;
+
 			for (  c = 0; c < veccount; c++ )
 			{
 				if ( memcmp ( &lpScene->lpVB[index],
@@ -273,8 +274,8 @@ void Scene_Prepare ( void )
 	SetRenderState ( D3DRS_CULLMODE, D3DCULL_CW );
 	SetRenderState ( D3DRS_AMBIENTMATERIALSOURCE, D3DMCS_COLOR2 );
 	SetRenderState ( D3DRS_DIFFUSEMATERIALSOURCE, D3DMCS_COLOR1 );
-	//SetRenderState ( D3DRS_SOFTWAREVERTEXPROCESSING, false );
-	g_D3DDevice->SetSoftwareVertexProcessing(TRUE);
+	SetRenderState ( D3DRS_SOFTWAREVERTEXPROCESSING, false );
+
 	SetTextureStageState ( 0, D3DTSS_COLORARG1, D3DTA_TEXTURE );
 	SetTextureStageState ( 0, D3DTSS_COLORARG2, D3DTA_DIFFUSE );
 	SetTextureStageState ( 0, D3DTSS_COLOROP, D3DTOP_MODULATE );
@@ -283,12 +284,9 @@ void Scene_Prepare ( void )
 	SetTextureStageState ( 0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE );
 	SetTextureStageState ( 0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG2 );
 
-	//SetTextureStageState ( 0, D3DTSS_MINFILTER, D3DTEXF_LINEAR );
-	//SetTextureStageState ( 0, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
-	//SetTextureStageState ( 0, D3DTSS_MIPFILTER, D3DTEXF_LINEAR );
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MINFILTER,D3DTEXF_LINEAR);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MAGFILTER,D3DTEXF_LINEAR);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MIPFILTER,D3DTEXF_LINEAR);
+	SetTextureStageState ( 0, D3DTSS_MINFILTER, D3DTEXF_LINEAR );
+	SetTextureStageState ( 0, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
+	SetTextureStageState ( 0, D3DTSS_MIPFILTER, D3DTEXF_LINEAR );
 
 	SetTextureStageState ( 1, D3DTSS_COLORARG1, D3DTA_TEXTURE );
 	SetTextureStageState ( 1, D3DTSS_COLORARG2, D3DTA_CURRENT );
@@ -298,13 +296,9 @@ void Scene_Prepare ( void )
 	SetTextureStageState ( 1, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE );
 	SetTextureStageState ( 1, D3DTSS_ALPHAOP, D3DTOP_DISABLE );
 
-	//SetTextureStageState ( 1, D3DTSS_MINFILTER, D3DTEXF_LINEAR );
-	//SetTextureStageState ( 1, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
-	//SetTextureStageState ( 1, D3DTSS_MIPFILTER, D3DTEXF_NONE );
-
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MINFILTER,D3DTEXF_LINEAR);
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MAGFILTER,D3DTEXF_LINEAR);
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MIPFILTER,D3DTEXF_LINEAR);
+	SetTextureStageState ( 1, D3DTSS_MINFILTER, D3DTEXF_LINEAR );
+	SetTextureStageState ( 1, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
+	SetTextureStageState ( 1, D3DTSS_MIPFILTER, D3DTEXF_NONE );
 }
 C3_CORE_DLL_API
 BOOL Scene_Draw ( C3Scene *lpScene )
@@ -364,8 +358,7 @@ BOOL Scene_Draw ( C3Scene *lpScene )
 												   &lpScene->matrix ) ) )
 		return false;
 	// vertex shader
-	//if ( FAILED ( g_D3DDevice->SetVertexShader ( SCENE_VERTEX ) ) )
-	if ( FAILED (	g_D3DDevice->SetFVF(SCENE_VERTEX)))
+	if ( FAILED ( g_D3DDevice->SetVertexShader ( SCENE_VERTEX ) ) )
 		return false;
 	// 绘制场景
 	if ( FAILED ( g_D3DDevice->DrawIndexedPrimitiveUP ( D3DPT_TRIANGLELIST,

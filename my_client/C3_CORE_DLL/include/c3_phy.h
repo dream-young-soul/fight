@@ -36,7 +36,7 @@ struct PhyVertex
 struct C3KeyFrame
 {
 	DWORD							pos;
-	D3DXMATRIXA16					*matrix;
+	D3DXMATRIX					*matrix;
 };
 struct C3Motion
 {
@@ -46,7 +46,7 @@ struct C3Motion
 	DWORD							dwKeyFrames;
 	C3KeyFrame						*lpKeyFrame;
 
-	D3DXMATRIXA16					*matrix;
+	D3DXMATRIX					*matrix;
 
 	DWORD							dwMorphCount;
 	float							*lpMorph;
@@ -64,7 +64,7 @@ BOOL Motion_Save ( char *lpName, C3Motion *lpMotion, BOOL bNew );
 C3_CORE_DLL_API
 void Motion_Unload ( C3Motion **lpMotion );
 C3_CORE_DLL_API
-void Motion_GetMatrix ( C3Motion *lpMotion, DWORD dwBone, D3DXMATRIXA16 *lpMatrix );
+void Motion_GetMatrix ( C3Motion *lpMotion, DWORD dwBone, D3DXMATRIX *lpMatrix );
 
 struct C3Phy
 {
@@ -75,12 +75,12 @@ struct C3Phy
 	DWORD							dwNVecCount;		// 顶点数(普通顶点)
 	DWORD							dwAVecCount;		// 顶点数(透明顶点)
 	PhyVertex						*lpVB;				// 顶点池(普通顶点/透明顶点)
-	LPDIRECT3DVERTEXBUFFER9			vb;
+	LPDIRECT3DVERTEXBUFFER8			vb;
 
 	DWORD							dwNTriCount;		// 多边形数(普通多边形)
 	DWORD							dwATriCount;		// 多边形数(透明多边形)
 	WORD							*lpIB;				// 索引池(普通多边形/透明多边形)
-	LPDIRECT3DINDEXBUFFER9			ib;
+	LPDIRECT3DINDEXBUFFER8			ib;
 	
 	char							*lpTexName;			// [ be used by plugin ]
 	int								nTex;
@@ -96,7 +96,7 @@ struct C3Phy
 
 	DWORD							dwTexRow;
 
-	D3DXMATRIXA16					InitMatrix;
+	D3DXMATRIX					InitMatrix;
 
 	// 12-20-2002 : "STEP"
 	D3DXVECTOR2						uvstep;
@@ -126,7 +126,7 @@ C3_CORE_DLL_API
 void Phy_SetFrame ( C3Phy *lpPhy, DWORD dwFrame );
 
 C3_CORE_DLL_API
-void Phy_Muliply ( C3Phy *lpPhy, int nBoneIndex, D3DXMATRIXA16 *matrix );
+void Phy_Muliply ( C3Phy *lpPhy, int nBoneIndex, D3DXMATRIX *matrix );
 
 C3_CORE_DLL_API
 void Phy_SetColor ( C3Phy *lpPhy,

@@ -2,12 +2,12 @@
 #include	 "..\include\c3_texture.h"
 #include     "..\include\c3_datafile.h"
 
-C3_CORE_DLL_API LPDIRECT3D9				g_D3D = 0;
-C3_CORE_DLL_API LPDIRECT3DDEVICE9		g_D3DDevice = 0;
-C3_CORE_DLL_API D3DCAPS9				g_D3DCaps;
+C3_CORE_DLL_API LPDIRECT3D8				g_D3D = 0;
+C3_CORE_DLL_API LPDIRECT3DDEVICE8		g_D3DDevice = 0;
+C3_CORE_DLL_API D3DCAPS8				g_D3DCaps;
 C3_CORE_DLL_API D3DDISPLAYMODE			g_DisplayMode;
 C3_CORE_DLL_API HWND					g_hWnd;
-C3_CORE_DLL_API D3DVIEWPORT9			g_Viewport;
+C3_CORE_DLL_API D3DVIEWPORT8			g_Viewport;
 C3_CORE_DLL_API D3DXMATRIX				g_ViewMatrix;
 C3_CORE_DLL_API D3DXMATRIX				g_ProjectMatrix;
 C3_CORE_DLL_API D3DPRESENT_PARAMETERS	g_Present;
@@ -88,9 +88,7 @@ int Init3DEx ( HWND hWnd,
 	g_DisplayMode.RefreshRate = 60;
 
 	// 创建 d3d
-	
-	g_D3D = Direct3DCreate9 ( D3D_SDK_VERSION );
-	
+	g_D3D = Direct3DCreate8 ( D3D_SDK_VERSION );
 	if ( NULL == g_D3D )
 		return 0;
 
@@ -134,7 +132,10 @@ int Init3DEx ( HWND hWnd,
     g_Present.BackBufferFormat = g_DisplayMode.Format;
     g_Present.EnableAutoDepthStencil = true;
     g_Present.AutoDepthStencilFormat = D3DFMT_D16;
-	
+	//预言 多重采样禁用
+	g_Present.MultiSampleType=D3DMULTISAMPLE_NONE;
+ 
+   
 	if ( FAILED ( g_D3D->CreateDevice ( D3DADAPTER_DEFAULT,
 									    D3DDEVTYPE_HAL,
 									    hWnd,
@@ -180,18 +181,12 @@ int Init3DEx ( HWND hWnd,
 	SetRenderState ( D3DRS_LIGHTING, true );
 	SetRenderState ( D3DRS_CULLMODE, D3DCULL_CW );
 	SetRenderState ( D3DRS_ZFUNC, D3DCMP_LESSEQUAL );
-	//SetRenderState (D3DRS_EDGEANTIALIAS, true);
-	//边缘抗锯齿使用D3DRS_ANTIALIASEDLINEENABLE代替
-	SetRenderState(D3DRS_ANTIALIASEDLINEENABLE,true);
+	SetRenderState (D3DRS_EDGEANTIALIAS, true);
 	SetRenderState (D3DRS_MULTISAMPLEANTIALIAS, true);
-	//dx8--------------------
-	//SetTextureStageState ( 0, D3DTSS_MINFILTER, D3DTEXF_LINEAR );
-	//SetTextureStageState ( 0, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
-    //SetTextureStageState ( 0, D3DTSS_MIPFILTER, D3DTEXF_LINEAR );
-	//--------------------
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MINFILTER,D3DTEXF_LINEAR);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MAGFILTER,D3DTEXF_LINEAR);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MIPFILTER,D3DTEXF_LINEAR);
+	SetTextureStageState ( 0, D3DTSS_MINFILTER, D3DTEXF_LINEAR );
+	SetTextureStageState ( 0, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
+    SetTextureStageState ( 0, D3DTSS_MIPFILTER, D3DTEXF_LINEAR );
+
 	for ( int t = 0; t < TEX_MAX; t++ )
 		g_lpTex[t] = 0;
 

@@ -692,43 +692,51 @@ void CMyBitmap::ShowEmotionString (int iPosX, int iPosY, DWORD color,  const cha
 //------------------------------------------------------
 void CMyBitmap::PrepareLine ( void )
 {
-    SetRenderState ( D3DRS_ZENABLE, false );
-    SetRenderState ( D3DRS_ZWRITEENABLE, false );
-    SetRenderState ( D3DRS_SHADEMODE, D3DSHADE_GOURAUD );
-    SetRenderState ( D3DRS_DITHERENABLE, false );
-    SetRenderState ( D3DRS_CULLMODE, D3DCULL_NONE );
-    SetRenderState ( D3DRS_AMBIENTMATERIALSOURCE, D3DMCS_COLOR1 );
-    SetRenderState ( D3DRS_DIFFUSEMATERIALSOURCE, D3DMCS_COLOR1 );
-    SetRenderState ( D3DRS_ALPHABLENDENABLE, true );
-    SetRenderState ( D3DRS_SRCBLEND, D3DBLEND_SRCALPHA );
-    SetRenderState ( D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA );
-    SetTextureStageState ( 0, D3DTSS_COLORARG1, D3DTA_TEXTURE );
-    SetTextureStageState ( 0, D3DTSS_COLORARG2, D3DTA_DIFFUSE );
-    SetTextureStageState ( 0, D3DTSS_COLOROP, D3DTOP_SELECTARG2 );
-    SetTextureStageState ( 0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE );
-    SetTextureStageState ( 0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE );
-    SetTextureStageState ( 0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG2 );
-   // SetTextureStageState ( 0, D3DTSS_MINFILTER, D3DTEXF_LINEAR );
-   // SetTextureStageState ( 0, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
-    //SetTextureStageState ( 0, D3DTSS_MIPFILTER, D3DTEXF_LINEAR );
+	SetRenderState ( D3DRS_ZENABLE, false );
+	SetRenderState ( D3DRS_ZWRITEENABLE, false );
+	SetRenderState ( D3DRS_SHADEMODE, D3DSHADE_GOURAUD );
+	SetRenderState ( D3DRS_DITHERENABLE, false );
+	SetRenderState ( D3DRS_CULLMODE, D3DCULL_NONE );
+	SetRenderState ( D3DRS_AMBIENTMATERIALSOURCE, D3DMCS_COLOR1 );
+	SetRenderState ( D3DRS_DIFFUSEMATERIALSOURCE, D3DMCS_COLOR1 );
+	
+	SetRenderState ( D3DRS_ALPHABLENDENABLE, true );
+	SetRenderState ( D3DRS_SRCBLEND, D3DBLEND_SRCALPHA );
+	SetRenderState ( D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA );
+	
+	SetTextureStageState ( 0, D3DTSS_COLORARG1, D3DTA_TEXTURE );
+	SetTextureStageState ( 0, D3DTSS_COLORARG2, D3DTA_DIFFUSE );
+	SetTextureStageState ( 0, D3DTSS_COLOROP, D3DTOP_SELECTARG2 );
+
+	SetTextureStageState ( 0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE );
+	SetTextureStageState ( 0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE );
+	SetTextureStageState ( 0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG2 );
+	
+	SetTextureStageState ( 0, D3DTSS_MINFILTER, D3DTEXF_LINEAR );
+	SetTextureStageState ( 0, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
+	SetTextureStageState ( 0, D3DTSS_MIPFILTER, D3DTEXF_LINEAR );
+	
+	SetTextureStageState ( 1, D3DTSS_COLORARG1, D3DTA_TEXTURE );
+	SetTextureStageState ( 1, D3DTSS_COLORARG2, D3DTA_CURRENT );
+	SetTextureStageState ( 1, D3DTSS_COLOROP, D3DTOP_DISABLE );
+	
+	SetTextureStageState ( 1, D3DTSS_ALPHAARG1, D3DTA_TEXTURE );
+	SetTextureStageState ( 1, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE );
+	SetTextureStageState ( 1, D3DTSS_ALPHAOP, D3DTOP_DISABLE );
+	
+	SetTextureStageState ( 1, D3DTSS_MINFILTER, D3DTEXF_NONE );
+	SetTextureStageState ( 1, D3DTSS_MAGFILTER, D3DTEXF_NONE );
+	SetTextureStageState ( 1, D3DTSS_MIPFILTER, D3DTEXF_NONE );
 
 
 
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MINFILTER,D3DTEXF_LINEAR);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MAGFILTER,D3DTEXF_LINEAR);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MIPFILTER,D3DTEXF_LINEAR);
-    SetTextureStageState ( 1, D3DTSS_COLORARG1, D3DTA_TEXTURE );
-    SetTextureStageState ( 1, D3DTSS_COLORARG2, D3DTA_CURRENT );
-    SetTextureStageState ( 1, D3DTSS_COLOROP, D3DTOP_DISABLE );
-    SetTextureStageState ( 1, D3DTSS_ALPHAARG1, D3DTA_TEXTURE );
-    SetTextureStageState ( 1, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE );
-    SetTextureStageState ( 1, D3DTSS_ALPHAOP, D3DTOP_DISABLE );
-   // SetTextureStageState ( 1, D3DTSS_MINFILTER, D3DTEXF_NONE );
-   // SetTextureStageState ( 1, D3DTSS_MAGFILTER, D3DTEXF_NONE );
-   // SetTextureStageState ( 1, D3DTSS_MIPFILTER, D3DTEXF_NONE );
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MINFILTER,D3DTEXF_NONE);
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MAGFILTER,D3DTEXF_NONE);
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MIPFILTER,D3DTEXF_NONE);
+	//g_D3DDevice->SetSamplerState(0,D3DSAMP_MINFILTER,D3DTEXF_LINEAR);
+	//g_D3DDevice->SetSamplerState(0,D3DSAMP_MAGFILTER,D3DTEXF_LINEAR);
+	//g_D3DDevice->SetSamplerState(0,D3DSAMP_MIPFILTER,D3DTEXF_LINEAR);
+ 
+	//g_D3DDevice->SetSamplerState(1,D3DSAMP_MINFILTER,D3DTEXF_NONE);
+	//g_D3DDevice->SetSamplerState(1,D3DSAMP_MAGFILTER,D3DTEXF_NONE);
+	//g_D3DDevice->SetSamplerState(1,D3DSAMP_MIPFILTER,D3DTEXF_NONE);
     // mode
     CMyBitmap::s_nShowMode	= modeLine;
 }
@@ -741,7 +749,10 @@ void CMyBitmap::ShowLine ( LineVertex* line, DWORD num )
         CMyBitmap::PrepareLine();
     }
 	
-    g_D3DDevice->SetFVF ( LINE_VERTEX );
+    //g_D3DDevice->SetFVF ( LINE_VERTEX );
+
+	g_D3DDevice->SetVertexShader ( LINE_VERTEX );
+
     g_D3DDevice->DrawPrimitiveUP ( D3DPT_LINELIST,
                                    num,
                                    line,
@@ -839,7 +850,9 @@ void CMyBitmap::ShowBlock( int x1, int y1, int x2, int y2, DWORD color1, DWORD c
     {
         CMyBitmap::PrepareLine();
     }
-    g_D3DDevice->SetFVF ( LINE_VERTEX );
+    //g_D3DDevice->SetFVF ( LINE_VERTEX );
+	g_D3DDevice->SetVertexShader ( LINE_VERTEX );
+
     g_D3DDevice->DrawPrimitiveUP ( D3DPT_TRIANGLESTRIP,
                                    2,
                                    s_vec,
@@ -874,11 +887,30 @@ void CMyBitmap::ShowBlock( CMyPos posA, CMyPos posB, CMyPos posC, CMyPos posD, D
     {
         CMyBitmap::PrepareLine();
     }
-    g_D3DDevice->SetFVF ( LINE_VERTEX );
+
+	//LPDIRECT3DVERTEXBUFFER9 g_VertexBuffer = NULL;
+	// if(FAILED(g_D3DDevice->CreateVertexBuffer(sizeof(LineVertex), 0,
+ //       D3DFVF_XYZ | D3DFVF_DIFFUSE, D3DPOOL_DEFAULT, &g_VertexBuffer,
+ //       NULL))) return ;
+	// void *ptr;
+
+ //   if(FAILED(g_VertexBuffer->Lock(0, sizeof(LineVertex),
+ //       (void**)&ptr, 0))) return ;
+
+ //   memcpy(ptr, objData, sizeof(objData));
+
+ //   g_VertexBuffer->Unlock();
+
+ //   g_D3DDevice->SetFVF ( LINE_VERTEX );
+	g_D3DDevice->SetVertexShader ( LINE_VERTEX );
     g_D3DDevice->DrawPrimitiveUP ( D3DPT_TRIANGLESTRIP,
                                    2,
                                    s_vec,
                                    sizeof ( LineVertex ) );
+
+	
+
+	
 }
 
 //------------------------------------------------------
@@ -910,7 +942,8 @@ void CMyBitmap::ShowBlock ( int x1, int y1, int x2, int y2, DWORD color )
         CMyBitmap::PrepareLine();
     }
 	
-    g_D3DDevice->SetFVF ( LINE_VERTEX );
+    //g_D3DDevice->SetFVF ( LINE_VERTEX );
+	g_D3DDevice->SetVertexShader ( LINE_VERTEX );
     g_D3DDevice->DrawPrimitiveUP ( D3DPT_TRIANGLESTRIP,
                                    2,
                                    s_vec,

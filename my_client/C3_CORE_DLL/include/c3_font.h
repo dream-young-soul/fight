@@ -17,7 +17,7 @@ struct FontVertex
 struct	C3Char
 {
 	char					Char[2];
-	LPDIRECT3DTEXTURE9		lpTex;
+	LPDIRECT3DTEXTURE8		lpTex;
 	DWORD					dwTime;
 };
 

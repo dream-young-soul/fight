@@ -90,7 +90,7 @@ void* MyDataFileLoad ( const char *filename, DWORD &size )
 	
 	C3DataFileIndex* pf = NULL;
 	// begin search the WFile 
-	int i = 0;
+	int i;
 	for ( i=0; i < MAXDATAFILE; i++ ) 
 	{
 		if ( DataFile_IsOpen ( &_WDF[i], id ) )
@@ -303,10 +303,4 @@ C3_CORE_DLL_API
 BOOL MyDnpFileOpen ( const char *filename )
 {
 	return g_objDnFile.OpenFile(filename);
-}
-
-C3_CORE_DLL_API
-void* OpenFilePointer(const char* pszFile,unsigned long &usFileSize)
-{
-	return g_objDnFile.GetMPtr(pszFile,usFileSize);
 }

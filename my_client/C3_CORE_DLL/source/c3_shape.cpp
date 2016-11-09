@@ -613,8 +613,8 @@ BOOL Shape_Draw ( C3Shape *lpShape, BOOL bLocal, int nAsb, int nAdb)
 		// alpha
 		DWORD add = lpShape->dwSegment;
 		float uvstep = 0.9f / add;
-		int n = 0;
-		for (  n = lpShape->dwSegmentCur; n >= 0; n-- )
+		
+		for ( int n = lpShape->dwSegmentCur; n >= 0; n-- )
 		{
 			float u = add * uvstep + 0.05f;
 
@@ -640,7 +640,7 @@ BOOL Shape_Draw ( C3Shape *lpShape, BOOL bLocal, int nAsb, int nAdb)
 
 			add--;
 		}
-		for ( n = lpShape->dwSegment - 1; n > ( int )lpShape->dwSegmentCur; n-- )
+		for (int n = lpShape->dwSegment - 1; n > ( int )lpShape->dwSegmentCur; n-- )
 		{
 			float u = add * uvstep + 0.05f;
 
@@ -690,8 +690,7 @@ BOOL Shape_Draw ( C3Shape *lpShape, BOOL bLocal, int nAsb, int nAdb)
 
 		g_D3DDevice->SetTransform ( D3DTS_WORLD, &mm );
 
-		//if ( FAILED ( g_D3DDevice->SetVertexShader ( SHAPE_OUT_VERTEX ) ) )
-		if ( FAILED (	g_D3DDevice->SetFVF(SHAPE_OUT_VERTEX)))
+		if ( FAILED ( g_D3DDevice->SetVertexShader ( SHAPE_OUT_VERTEX ) ) )
 			return false;
 
 		if ( FAILED ( g_D3DDevice->DrawPrimitiveUP ( D3DPT_TRIANGLELIST,
@@ -734,13 +733,9 @@ void Shape_Prepare ( void )
 	SetTextureStageState ( 0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE );
 	SetTextureStageState ( 0, D3DTSS_ALPHAOP, D3DTOP_MODULATE );
 
-	//SetTextureStageState ( 0, D3DTSS_MINFILTER, D3DTEXF_LINEAR );
-	//SetTextureStageState ( 0, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
-	//SetTextureStageState ( 0, D3DTSS_MIPFILTER, D3DTEXF_LINEAR );
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MINFILTER,D3DTEXF_LINEAR);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MAGFILTER,D3DTEXF_LINEAR);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MIPFILTER,D3DTEXF_LINEAR);
-
+	SetTextureStageState ( 0, D3DTSS_MINFILTER, D3DTEXF_LINEAR );
+	SetTextureStageState ( 0, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
+	SetTextureStageState ( 0, D3DTSS_MIPFILTER, D3DTEXF_LINEAR );
 
 	SetTextureStageState ( 1, D3DTSS_COLORARG1, D3DTA_TEXTURE );
 	SetTextureStageState ( 1, D3DTSS_COLORARG2, D3DTA_CURRENT );
@@ -750,13 +745,9 @@ void Shape_Prepare ( void )
 	SetTextureStageState ( 1, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE );
 	SetTextureStageState ( 1, D3DTSS_ALPHAOP, D3DTOP_DISABLE );
 
-	//SetTextureStageState ( 1, D3DTSS_MINFILTER, D3DTEXF_NONE );
-	//SetTextureStageState ( 1, D3DTSS_MAGFILTER, D3DTEXF_NONE );
-	//SetTextureStageState ( 1, D3DTSS_MIPFILTER, D3DTEXF_NONE );
-
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MINFILTER,D3DTEXF_NONE);
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MAGFILTER,D3DTEXF_NONE);
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MIPFILTER,D3DTEXF_NONE);
+	SetTextureStageState ( 1, D3DTSS_MINFILTER, D3DTEXF_NONE );
+	SetTextureStageState ( 1, D3DTSS_MAGFILTER, D3DTEXF_NONE );
+	SetTextureStageState ( 1, D3DTSS_MIPFILTER, D3DTEXF_NONE );
 }
 C3_CORE_DLL_API
 void Shape_ChangeTexture ( C3Shape *lpShape, int nTexID )
@@ -983,8 +974,8 @@ BOOL Shape_DrawAlpha(C3Shape *lpShape, BOOL bLocal)
 		lpShape->vb[lpShape->dwSegmentCur * 6 + 5].color = D3DCOLOR_ARGB ( 255, 255, 255, 255);
 		lpShape->vb[cur + 5].u = 0;
 		lpShape->vb[cur + 5].v = 0;
-		DWORD i = 0;
-		for (  i = 0; i < 6; i++ )
+		
+		for ( DWORD i = 0; i < 6; i++ )
 		{
 			vPos.x = lpShape->vb[cur + i].x;
 			vPos.y = lpShape->vb[cur + i].y;
@@ -1009,7 +1000,7 @@ BOOL Shape_DrawAlpha(C3Shape *lpShape, BOOL bLocal)
 		}
 
 		// Set the texcoord
-		for ( i = 0; i < lpShape->dwSegment; i++ )
+		for (int i = 0; i < lpShape->dwSegment; i++ )
 		{
 			for ( int j = 0; j < 6; j++ )
 			{
@@ -1032,20 +1023,19 @@ BOOL Shape_DrawAlpha(C3Shape *lpShape, BOOL bLocal)
 		if ( lpShape->dwSegmentCur == lpShape->dwSegment )
 			lpShape->dwSegmentCur = 0;
 
-		LPDIRECT3DSURFACE9 pBackBufferSurface;
-		LPDIRECT3DSURFACE9 pTextureSurface;
+		LPDIRECT3DSURFACE8 pBackBufferSurface;
+		LPDIRECT3DSURFACE8 pTextureSurface;
 		POINT point = { 0, 0 };
 		
 		lpShape->pTearAirTex->GetSurfaceLevel( 0, &pTextureSurface );
-	//	g_D3DDevice->GetBackBuffer( 0, D3DBACKBUFFER_TYPE_MONO, &pBackBufferSurface );
-		g_D3DDevice->GetBackBuffer( 0, 0, D3DBACKBUFFER_TYPE_MONO, &pBackBufferSurface );
-		//g_D3DDevice->CopyRects( pBackBufferSurface, &lpShape->TearAirTexRect, 1, pTextureSurface, &point );
-		g_D3DDevice->UpdateSurface(pBackBufferSurface, &lpShape->TearAirTexRect, pTextureSurface, &point );
+		g_D3DDevice->GetBackBuffer( 0, D3DBACKBUFFER_TYPE_MONO, &pBackBufferSurface );
+		g_D3DDevice->CopyRects( pBackBufferSurface, &lpShape->TearAirTexRect, 1, pTextureSurface, &point );
+
 		lpShape->LastTearAirTexRect.left	= lpShape->TearAirTexRect.left;
 		lpShape->LastTearAirTexRect.right	= lpShape->TearAirTexRect.right;
 		lpShape->LastTearAirTexRect.top		= lpShape->TearAirTexRect.top;	
 		lpShape->LastTearAirTexRect.bottom	= lpShape->TearAirTexRect.bottom;
-	
+
 		char strText[64];
 		sprintf( strText, "Capture the backbuffer, Width = %d, Height = %d!\n", lpShape->LastTearAirTexRect.right - lpShape->LastTearAirTexRect.left, lpShape->LastTearAirTexRect.bottom - lpShape->LastTearAirTexRect.top );
 		::OutputDebugString( strText );
@@ -1054,8 +1044,7 @@ BOOL Shape_DrawAlpha(C3Shape *lpShape, BOOL bLocal)
 
 		g_D3DDevice->SetTransform ( D3DTS_WORLD, &mm );
 
-	//	if ( FAILED ( g_D3DDevice->SetVertexShader ( SHAPE_OUT_VERTEX ) ) )
-		if ( FAILED (	g_D3DDevice->SetFVF(SHAPE_OUT_VERTEX)))
+		if ( FAILED ( g_D3DDevice->SetVertexShader ( SHAPE_OUT_VERTEX ) ) )
 			return false;
 
 		if ( FAILED ( g_D3DDevice->DrawPrimitiveUP ( D3DPT_TRIANGLELIST,
@@ -1074,14 +1063,14 @@ BOOL Shape_DrawAlpha(C3Shape *lpShape, BOOL bLocal)
 		// Create the tearair texture only the user invoke the Shape_DrawAlpha()
 		if ( lpShape->pTearAirTex == NULL )
 		{
-			LPDIRECT3DSURFACE9	pBackBufferSurface;
+			LPDIRECT3DSURFACE8	pBackBufferSurface;
 			D3DSURFACE_DESC		BackBufferDesc;
 			
-			if ( g_D3DDevice->GetBackBuffer(0,0, D3DBACKBUFFER_TYPE_MONO, &pBackBufferSurface ) == D3D_OK )
+			if ( g_D3DDevice->GetBackBuffer( 0, D3DBACKBUFFER_TYPE_MONO, &pBackBufferSurface ) == D3D_OK )
 			{
 				pBackBufferSurface->GetDesc( &BackBufferDesc );
-				//g_D3DDevice->CreateTexture( TEARAIR_TEX_SIZE, TEARAIR_TEX_SIZE, 1, 0, BackBufferDesc.Format, D3DPOOL_MANAGED, &lpShape->pTearAirTex );
-				g_D3DDevice->CreateTexture( TEARAIR_TEX_SIZE, TEARAIR_TEX_SIZE, 1, 0, BackBufferDesc.Format, D3DPOOL_MANAGED, &lpShape->pTearAirTex ,0);
+				g_D3DDevice->CreateTexture( TEARAIR_TEX_SIZE, TEARAIR_TEX_SIZE, 1, 0, BackBufferDesc.Format, D3DPOOL_MANAGED, &lpShape->pTearAirTex );
+
 				::OutputDebugString( "Create the tear air texture!\n" );
 			}
 		}

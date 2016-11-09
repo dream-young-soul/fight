@@ -170,12 +170,8 @@ void Sprite_Prepare ( void )
 	SetRenderState ( D3DRS_CULLMODE, D3DCULL_NONE );
 	SetRenderState ( D3DRS_AMBIENTMATERIALSOURCE, D3DMCS_COLOR1 );
 	SetRenderState ( D3DRS_DIFFUSEMATERIALSOURCE, D3DMCS_COLOR1 );
-	//dx8----------------------
-	//SetRenderState ( D3DRS_SOFTWAREVERTEXPROCESSING, false );
-	//--------------------------------
-	//使用这个代替
-	g_D3DDevice->SetSoftwareVertexProcessing(TRUE);
-	
+	SetRenderState ( D3DRS_SOFTWAREVERTEXPROCESSING, false );
+
 	SetTextureStageState ( 0, D3DTSS_COLORARG1, D3DTA_TEXTURE );
 	SetTextureStageState ( 0, D3DTSS_COLORARG2, D3DTA_DIFFUSE );
 	SetTextureStageState ( 0, D3DTSS_COLOROP, D3DTOP_MODULATE );
@@ -184,13 +180,9 @@ void Sprite_Prepare ( void )
 	SetTextureStageState ( 0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE );
 	SetTextureStageState ( 0, D3DTSS_ALPHAOP, D3DTOP_MODULATE );
 
-	//SetTextureStageState ( 0, D3DTSS_MINFILTER, D3DTEXF_POINT );
-	//SetTextureStageState ( 0, D3DTSS_MAGFILTER, D3DTEXF_POINT );
-	//SetTextureStageState ( 0, D3DTSS_MIPFILTER, D3DTEXF_NONE );
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MINFILTER,D3DTEXF_POINT);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MAGFILTER,D3DTEXF_POINT);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MIPFILTER,D3DTEXF_NONE);
-
+	SetTextureStageState ( 0, D3DTSS_MINFILTER, D3DTEXF_POINT );
+	SetTextureStageState ( 0, D3DTSS_MAGFILTER, D3DTEXF_POINT );
+	SetTextureStageState ( 0, D3DTSS_MIPFILTER, D3DTEXF_NONE );
 
 	SetTextureStageState ( 1, D3DTSS_COLORARG1, D3DTA_TEXTURE );
 	SetTextureStageState ( 1, D3DTSS_COLORARG2, D3DTA_CURRENT );
@@ -200,13 +192,9 @@ void Sprite_Prepare ( void )
 	SetTextureStageState ( 1, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE );
 	SetTextureStageState ( 1, D3DTSS_ALPHAOP, D3DTOP_DISABLE );
 
-	//SetTextureStageState ( 1, D3DTSS_MINFILTER, D3DTEXF_NONE );
-	//SetTextureStageState ( 1, D3DTSS_MAGFILTER, D3DTEXF_NONE );
-	//SetTextureStageState ( 1, D3DTSS_MIPFILTER, D3DTEXF_NONE );
-
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MINFILTER,D3DTEXF_NONE);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MAGFILTER,D3DTEXF_NONE);
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MIPFILTER,D3DTEXF_NONE);
+	SetTextureStageState ( 1, D3DTSS_MINFILTER, D3DTEXF_NONE );
+	SetTextureStageState ( 1, D3DTSS_MAGFILTER, D3DTEXF_NONE );
+	SetTextureStageState ( 1, D3DTSS_MIPFILTER, D3DTEXF_NONE );
 }
 C3_CORE_DLL_API
 BOOL Sprite_Draw ( C3Sprite *lpSprite, DWORD dwShowWay )
@@ -293,8 +281,7 @@ BOOL Sprite_Draw ( C3Sprite *lpSprite, DWORD dwShowWay )
 	if ( FAILED ( g_D3DDevice->SetTexture ( 0, lpSprite->lpTex->lpTex ) ) )
 		return false;
 
-	//if ( FAILED ( g_D3DDevice->SetVertexShader ( SPRITE_VERTEX ) ) )
-	if ( FAILED (	g_D3DDevice->SetFVF(SPRITE_VERTEX)))
+	if ( FAILED ( g_D3DDevice->SetVertexShader ( SPRITE_VERTEX ) ) )
 		return false;
 	if ( FAILED ( g_D3DDevice->DrawPrimitiveUP ( D3DPT_TRIANGLESTRIP,
 											     2,
@@ -345,8 +332,7 @@ BOOL Sprite_Draw (C3Sprite *lpSpriteUp, C3Sprite *lpSpriteDn, UCHAR uAlphaA, UCH
 		return false;
 	if ( FAILED ( g_D3DDevice->SetTexture ( 1, lpSpriteUp->lpTex->lpTex ) ) )
 		return false;
-//	if ( FAILED ( g_D3DDevice->SetVertexShader (D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX2 )))
-	if ( FAILED (	g_D3DDevice->SetFVF(D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX2)))
+	if ( FAILED ( g_D3DDevice->SetVertexShader (D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX2 )))
 		return false;
 	g_D3DDevice->SetRenderState( D3DRS_ALPHABLENDENABLE, TRUE);
 	g_D3DDevice->SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG1);
@@ -357,21 +343,13 @@ BOOL Sprite_Draw (C3Sprite *lpSpriteUp, C3Sprite *lpSpriteDn, UCHAR uAlphaA, UCH
 	g_D3DDevice->SetTextureStageState(1, D3DTSS_COLORARG1, D3DTA_TEXTURE);
 	g_D3DDevice->SetTextureStageState(1, D3DTSS_COLORARG2, D3DTA_CURRENT);
 	g_D3DDevice->SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
-	//g_D3DDevice->SetTextureStageState(0, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
-	//g_D3DDevice->SetTextureStageState(1, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
-	//g_D3DDevice->SetTextureStageState(0, D3DTSS_MINFILTER , D3DTEXF_LINEAR );
-	//g_D3DDevice->SetTextureStageState(1, D3DTSS_MINFILTER , D3DTEXF_LINEAR );
-	//g_D3DDevice->SetTextureStageState(0, D3DTSS_MIPFILTER , D3DTEXF_LINEAR );
-	//g_D3DDevice->SetTextureStageState(1, D3DTSS_MIPFILTER , D3DTEXF_LINEAR );
-
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MAGFILTER,D3DTEXF_LINEAR);
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MAGFILTER,D3DTEXF_LINEAR);
-
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MINFILTER,D3DTEXF_LINEAR);
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MINFILTER,D3DTEXF_LINEAR);
-
-	g_D3DDevice->SetSamplerState(0,D3DSAMP_MIPFILTER,D3DTEXF_LINEAR);
-	g_D3DDevice->SetSamplerState(1,D3DSAMP_MIPFILTER,D3DTEXF_LINEAR);
+	g_D3DDevice->SetTextureStageState(0, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
+	g_D3DDevice->SetTextureStageState(1, D3DTSS_MAGFILTER, D3DTEXF_LINEAR );
+	g_D3DDevice->SetTextureStageState(0, D3DTSS_MINFILTER , D3DTEXF_LINEAR );
+	g_D3DDevice->SetTextureStageState(1, D3DTSS_MINFILTER , D3DTEXF_LINEAR );
+	g_D3DDevice->SetTextureStageState(0, D3DTSS_MIPFILTER , D3DTEXF_LINEAR );
+	g_D3DDevice->SetTextureStageState(1, D3DTSS_MIPFILTER , D3DTEXF_LINEAR );
+	
 	if ( FAILED ( g_D3DDevice->DrawPrimitiveUP ( D3DPT_TRIANGLESTRIP,
 		2,
 		vSprite,
@@ -393,4 +371,14 @@ C3_CORE_DLL_API
 void Sprite_Unlock ( C3Sprite *lpSprite )
 {
 	lpSprite->lpTex->lpTex->UnlockRect ( 0 );
+}
+
+C3_CORE_DLL_API
+BOOL Sprite_Save(C3Sprite* lpSprite,char* szName)
+{
+	if (lpSprite == NULL||szName == NULL)
+	{
+		return false;
+	}
+	return Texture_Save(lpSprite->lpTex,szName);
 }
