@@ -168,24 +168,28 @@ protected:
     {
         MSGHEAD_DEFINE
 
-        DWORD		dwTimeStamp;
+			DWORD		dwTimeStamp;
 
-        OBJID		idUser;
-        USHORT		unPosX, unPosY;
-        USHORT		unDir;
-        union
-        {
-            OBJID		idTarget;
-            DWORD		dwData;
-            INT			iData;
-            BOOL		bSucDone;
-            struct
-            {
-                USHORT usTargetPosX;
-                USHORT usTargetPosY;
-            };
-        };
-        USHORT		usAction;
+		OBJID		idUser;
+		USHORT		unPosX, unPosY;
+		USHORT		unDir;
+		USHORT		flag;
+		//union
+		//{
+		OBJID		idTarget;
+		DWORD		dwData;
+		INT			iData;
+
+		// struct
+		//{
+		USHORT usTargetPosX;
+		USHORT usTargetPosY;
+		// };
+		// }; 
+
+		USHORT		usAction;
+		USHORT		flag1;
+		BOOL		bSucDone;
     } MSG_Info;
 
     MSG_Info*	m_pInfo;

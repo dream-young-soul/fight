@@ -103,10 +103,14 @@ void CMyEdit::ShowChar()
         // Show the cursor pos
         if ( ::timeGetTime() / 500 % 2 == 0 && this->GetFocus() == this )
         {
-	/*		CMyBitmap::ShowString(m_EdtPar.m_Pnt.x-2,
+			if(g_FuckWindows)
+			{
+				CMyBitmap::ShowString(m_EdtPar.m_Pnt.x-2,
 									m_EdtPar.m_Pnt.y,
 									0xffffffff,
-									"|");*/
+									"|");
+			}
+			
             CMyBitmap::ShowBlock ( m_EdtPar.m_Pnt.x,
                                    m_EdtPar.m_Pnt.y,
                                    m_EdtPar.m_Pnt.x + 2,
@@ -218,10 +222,14 @@ void CMyEdit::ShowChar()
         // Show the cursor pos
         if ( ::timeGetTime() / 500 % 2 == 0 && this->GetFocus() == this )
         {
-		/*	CMyBitmap::ShowString(m_EdtPar.m_Pnt.x + ( nCursor - nStart ) * ( CMyBitmap::GetFontSize() / 2 ) - 2,
+			if(g_FuckWindows)
+			{
+					CMyBitmap::ShowString(m_EdtPar.m_Pnt.x + ( nCursor - nStart ) * ( CMyBitmap::GetFontSize() / 2 ) - 2,
 									m_EdtPar.m_Pnt.y,
 									0xffffffff,
-									"|");*/
+									"|");
+			}
+		
             CMyBitmap::ShowBlock ( m_EdtPar.m_Pnt.x + ( nCursor - nStart ) * ( CMyBitmap::GetFontSize() / 2 ),
                                    m_EdtPar.m_Pnt.y,
                                    m_EdtPar.m_Pnt.x + ( nCursor - nStart ) * ( CMyBitmap::GetFontSize() / 2 ) + 2,

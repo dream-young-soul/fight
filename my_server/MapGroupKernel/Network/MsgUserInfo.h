@@ -70,6 +70,7 @@ protected:
         UCHAR	ucNobilityRank;	// 爵位
         USHORT	usMaxEudemon;	// 最大可召唤幻兽数
         DWORD	dwExploit;		// 功勋值
+		BYTE tag[3];
         // for str packer
         char szBuf[1];
     } MSG_Info;

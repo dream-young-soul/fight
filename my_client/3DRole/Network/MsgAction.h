@@ -141,27 +141,30 @@ public:
 protected:
     typedef struct
     {
-        USHORT		unMsgSize;
-        USHORT		unMsgType;
-        DWORD		dwTimeStamp;
+		USHORT		unMsgSize;
+		USHORT		unMsgType;
+		DWORD		dwTimeStamp;
 
-        OBJID		idUser;
-        USHORT		unPosX, unPosY;
-        USHORT		unDir;
-        union
-        {
-            OBJID		idTarget;
-            DWORD		dwData;
-            INT			iData;
-            BOOL		bSucDone;
-            struct
-            {
-                USHORT usTargetPosX;
-                USHORT usTargetPosY;
-            };
-        };
+		OBJID		idUser;
+		USHORT		unPosX, unPosY;
+		USHORT		unDir;
+		USHORT		flag;
+		//union
+		//{
+		OBJID		idTarget;
+		DWORD		dwData;
+		INT			iData;
 
-        USHORT		usAction;
+		// struct
+		//{
+		USHORT usTargetPosX;
+		USHORT usTargetPosY;
+		// };
+		// }; 
+
+		USHORT		usAction;
+		USHORT		flag1;
+		BOOL		bSucDone;
     } MSG_Info;
 
     MSG_Info*	m_pInfo;

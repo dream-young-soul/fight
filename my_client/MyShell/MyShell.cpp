@@ -267,6 +267,15 @@ CBkWnd* g_pBkWnd = NULL ;
 
 BOOL CMyShellApp::InitInstance()
 {
+	//取操作系统信息- 麻痹 win7以上 -画线画不了，日狗- 调试一晚上2016.11.10
+	OSVERSIONINFOA version;
+	memset(&version,0,sizeof(OSVERSIONINFOA));
+	version.dwOSVersionInfoSize=sizeof(OSVERSIONINFOA);
+	::GetVersionEx(&version);
+	if(version.dwMajorVersion >= 6)//win8以上
+	{
+		g_FuckWindows = true;
+	}
     AfxEnableControlContainer();
     // init global obj
     g_objGameDataSet.Init();

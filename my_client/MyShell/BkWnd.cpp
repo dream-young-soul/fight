@@ -59,8 +59,9 @@ void CBkWnd::Create()
     CreateEx( WS_MAXIMIZEBOX,
               AfxRegisterWndClass(0, AfxGetApp()->LoadStandardCursor(IDC_ARROW)),
               "MyWnd",
+
               WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX,
-			 // WS_POPUP, //нч╠ъ©Р
+			  //WS_POPUP, //нч╠ъ©Р
               rect,
               NULL,
               NULL,

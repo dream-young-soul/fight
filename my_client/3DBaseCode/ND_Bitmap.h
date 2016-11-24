@@ -325,7 +325,7 @@ extern DWORD g_dw3DTextureLoadTimeFrame;
 extern DWORD g_dwFrameInterval;
 extern DWORD g_dwBigTexture;
 #endif
-
+extern bool g_FuckWindows;
 
 //------------------------------------------------------
 #endif

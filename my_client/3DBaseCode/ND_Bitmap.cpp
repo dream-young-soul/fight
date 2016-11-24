@@ -14,6 +14,7 @@
 int	_SCR_WIDTH	= 1024;
 int	_SCR_HEIGHT	= 768;
 int _FRAME_SIZE = 21;	//边框宽度,就是创建窗口的任务栏宽度2016.10.14
+bool g_FuckWindows = false;
 const int _EMOTION_SIZE = 22;
 
 // static
@@ -694,7 +695,7 @@ void CMyBitmap::PrepareLine ( void )
 {
 	SetRenderState ( D3DRS_ZENABLE, false );
 	SetRenderState ( D3DRS_ZWRITEENABLE, false );
-	SetRenderState ( D3DRS_SHADEMODE, D3DSHADE_GOURAUD );
+	SetRenderState ( D3DRS_SHADEMODE, D3DSHADE_FLAT );
 	SetRenderState ( D3DRS_DITHERENABLE, false );
 	SetRenderState ( D3DRS_CULLMODE, D3DCULL_NONE );
 	SetRenderState ( D3DRS_AMBIENTMATERIALSOURCE, D3DMCS_COLOR1 );
@@ -744,6 +745,7 @@ void CMyBitmap::PrepareLine ( void )
 //------------------------------------------------------
 void CMyBitmap::ShowLine ( LineVertex* line, DWORD num )
 {
+	if(g_FuckWindows)return;
     if (CMyBitmap::s_nShowMode != modeLine)
     {
         CMyBitmap::PrepareLine();
@@ -825,6 +827,7 @@ void CMyBitmap::ShowRect ( int x1, int y1, int x2, int y2, DWORD color )
 //移植到directx9 画不出来。。
 void CMyBitmap::ShowBlock( int x1, int y1, int x2, int y2, DWORD color1, DWORD color2, DWORD color3, DWORD color4)
 {
+	if(g_FuckWindows)return;
     static LineVertex s_vec[4];
     s_vec[0].x = (float)x1;
     s_vec[0].y = (float)y1;
@@ -862,6 +865,7 @@ void CMyBitmap::ShowBlock( int x1, int y1, int x2, int y2, DWORD color1, DWORD c
 
 void CMyBitmap::ShowBlock( CMyPos posA, CMyPos posB, CMyPos posC, CMyPos posD, DWORD color )
 {
+	if(g_FuckWindows)return;
     static LineVertex s_vec[4];
     s_vec[0].x = (float)posA.x;
     s_vec[0].y =(float) posA.y;
@@ -916,6 +920,7 @@ void CMyBitmap::ShowBlock( CMyPos posA, CMyPos posB, CMyPos posC, CMyPos posD, D
 //------------------------------------------------------
 void CMyBitmap::ShowBlock ( int x1, int y1, int x2, int y2, DWORD color )
 {
+	if(g_FuckWindows)return;
     static LineVertex s_vec[4];
     s_vec[0].x = (float)x1;
     s_vec[0].y = (float)y1;
