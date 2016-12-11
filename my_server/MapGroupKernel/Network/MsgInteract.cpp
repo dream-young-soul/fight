@@ -259,20 +259,21 @@ void CMsgInteract::Process(void* pInfo)
                 m_pInfo->usData1 = usLev;
                 //* DECODE
                 //////////////////////////////////////////////////////////////////////////
+				//idTarget	= ::ExchangeLongBits(((idTarget - 0x8B90B51A) ^ (idUser) ^ 0x5F2D2463),32-13); 
+				//idTarget	= (::ExchangeLongBits((idTarget),13) ^ (idUser) ^ 0x5F2D2463) + 0x8B90B51A; 
 #define	ENCODE_MAGICATTACK(idUser,usType,idTarget,usPosX,usPosY) {	\
 				usType		= (::ExchangeShortBits((usType - 0x14BE),3) ^ (idUser) ^ 0x915D);	\
-				idTarget	= ::ExchangeLongBits(((idTarget - 0x8B90B51A) ^ (idUser) ^ 0x5F2D2463),32-13); \
 				usPosX		= (::ExchangeShortBits((usPosX - 0xDD12),1) ^ (idUser) ^ 0x2ED6);	\
 				usPosY		= (::ExchangeShortBits((usPosY - 0x76DE),5) ^ (idUser) ^ 0xB99B);	}
 #define	DECODE_MAGICATTACK(idUser,usType,idTarget,usPosX,usPosY) {	\
 				usType		= 0xFFFF&(::ExchangeShortBits(((usType) ^ (idUser) ^ 0x915D),16-3) + 0x14BE);	\
-				idTarget	= (::ExchangeLongBits((idTarget),13) ^ (idUser) ^ 0x5F2D2463) + 0x8B90B51A; \
 				usPosX		= 0xFFFF&(::ExchangeShortBits(((usPosX) ^ (idUser) ^ 0x2ED6),16-1) + 0xDD12);	\
 				usPosY		= 0xFFFF&(::ExchangeShortBits(((usPosY) ^ (idUser) ^ 0xB99B),16-5) + 0x76DE);	}
                 //////////////////////////////////////////////////////////////////////////
                 if (!IsNpcMsg())
-                    DECODE_MAGICATTACK(pUser->GetID(), m_pInfo->usMagicType, m_pInfo->idTarget, m_pInfo->unPosX, m_pInfo->unPosY)
-                    //*/// DECODE
+					DECODE_MAGICATTACK(pUser->GetID(), m_pInfo->usData0, m_pInfo->idTarget, m_pInfo->unPosX, m_pInfo->unPosY)
+					m_pInfo->usMagicType = m_pInfo->usData0;
+					//*/// DECODE
                     if (pUser)
                     {
                         if (bTestMagic && pUser->IsMagicAtkCheat(m_pInfo->idTarget, m_pInfo->unPosX, m_pInfo->unPosY, m_pInfo->dwTimeStamp))

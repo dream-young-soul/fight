@@ -73,35 +73,36 @@ private:
         OBJID	idSender;
         OBJID	idTarget;
 
-        union
-        {
-            struct
-            {
+       // union
+       // {
+           // struct
+           // {
                 USHORT	unPosX;
                 USHORT	unPosY;
-            };
-            //			DWORD dwBulletType;
-            //			OBJID idBullet;
-        };
+          //  };
+            			DWORD dwBulletType;
+            			OBJID idBullet;
+       // };
 
         USHORT	unType;
-        union
-        {
+		USHORT  flag;
+        //union
+        //{
             OBJID	idItem;
             DWORD	dwData;
             INT		nData;
-            struct
-            {
+            //struct
+            //{
                 USHORT	usMagicType;
                 USHORT	usMagicLevel;
-            };
+           // };
 
-            struct
-            {
+           // struct
+           // {
                 USHORT	usData0;
                 USHORT	usData1;
-            };
-        };
+           // };
+       // };
     } MSG_Info;
 
     MSG_Info*	m_pInfo;

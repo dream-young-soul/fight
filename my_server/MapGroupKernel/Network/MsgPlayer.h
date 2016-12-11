@@ -45,45 +45,45 @@ protected:
 
         OBJID id;
         DWORD dwLookFace;
-        union
-        {
+       // union
+       // {
             //I64 i64Status;
             DWORD	dwStatus[2];
-            struct
-            {
+           // struct
+            //{
                 USHORT usStatuaryLife; // 雕像生命
                 USHORT usStatuaryFrame;// 雕像帧数
-            };
-        };
+            //};
+        //};
 
-        union
-        {
+        //union
+        //{
             DWORD	dwSynID_Rank;		// 非幻兽有效
             OBJID	idOwner;			// 幻兽有效
-        };
+       // };
 
         DWORD dwArmorType;
         DWORD dwWeaponRType;
 
-        union
-        {
+        //union
+       // {
             DWORD	dwMantleType;
-            struct
-            {
+           // struct
+           // {
                 USHORT	usMaxLife;				// 当Player为Monster的时候，表示最大生命
                 USHORT	usMonsterLife;			// 当Player为Monster的时候，表示当前生命
-            };
-        };
+           // };
+        //};
 
-        union
-        {
+       // union
+        //{
             DWORD dwMountType;
-            struct
-            {
+            //struct
+            //{
                 USHORT usLife;		//	怪物有效
                 USHORT usLevel;		//  怪物等级
-            };
-        };
+           // };
+        //};
 
         //unsigned short usMantleType;
 
@@ -97,17 +97,18 @@ protected:
         UCHAR ucDir;
         UCHAR ucPose;
 
-        union
-        {
-            struct
-            {
+        //union
+        //{
+           // struct
+           // {
                 UCHAR ucActionSpeed;		// 行动速度
                 UCHAR ucTutorLevel;			// 导师等级
                 UCHAR ucMercenaryRank;		// 佣兵等级
                 UCHAR ucNobilityRank;		// 爵位
-            };
+				USHORT flag; //补位	
+           // };
             OBJID	idMonsterType;			// 怪物和幻兽有效
-        };
+       // };
         // for str packer
         char szBuf[1];
     } MSG_Info;

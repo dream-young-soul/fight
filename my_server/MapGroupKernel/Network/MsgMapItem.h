@@ -50,11 +50,11 @@ protected:
         MSGHEAD_DEFINE
 
         OBJID			id;
-        union
-        {
+       // union
+      //  {
             OBJID			idType;		// for map_item
             USHORT			usLook;		// for trap
-        };
+       // };
         USHORT			nPosX;
         USHORT			nPosY;
         UCHAR			nAction;
