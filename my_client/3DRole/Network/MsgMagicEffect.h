@@ -34,19 +34,20 @@ protected:
         USHORT	unMsgType;
 
         OBJID				idUser;
-        union
-        {
+       // union
+       // {
             OBJID				idTarget;
-            struct
-            {
+       //     struct
+       //     {
                 USHORT				usPosX;
                 USHORT				usPosY;
-            };
-        };
+       //     };
+       // };
         USHORT				usType;
         USHORT				usLevel;
         UCHAR				ucDir;
         UCHAR				ucEffectNum;				// 可能为0
+		USHORT		flag;
         MagicEffectRoleInfo	setEffectRole[1];			// 变长
 
     } MSG_Info;

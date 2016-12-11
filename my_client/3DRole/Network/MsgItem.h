@@ -90,16 +90,17 @@ protected:
         unsigned short	unMsgType;
 
         OBJID		id;
-        union
-        {
+       // union
+       // {
             DWORD		dwData;
-            struct
-            {
+      //      struct
+      //      {
                 USHORT	usPosY;
                 USHORT	usPosX;
-            };
-        };
+       //     };
+       // };
         USHORT		usAction;
+		USHORT		flag;
         OBJID		idTarget; // 目标对象ID，ID_NONE表示自己
     } MSG_Info;
 

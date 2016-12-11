@@ -914,7 +914,11 @@ void    CPlayer::SynTrack(BOOL bMove)
         }
         if (strcmp(pCmd->szString1, "NULL") != 0)
         {
-            ::DXPlaySound(pCmd->szString1);
+			if(strlen(pCmd->szString1) > 0)
+			{
+				::DXPlaySound(pCmd->szString1);
+			}
+            
         }
         delete pCmd;
         m_setCmd.erase(m_setCmd.begin());

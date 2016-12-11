@@ -76,48 +76,51 @@ private:
         OBJID	idSender;
         OBJID	idTarget;
 
-        union
-        {
-            struct
-            {
+//union
+       // {
+         //   struct
+         //   {
                 USHORT	unPosX;
                 USHORT	unPosY;
-            };
+         //   };
             DWORD dwBulletType;
             OBJID idBullet;
-        };
+       // };
 
         USHORT	unType;
-        union
-        {
+		USHORT  flag;
+       // union
+       // {
             OBJID	idItem;
             DWORD	dwData;
             INT		nData;
-            struct
-            {
+         //   struct
+         //   {
                 USHORT	usMagicType;
                 USHORT	usMagicLevel;
-            };
+         //   };
 
-            struct
-            {
+         //   struct
+         //   {
                 USHORT	usData0;
                 USHORT	usData1;
-            };
-        };
+          //  };
+       // };
     } MSG_Info;
 
     MSG_Info*	m_pInfo;
 };
+/*idTarget	= ::ExchangeLongBits(((idTarget - 0x8B90B51A) ^ (idUser) ^ 0x5F2D2463),32-13); \*/
+
+//decode
+/*idTarget	= (::ExchangeLongBits((idTarget),13) ^ (idUser) ^ 0x5F2D2463) + 0x8B90B51A; \*/
 //////////////////////////////////////////////////////////////////////////
 #define	ENCODE_MAGICATTACK(idUser,usType,idTarget,usPosX,usPosY) {	\
 				usType		= (::ExchangeShortBits((usType - 0x14BE),3) ^ (idUser) ^ 0x915D);	\
-				idTarget	= ::ExchangeLongBits(((idTarget - 0x8B90B51A) ^ (idUser) ^ 0x5F2D2463),32-13); \
 				usPosX		= (::ExchangeShortBits((usPosX - 0xDD12),1) ^ (idUser) ^ 0x2ED6);	\
 usPosY		= (::ExchangeShortBits((usPosY - 0x76DE),5) ^ (idUser) ^ 0xB99B);	}
 #define	DECODE_MAGICATTACK(idUser,usType,idTarget,usPosX,usPosY) {	\
 				usType		= 0xFFFF&(::ExchangeShortBits(((usType) ^ (idUser) ^ 0x915D),16-3) + 0x14BE);	\
-				idTarget	= (::ExchangeLongBits((idTarget),13) ^ (idUser) ^ 0x5F2D2463) + 0x8B90B51A; \
 				usPosX		= 0xFFFF&(::ExchangeShortBits(((usPosX) ^ (idUser) ^ 0x2ED6),16-1) + 0xDD12);	\
 usPosY		= 0xFFFF&(::ExchangeShortBits(((usPosY) ^ (idUser) ^ 0xB99B),16-5) + 0x76DE);	}
 //////////////////////////////////////////////////////////////////////////

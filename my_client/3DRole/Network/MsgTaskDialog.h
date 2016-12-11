@@ -47,15 +47,15 @@ private:
         unsigned short	unMsgSize;
         unsigned short	unMsgType;
 
-        union
-        {
-            struct
-            {
+        //union
+        //{
+            //struct
+            //{
                 USHORT	usPosX;
                 USHORT	usPosY;
-            };
+            //};
             DWORD	idTask;			// panel task id, to server only
-        };
+        //};
         USHORT	usData;
         UCHAR	idxTask;
         UCHAR	ucAction;

@@ -37,6 +37,7 @@ protected:
         USHORT		usPosY;
         UCHAR		ucDir;
         UCHAR		ucMode;
+		USHORT		flag;
     } MSG_Info;
 
     MSG_Info*	m_pInfo;

@@ -47,11 +47,11 @@ protected:
         USHORT			unMsgType;
 
         OBJID			id;
-        union
-        {
+        //union
+       // {
             OBJID			idType;		// for map_item
             USHORT			usLook;		// for trap
-        };
+       // };
         unsigned short	usPosX;
         unsigned short	usPosY;
         unsigned char	ucAction;

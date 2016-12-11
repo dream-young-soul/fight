@@ -488,6 +488,8 @@ BOOL CGameSocket<a1, b1, c1, fst1, a2, b2, c2, fst2>::ReceiveMsg(void* pBuf, int
 #ifdef	LOGFILE
             LogSave("ERROR：接收到一个消息包尺寸超长[%d]的消息!!!", packsize);
 #endif
+			::DebugMsg("ERROR：接收到一个消息包尺寸超长[%d]的消息!!!",packsize);
+			
             m_nInbufLen = 0;		// 直接清空INBUF
             m_nInbufStart = 0;
             Destroy();
